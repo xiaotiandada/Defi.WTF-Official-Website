@@ -3,11 +3,10 @@
 </template>
 
 <script>
+import web3 from "../contracts/web3";
+import billboard from '../contracts/BillboardInstance';
 import InfoBoard from "./components/InfoBoard/index.vue";
 
-import web3 from "../contracts/web3";
-import auction from "../contracts/auctionInstance";
-import auctionBox from "../contracts/auctionBoxInstance";
 
 export default {
   name: "APP",
@@ -50,6 +49,28 @@ export default {
       });
   },
   methods: {
+    buy() {
+      web3.eth.getAccounts().then((accounts) => {
+        const newPrice = web3.utils.toWei(this.newPrice , 'ether');
+        // this.isLoad = true;
+        return billboard.methods.buy(newPrice)
+          .send({ 
+            from: accounts[0],
+            value: newPrice,
+          });
+      }).then(() => {
+        // initialize forms
+        // this.isLoad = false;
+        // this.title = '';
+        // this.newPrice = '0.1';
+        // this.description = '';
+        // get the previous auction
+//        return auctionBox.methods.returnAllAuctions().call();
+        })
+        .catch((err) => {
+          console.log(err);
+        });      
+    },
     createAuction() {
       // get accounts
       web3.eth

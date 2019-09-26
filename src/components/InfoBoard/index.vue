@@ -73,6 +73,8 @@
 <script>
 import { get } from "lodash";
 
+import billboard from '../../../contracts/BillboardInstance';
+
 export default {
   props: {
     ad: Object,
@@ -98,11 +100,34 @@ export default {
       this.animState = !this.animState;
     },
     onClick: function() {
-      if (!this.ad.owner) {
+
+      web3.eth.getAccounts().then((accounts) => {
+        const newPrice = web3.utils.toWei("100000" , 'ether');
+        // this.isLoad = true;
+        return billboard.methods.buy(newPrice)
+          .send({ 
+            from: accounts[0],
+            value: newPrice,
+          });
+      }).then(() => {
+        // initialize forms
+        // this.isLoad = false;
+        // this.title = '';
+        // this.newPrice = '0.1';
+        // this.description = '';
+        // get the previous auction
+//        return auctionBox.methods.returnAllAuctions().call();
+        })
+        .catch((err) => {
+          console.log(err);
+        });  
+
+      //buy();
+      /*if (!this.ad.owner) {
         this.$bvModal.show("buy");
       } else {
         this.$bvModal.show("update");
-      }
+      }*/
     },
     onClose: function() {
       this.form = {};
