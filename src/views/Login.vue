@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <button class="btn-base bg-purple" @click="walletLogin('GitHub')">
       <span>Github 登录</span>
     </button>
@@ -16,13 +16,13 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+// import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "home",
-  components: {
-    HelloWorld
-  },
+  // components: {
+  //   HelloWorld
+  // },
   methods: {
     // 点击时候触发， 重定向到登陆页面
     async walletLogin(type) {

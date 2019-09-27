@@ -1,10 +1,14 @@
 import Vue from "vue";
-import Router from "vue-router";
-// import Home from "./views/Home.vue";
+import VueRouter from 'vue-router'
 
-Vue.use(Router);
+Vue.use(VueRouter)
+import Login from "./views/Login.vue";
+import Billboard from "./views/Billboard.vue";
+import Stuffs from "./views/Stuffs.vue";
+import GithubLogin from "./views/GithubLogin.vue";
+import TwitterLogin from "./views/TwitterLogin.vue";
 
-export default new Router({
+export default new VueRouter({
   mode: "history",
   base: "",
   routes: [
@@ -19,8 +23,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Login.vue")
+      component: Login
     },
     {
       path: "/billboard",
@@ -28,8 +31,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Billboard.vue")
+      component:Billboard
     },
     {
       path: "/stuffs",
@@ -37,18 +39,17 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Stuffs.vue")
-    },    
+      component: Stuffs
+    },
     {
       path: "/login/github",
       name: "GithubLogin",
-      component: () => import("./views/GithubLogin.vue")
+      component: GithubLogin
     },
     {
       path: "/login/twitter",
       name: "TwitterLogin",
-      component: () => import("./views/TwitterLogin.vue")
-    },
+      component: TwitterLogin
+    }
   ]
 });
