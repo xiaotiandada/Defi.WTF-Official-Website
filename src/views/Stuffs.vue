@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { toReadablePrice } from '@/util';
+// import { toReadablePrice } from '@/util';
 
 export default {
   name: 'item-lists',
