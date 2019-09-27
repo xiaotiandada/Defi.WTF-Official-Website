@@ -101,6 +101,7 @@ export default {
     },
     onClick: function() {
 
+      /*
       web3.eth.getAccounts().then((accounts) => {
         const newPrice = web3.utils.toWei("100000" , 'ether');
         // this.isLoad = true;
@@ -120,14 +121,14 @@ export default {
         })
         .catch((err) => {
           console.log(err);
-        });  
+        });  */
 
       //buy();
-      /*if (!this.ad.owner) {
+      if (!this.ad.owner) {
         this.$bvModal.show("buy");
       } else {
         this.$bvModal.show("update");
-      }*/
+      }
     },
     onClose: function() {
       this.form = {};

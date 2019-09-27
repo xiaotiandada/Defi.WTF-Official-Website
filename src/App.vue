@@ -7,7 +7,6 @@ import web3 from "../contracts/web3";
 import billboard from '../contracts/BillboardInstance';
 import InfoBoard from "./components/InfoBoard/index.vue";
 
-
 export default {
   name: "APP",
   components: { InfoBoard },
@@ -38,121 +37,15 @@ export default {
     };
   },
   beforeMount() {
-    // get auctionBox method: returnAllAuctions()
-    auctionBox.methods
-      .returnAllAuctions()
-      .call()
-      .then(auctions => {
-        console.log(auctions);
-        // set the amount of auctions
-        this.amount = auctions.length;
-      });
   },
   methods: {
-    buy() {
-      web3.eth.getAccounts().then((accounts) => {
-        const newPrice = web3.utils.toWei(this.newPrice , 'ether');
-        // this.isLoad = true;
-        return billboard.methods.buy(newPrice)
-          .send({ 
-            from: accounts[0],
-            value: newPrice,
-          });
-      }).then(() => {
-        // initialize forms
-        // this.isLoad = false;
-        // this.title = '';
-        // this.newPrice = '0.1';
-        // this.description = '';
-        // get the previous auction
-//        return auctionBox.methods.returnAllAuctions().call();
-        })
-        .catch((err) => {
-          console.log(err);
-        });      
+    buy() {     
     },
     createAuction() {
-      // get accounts
-      web3.eth
-        .getAccounts()
-        .then(accounts => {
-          // convert 'ether' to 'wei'
-          const startPrice = web3.utils.toWei(this.startPrice, "ether");
-          // createAuction in AuctionBox contract
-          this.isLoad = true;
-          return auctionBox.methods
-            .createAuction(this.title, startPrice, this.description)
-            .send({ from: accounts[0] });
-        })
-        .then(() => {
-          // initialize forms
-          this.isLoad = false;
-          this.title = "";
-          this.startPrice = "";
-          this.description = "";
-          // get the previous auction
-          return auctionBox.methods.returnAllAuctions().call();
-        })
-        .then(auctions => {
-          const index = auctions.length - 1;
-          console.log(auctions[index]);
-          // get the contract address of the previous auction
-          this.auctionAddress = auctions[index];
-          // set the address as the parameter
-          const auctionInstance = auction(auctions[index]);
-          return auctionInstance.methods.returnContents().call();
-        })
-        .then(lists => {
-          console.log(lists);
-          const auctionlists = lists;
-          // convert 'wei' to 'ether'
-          auctionlists[1] = web3.utils.fromWei(auctionlists[1], "ether");
-          this.auctionCard = auctionlists;
-          // show up the auction at the bottom of the page
-          this.isShow = true;
-          this.amount += 1;
-        })
-        .catch(err => {
-          console.log(err);
-        });
     },
     handleSubmit() {
-      // convert 'ether' to 'wei'
-      const bidPriceWei = web3.utils.toWei(this.bidPrice, "ether");
-      // get the wallet adddress
-      const fromAddress = web3.eth.accounts.givenProvider.selectedAddress;
-      // set the address as the parameter
-      const selectedAuction = auction(this.auctionAddress);
-      this.isBid = true;
-      // placeBid in Auction contract
-      selectedAuction.methods
-        .placeBid()
-        .send({
-          from: fromAddress,
-          value: bidPriceWei
-        })
-        .then(() => {
-          this.isBid = false;
-          // increase the number of bidders
-          this.bidders += 1;
-          this.bidPrice = "";
-        });
     },
     handleFinalize() {
-      // get accounts
-      web3.eth.getAccounts().then(accounts => {
-        // set the address as the parameter
-        const selectedAuction = auction(this.auctionAddress);
-        this.isFin = true;
-        // finalizeAuction in Auction contract
-        selectedAuction.methods
-          .finalizeAuction()
-          .send({ from: accounts[0] })
-          .then(() => {
-            this.isFin = false;
-            this.finalizeStatus = "finalized";
-          });
-      });
     }
   }
 };
