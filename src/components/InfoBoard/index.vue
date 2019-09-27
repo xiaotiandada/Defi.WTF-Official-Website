@@ -100,10 +100,21 @@ export default {
       this.animState = !this.animState;
     },
     onClick: function() {
-
-      /*
-      web3.eth.getAccounts().then((accounts) => {
-        const newPrice = web3.utils.toWei("100000" , 'ether');
+      //buy();
+      if (!this.ad.owner) {
+        this.$bvModal.show("buy");
+      } else {
+        this.$bvModal.show("update");
+      }
+    },
+    onClose: function() {
+      this.form = {};
+    },
+    bid: function() {
+      console.log("bid");
+      alert("bid");
+     /* web3.eth.getAccounts().then((accounts) => {
+        const newPrice = web3.utils.toWei(this.form.prePay, 'ether');
         // this.isLoad = true;
         return billboard.methods.buy(newPrice)
           .send({ 
@@ -121,19 +132,9 @@ export default {
         })
         .catch((err) => {
           console.log(err);
-        });  */
+        });    */  
 
-      //buy();
-      if (!this.ad.owner) {
-        this.$bvModal.show("buy");
-      } else {
-        this.$bvModal.show("update");
-      }
-    },
-    onClose: function() {
-      this.form = {};
-    },
-    bid: function() {
+      /*
       console.log("bid");
       const ALICE = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY";
       const loading = this.$loading({
@@ -155,9 +156,31 @@ export default {
           message: "Buy billboard success",
           type: "success"
         });
-      }, 1000);
+      }, 1000);*/
     },
     setBoard: function() {
+      alert("setBoard");
+      web3.eth.getAccounts().then((accounts) => {
+        const newPrice = web3.utils.toWei(this.form.prePay, 'ether');
+        // this.isLoad = true;
+        return billboard.methods.buy(newPrice)
+          .send({ 
+            from: accounts[0],
+            value: newPrice,
+          });
+      }).then(() => {
+        // initialize forms
+        // this.isLoad = false;
+        // this.title = '';
+        // this.newPrice = '0.1';
+        // this.description = '';
+        // get the previous auction
+//        return auctionBox.methods.returnAllAuctions().call();
+        })
+        .catch((err) => {
+          console.log(err);
+        });  
+
       // console.log("setBoard");
       const ALICE = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY";
       const loading = this.$loading({
