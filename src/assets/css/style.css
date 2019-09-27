@@ -139,6 +139,18 @@ label {
 
 
 
+.billboard{background-repeat: no-repeat transparent ;
+background-position: center; 
+    background-image:  url(../img/billboard-bg.png);
+    border: 40px solid transparent;
+           padding:15px; 
+            -moz-border-radius: 24px; /* Firefox */
+  -webkit-border-radius: 24px; /* Safari 和 Chrome */
+  border-radius: 24px; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+       -moz-border-image:url(../img/billboard.png) 40 40  round;    /* Old Firefox */
+-webkit-border-image:url(../img/billboard.png) 40 40 round;    /* Safari and Chrome */
+-o-border-image:url(../img/billboard.png) 40 40 round;     /* Opera */
+border-image:url(../img/billboard.png) 40 40 round;}
 
 
 
