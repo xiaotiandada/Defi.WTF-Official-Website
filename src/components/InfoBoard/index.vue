@@ -73,7 +73,7 @@
 <script>
 import { get } from "lodash";
 
-import billboard from '../../../contracts/BillboardInstance';
+import billboard from '../../../contracts/billboardInstance';
 
 export default {
   props: {

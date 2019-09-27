@@ -4,7 +4,7 @@
 
 <script>
 import web3 from "../contracts/web3";
-import billboard from '../contracts/BillboardInstance';
+import billboard from '../contracts/billboardInstance';
 import InfoBoard from "./components/InfoBoard/index.vue";
 
 export default {
