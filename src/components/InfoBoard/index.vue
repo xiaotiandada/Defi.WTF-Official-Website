@@ -73,8 +73,6 @@
 <script>
 import { get } from "lodash";
 
-import billboard from '../../../contracts/billboardInstance';
-
 export default {
   props: {
     ad: Object,
@@ -100,11 +98,11 @@ export default {
       this.animState = !this.animState;
     },
     onClick: function() {
-      if (!this.ad.owner) {
-        this.$bvModal.show("buy");
-      } else {
-        this.$bvModal.show("update");
-      }
+      web3.eth.getAccounts().then((accounts) => {
+        const newPrice = web3.utils.toWei('1', 'ether');
+        // this.isLoad = true;   
+      });
+      //window.location.href('https://capitalbox.one/index.html#/ad/0');
     },
     onClose: function() {
       this.form = {};
@@ -112,6 +110,7 @@ export default {
     bid: function() {
       console.log("bid");
       alert("bid");
+      /*
       web3.eth.getAccounts().then((accounts) => {
         const newPrice = web3.utils.toWei(this.form.prePay, 'ether');
         // this.isLoad = true;
@@ -132,6 +131,7 @@ export default {
         .catch((err) => {
           console.log(err);
         });
+        */
       /*
       console.log("bid");
       const ALICE = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY";

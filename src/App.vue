@@ -1,15 +1,18 @@
 <template>
-  <InfoBoard class="ad0" :ad="adInfo" boardOwner="Alice" />
+  <div>
+    <Billboard />
+    <InfoBoard class="ad0" :ad="adInfo" boardOwner="Alice" />
+  </div>
 </template>
 
 <script>
-import web3 from "../contracts/web3";
-import billboard from '../contracts/billboardInstance';
+import Billboard from "./components/Billboard.vue";
 import InfoBoard from "./components/InfoBoard/index.vue";
+
 
 export default {
   name: "APP",
-  components: { InfoBoard },
+  components: { InfoBoard, Billboard },
   data() {
     return {
       title: "",
