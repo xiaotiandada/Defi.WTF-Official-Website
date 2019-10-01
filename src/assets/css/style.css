@@ -55,6 +55,7 @@ label {
 .stuffs h2{padding:10px 10px 30px 10px; }
 .stuffs-item{margin-bottom:14px;text-align: center; padding-left: 8px; padding-right: 8px;}
 .stuffs-name{position: absolute;
+    font-size: 12px;
     right: 0;
     bottom: 0;
     margin-bottom: 0;
