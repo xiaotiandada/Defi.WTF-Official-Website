@@ -43,8 +43,7 @@ const vm = new Vue({
   //    this[ACTION_TYPES.SET_CURRENT_VIEW](newRoute)
     }
   },
-  beforeCreate: function() {
-    /*
+  beforeCreate: function() {  
     this.$store.dispatch(ACTION_TYPES.REGISTER_WEB3_INSTANCE)
       .then((result) => {
         let state = result.state
@@ -61,7 +60,7 @@ const vm = new Vue({
         }
 
         console.error(result, 'Unable to REGISTER_WEB3_INSTANCE')
-      })*/
+      })
   },
   created: function() {
 //    this[ACTION_TYPES.CHANGE_CURRENT_ROUTE_TO](this.$route)
