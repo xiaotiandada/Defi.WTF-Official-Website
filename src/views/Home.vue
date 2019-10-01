@@ -189,19 +189,6 @@
         </div>
     </section>
     
-    <section class="portfolio-section spad" id="billboard">
-      <div class="container">
-          <div class="row ">
-              <div class=" wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
-                  <img src="src/assets/img/wtf5.png">
-              </div>
-              <div class=" want wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
-                  <h1>We Want You!</h1>
-              </div>
-          </div>
-      </div>
-    </section>
-    <Billboard></Billboard>
     <section>
         <div class="container">
             <div class="row ">
@@ -264,7 +251,7 @@
 </template>
 
 <script>
-import Billboard from "../components/Billboard.vue";
+import Billboard from "../views/Billboard.vue";
 import InfoBoard from "../components/InfoBoard/index.vue";
 
 

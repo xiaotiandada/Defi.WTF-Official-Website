@@ -1,9 +1,24 @@
 <template>
-<section class="stuffs">
-    <div class="container">
+<section class="billboards">
+
+    <section class="portfolio-section spad" id="billboard">
+      <div class="container">
+          <div class="row ">
+              <div class=" wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
+                  <img src="src/assets/img/wtf5.png">
+              </div>
+              <div class=" want wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
+                  <h1>We Want You!</h1> <br>
+                  <a target="_blank"  href="http://capitalbox.one/index.html#/ad/0" class="site-btn wow fadeInUp" data-wow-delay="0.2s">Buy a billboard?(Kovan Test Net)</a>
+              </div>
+                
+          </div>
+      </div>
+    </section>
+
       <div class="row billboard">
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[0]" alt="adList[0]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[1]" alt="adList[1]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[0]" alt="adList[0]"> </div>
+  <!--  <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[1]" alt="adList[1]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[2]" alt="adList[2]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[3]" alt="adList[3]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[4]" alt="adList[4]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
@@ -12,8 +27,9 @@
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[7]" alt="adList[7]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[8]" alt="adList[8]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[9]" alt="adList[9]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
+        -->
       </div>
-    </div>
+       
   </section> 
 </template>
 
@@ -43,6 +59,10 @@ export default {
   },
   created(){
     this.getTotalNumber();
+    for (let i=0;i<10;++i) {
+ //     this.adList.push("src/assets/img/wtf5.png");
+      //this.adList.push("...");
+    }
   },
   destoryed(){
   },
@@ -54,6 +74,7 @@ export default {
       this.artName = adboardData.content;
     },
     getAdBoardData: async function(total) {
+      console.log(total);
       for (let i = 0; i < total; i++) {
         try {
           let res = await this.$root.getAdBoardDataId(i)
@@ -61,8 +82,7 @@ export default {
           // arr.push(res)
           let val = JSON.parse(res.content).cover
           console.log(val);
-          this.adList.push(val)
-          console.log(this.adList);
+          this.adList.push(val);
         } catch (error) {
           console.log('getAdBoardDataId', error)
         }

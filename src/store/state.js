@@ -1,10 +1,7 @@
 export default {
   currentRoute: null,
   currentView: null,
-
-  billboardURL: {
-  },
-
+  billboardURLs: [],
   web3: {
     address: null,
     coinbase: null,

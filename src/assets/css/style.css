@@ -51,6 +51,9 @@ label {
   cursor: pointer;
   transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
+
+.billboards{margin: 10px 150px 10px; min-height: 60px;}
+
 .stuffs{margin-top: 120px;min-height: 600px;margin-bottom: 120px;}
 .stuffs h2{padding:10px 10px 30px 10px; }
 .stuffs-item{margin-bottom:14px;text-align: center; padding-left: 8px; padding-right: 8px;}
