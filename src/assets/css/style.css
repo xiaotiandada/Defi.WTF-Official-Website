@@ -172,7 +172,7 @@ background-position: center;
 -o-border-image:url(../img/billboard.png) 40 40 round;     /* Opera */
 border-image:url(../img/billboard.png) 40 40 round;}
 
-
+.billboard img{margin-bottom: 12px; border-radius: 8px;}
 
 
 .want{padding-top: 200px;padding-bottom:50px}
