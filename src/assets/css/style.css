@@ -161,6 +161,7 @@ label {
 
 .billboard{background-repeat: no-repeat transparent ;
 background-position: center; 
+min-width: 350px;
     background-image:  url(../img/billboard-bg.png);
     border: 40px solid transparent;
            padding:15px; 
@@ -172,7 +173,7 @@ background-position: center;
 -o-border-image:url(../img/billboard.png) 40 40 round;     /* Opera */
 border-image:url(../img/billboard.png) 40 40 round;}
 
-.billboard img{margin-bottom: 12px; border-radius: 8px;}
+.billboard img{margin-bottom: 12px; height: 170px;overflow: hidden; border-radius: 8px;}
 
 
 .want{padding-top: 200px;padding-bottom:50px}
