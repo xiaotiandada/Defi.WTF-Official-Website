@@ -9,13 +9,9 @@
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[4]" alt="adList[4]"> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[5]" alt="adList[5]"> </div>                
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[6]" alt="adList[6]"> </div>
-
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="1" alt="cover[0]"> </div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="cover" alt="cover[1]"> </div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="adList[0]" alt="adList[0]"> </div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img src="src/assets/img/wtf5.png"></div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img src="src/assets/img/wtf5.png"></div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img src="src/assets/img/wtf5.png"></div>
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[7]" alt="adList[7]"> </div>
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[8]" alt="adList[8]"> </div>
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[9]" alt="adList[9]"> </div>                
       </div>
     </div>
   </section> 

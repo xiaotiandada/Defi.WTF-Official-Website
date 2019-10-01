@@ -11,10 +11,10 @@
           <nav class="site-menu">
             <div class="sm-close"><i class="ti-close"></i></div>
             <ul class="menu-list">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#Agenda">Agenda</a></li>
-              <li><a href="#billboard">Billboard</a></li>
-              <li><a href="#location">Location</a></li>
+              <li><a href="/#home">Home</a></li>
+              <li><a href="/#Agenda">Agenda</a></li>
+              <li><a href="/#billboard">Billboard</a></li>
+              <li><a href="/#location">Location</a></li>
               <li><router-link to="/about">Vote</router-link> </li>
               <li><router-link to="/billboard">Billboard</router-link></li>
               <li>
