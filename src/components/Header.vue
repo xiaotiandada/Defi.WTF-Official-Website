@@ -15,13 +15,13 @@
               <li><a href="#Agenda">Agenda</a></li>
               <li><a href="#billboard">Billboard</a></li>
               <li><a href="#location">Location</a></li>
-              <li><a href="/about">Vote</a> </li>
-              <li><a href="/billboard">Billboard</a></li>
+              <li><router-link to="/about">Vote</router-link> </li>
+              <li><router-link to="/billboard">Billboard</router-link></li>
               <li>
-              <a href="/stuffs">Stuffs</a>   
+              <router-link to="/stuffs">Stuffs</router-link>   
               </li>
               <li>
-                <a href="/login">Login</a>          
+                <router-link to="/login">Login</router-link>          
                 </li>
             </ul>
           </nav>
