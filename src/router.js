@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 import Login from "./views/Login.vue";
+import Home from "./views/Home.vue";
 import Billboard from "./views/Billboard.vue";
 import Stuffs from "./views/Stuffs.vue";
 import GithubLogin from "./views/GithubLogin.vue";
@@ -12,11 +13,11 @@ export default new VueRouter({
   mode: "history",
   base: "",
   routes: [
-//    {
-  //    path: "/",
-    //  name: "home",
-     // component: Home
-   // },
+   {
+     path: "/",
+     name: "home",
+     component: Home
+   },
     {
       path: "/login",
       name: "login",
