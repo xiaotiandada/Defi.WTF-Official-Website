@@ -2,13 +2,17 @@
 <section class="stuffs">
     <div class="container">
       <div class="row billboard">
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[0]" alt="adList[0]"> </div>
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[1]" alt="adList[1]"> </div>
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[2]" alt="adList[2]"> </div>
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[3]" alt="adList[3]"> </div>
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[4]" alt="adList[4]"> </div>
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[5]" alt="adList[5]"> </div>                
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[6]" alt="adList[6]"> </div>
+
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="1" alt="cover[0]"> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="cover" alt="cover[1]"> </div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="adlist[0]"></div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img src="src/assets/img/wtf5.png"></div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img src="src/assets/img/wtf5.png"></div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img src="src/assets/img/wtf5.png"></div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img src="src/assets/img/wtf5.png"></div>
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="adList[0]" alt="adList[0]"> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img src="src/assets/img/wtf5.png"></div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img src="src/assets/img/wtf5.png"></div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img src="src/assets/img/wtf5.png"></div>
@@ -28,7 +32,7 @@ export default {
       cover: '',
       text: '',
       url1: '',
-      adlist: '',
+      adList: [],
     }
   },
   computed: {
@@ -54,13 +58,15 @@ export default {
       this.artName = adboardData.content;
     },
     getAdBoardData: async function(total) {
-      alert(total);
       for (let i = 0; i < total; i++) {
         try {
           let res = await this.$root.getAdBoardDataId(i)
           console.log('res', res)
           // arr.push(res)
-          this.adList.push(res)
+          let val = JSON.parse(res.content).cover
+          console.log(val);
+          this.adList.push(val)
+          console.log(this.adList);
         } catch (error) {
           console.log('getAdBoardDataId', error)
         }
