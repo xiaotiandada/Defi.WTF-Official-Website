@@ -42,6 +42,7 @@ export default {
     }
   },
   created(){
+    this.getTotalNumber();
   },
   destoryed(){
   },
@@ -53,6 +54,7 @@ export default {
       this.artName = adboardData.content;
     },
     getAdBoardData: async function(total) {
+      alert(total);
       for (let i = 0; i < total; i++) {
         try {
           let res = await this.$root.getAdBoardDataId(i)
