@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-    <section class="resume-section" id="home">
+    <!--section class="resume-section" id="home">
       <div class="container  ">
         <div class="row">
           <div class=" about wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
@@ -17,8 +17,86 @@
           </div>
         </div>
       </div>
-    </section>
+    </section-->
+    <section>
+      <div class="row" style="margin-top:5em; background:#cd341f">
+        <div class="col-3 m-0 p-0 my-auto">
+          <b-img src="src/assets/img/head-left.png"/>
+        </div>
+        <div class="col-6 my-auto px-4" style="background:#cd341f">
+          <b-carousel
+            id="carousel"
+            v-model="slide"
+            :interval="4000"
+            controls
+            indicators
+            background="#cd341f"
+            class="mx-4"
+            img-width="360"
+            img-height="180"
+            style="background:#cd341f"
+            @sliding-start="onSlideStart"
+            @sliding-end="onSlideEnd"
+           >
 
+          <!-- Slides with image only -->
+            <b-carousel-slide>
+              <template v-slot:img>
+                <img
+                  class="d-block img-fluid w-100"
+                  width="360"
+                  height="180"
+                  src="src/assets/img/Slide5.JPG"
+                  alt="image slot"
+                >
+              </template>
+            </b-carousel-slide>
+            <b-carousel-slide>
+              <template v-slot:img>
+                <img
+                  class="d-block img-fluid w-100"
+                  width="360"
+                  height="180"
+                  src="src/assets/img/Slide6.JPG"
+                  alt="image slot"
+                >
+              </template>
+            </b-carousel-slide>
+            <b-carousel-slide>
+              <template v-slot:img>
+                <img
+                  class="d-block img-fluid w-100"
+                  width="360"
+                  height="180"
+                  src="src/assets/img/Slide3.JPG"
+                  alt="image slot"
+                >
+              </template>
+            </b-carousel-slide>
+          </b-carousel>
+        </div>
+        <div class="col-3 m-0 p-0 my-auto">
+          <b-img src="src/assets/img/head-left.png" style="transform: rotate(180deg)"/>
+        </div>
+      </div>
+    </section>
+    <section class="row my-4">
+      <div class="col-8 offset-2">
+        <h4 class=" red-text">
+          About WTF | the Power of Asking
+        </h4>
+        <p>
+          A modern resurrection of the Greek Pnyx (/nɪks/): a supportive space for open, inclusive, informed, and thoughtful exchanges of ideas, for the practice of the
+        ancient art of asking the right questions to move beyond hype and arrive at knowledge.
+        </p>
+        <h4 class="mt-4 red-text">
+          DeFi.WTF | Pierces through the Surface of Decentralized Finance
+        </h4>
+        <p>
+          The first of a series of WTF events, traces the emergent DeFi stack and explores its implications through in-depth conversations with the space’s main actors.
+        </p>
+      </div>
+    </section>
     <section class="resume-section" id="Agenda">
       <div class="container">
         <div class="row mt-4 pt-4">
@@ -75,22 +153,22 @@
         </div>
     </section>
     <section class="about-section spad red-section" id="location">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 maps wow fadeInUp maps" data-wow-delay="0.3s">
-                    <figure>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6563.45010563074!2d135.517705!3d34.661646!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf2eaba4fb607cc08!2sInternational%20House%2C%20Osaka!5e0!3m2!1sen!2sus!4v1569379742750!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                    </figure>
-                </div>
-                <div class="col-lg-5 about-text wow fadeInDown" data-wow-delay="0.5s">
-                    <h3>Monday, Oct 7, 2019<br> 10:00-18:00</h3>
-                    <br>
-                    <h3>Location: International House, Osaka </h3>
-                    <h4 class="font-weight-light">8-chōme-2-6 Uehonmachi, Tennōji-ku, Osaka, 543-0001, Japan</h4>
-                    <br>
-                    <br>
-                    <h6>DeFi.WTF will take place at the same venue as the Ethereum Lightning Talks organized by ETHPLANET. </h6>
-                </div>
+        <div class="row">
+            <div class="col-lg-5 offset-lg-1 maps wow fadeInUp maps" data-wow-delay="0.3s">
+                <figure>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6563.45010563074!2d135.517705!3d34.661646!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf2eaba4fb607cc08!2sInternational%20House%2C%20Osaka!5e0!3m2!1sen!2sus!4v1569379742750!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </figure>
+            </div>
+            <div class="col-lg-5 about-text wow fadeInDown" data-wow-delay="0.5s">
+                <h3>Email: <a href="mailto:ask@defi.wtf" class="font-weight-thin">ask@defi.wtf</a> Telegram: <a href="http://t.me/defiwtf" target="_blank" class="font-weight-thin">t.me/defiwtf</a></h3>
+                <br>
+                <h3>Monday, Oct 7, 2019<br> 10:00-18:00</h3>
+                <br>
+                <h3>Location: International House, Osaka </h3>
+                <h4 class="font-weight-light">8-chōme-2-6 Uehonmachi, Tennōji-ku, Osaka, 543-0001, Japan</h4>
+                <br>
+                <br>
+                <h6>DeFi.WTF will take place at the same venue as the Ethereum Lightning Talks organized by ETHPLANET. </h6>
             </div>
         </div>
     </section>
@@ -123,6 +201,8 @@ export default {
     return {
       Agenda,
       People,
+      slide: 0,
+      sliding: null,
       showBody: [false,false,false,false,false,false,false,false],
       title: "",
       startPrice: "",
@@ -151,6 +231,12 @@ export default {
   beforeMount() {
   },
   methods: {
+    onSlideStart(slide) {
+      this.sliding = true
+    },
+    onSlideEnd(slide) {
+      this.sliding = false
+    },
     buy() {
     },
     createAuction() {
