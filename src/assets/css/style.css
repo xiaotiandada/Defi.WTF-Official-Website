@@ -69,6 +69,9 @@ label {
 .red-text{
 	color: #cd341f !important;
 }
+.white-text{
+	color: white;
+}
 .panel-body, .resume-year p{
 	color: #363636;
 }

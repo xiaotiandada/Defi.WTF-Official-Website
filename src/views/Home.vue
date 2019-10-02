@@ -140,6 +140,9 @@
         </div>
     </section>
     <section>
+      <FrontBillboard />
+    </section>
+    <section>
         <div class="container">
             <div class="row">
                  <div class="col-md-12 fish-wap wow fadeInUp" data-wow-delay="0.2s">
@@ -193,10 +196,11 @@ import InfoBoard from "../components/InfoBoard/index.vue";
 import Avatar from "../components/Avatar.vue";
 import People from "../util/people.js";
 import Agenda from "../util/agenda.js";
+import FrontBillboard from "../views/FrontBillboard.vue";
 
 export default {
   name: "Home",
-  components: { InfoBoard, Billboard, Avatar },
+  components: { InfoBoard, FrontBillboard, Avatar },
   data() {
     return {
       Agenda,
