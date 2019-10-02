@@ -18,20 +18,10 @@
 
       <div class="row billboard">
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6" 
-          v-for="ad in adList" :key="ad.text"> 
-          <img :src="ad.cover" alt="ADS">
-          <p>{{ad.text}}</p>
+          v-for="ad in adList" :key="ad.text" v-show="ad.text">
+            <img :src="ad.cover" alt="ADS">
+            <p>{{ad.text}}</p>
         </div>
-  <!--  <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[1]" alt="adList[1]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[2]" alt="adList[2]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[3]" alt="adList[3]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[4]" alt="adList[4]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[5]" alt="adList[5]" onerror='this.src="src/assets/img/wtf5.png"'> </div> 
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[6]" alt="adList[6]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[7]" alt="adList[7]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[8]" alt="adList[8]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[9]" alt="adList[9]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
-        -->
       </div>
        
   </section> 
