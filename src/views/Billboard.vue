@@ -17,7 +17,9 @@
     </section>
 
       <div class="row billboard">
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6" v-for="ad in adList" :key="ad"> <img :src="ad.cover" alt="ADS">
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6" 
+          v-for="ad in adList" :key="ad.text"> 
+          <img :src="ad.cover" alt="ADS">
           <p>{{ad.text}}</p>
         </div>
   <!--  <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[1]" alt="adList[1]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
@@ -71,17 +73,17 @@ export default {
   methods: {
     getHeight:function() {
     },
-    getData: async function(adId) {
-      let adboardData = await this.$root.getAdBoardData(adId);
-      this.artName = adboardData.content;
-    },
     getAdBoardData: async function(total) {
       for (let i = 0; i < total; i++) {
         try {
           let res = await this.$root.getAdBoardDataId(i)
           console.log('res', res)
-          let data = JSON.parse(res.content)
-          this.adList.push(data);
+          if (res.content.includes(`"cover"`)) { // 只能这样判断了，不敢直接 JSON parse
+            let data = JSON.parse(res.content)
+            this.adList.push(data);
+          } else { //有文字没图片的场合
+            this.adList.push({ text: res.content, cover: "https://i.loli.net/2019/10/02/N4TzivwgLJypRb9.png" })
+          }
         } catch (error) {
           console.log('getAdBoardDataId', error)
         }
