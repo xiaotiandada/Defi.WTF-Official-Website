@@ -17,7 +17,9 @@
     </section>
 
       <div class="row billboard">
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[0]" alt="adList[0]"> </div>
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6" v-for="ad in adList" :key="ad"> <img :src="ad.cover" alt="ADS">
+          <p>{{ad.text}}</p>
+        </div>
   <!--  <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[1]" alt="adList[1]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[2]" alt="adList[2]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[3]" alt="adList[3]" onerror='this.src="src/assets/img/wtf5.png"'> </div>
@@ -74,22 +76,20 @@ export default {
       this.artName = adboardData.content;
     },
     getAdBoardData: async function(total) {
-      console.log(total);
       for (let i = 0; i < total; i++) {
         try {
           let res = await this.$root.getAdBoardDataId(i)
           console.log('res', res)
-          // arr.push(res)
-          let val = JSON.parse(res.content).cover
-          console.log(val);
-          this.adList.push(val);
+          let data = JSON.parse(res.content)
+          this.adList.push(data);
         } catch (error) {
           console.log('getAdBoardDataId', error)
         }
       }
     },
-    getTotalNumber: async function () {
-      await this.$root.getTotalNumber().then(res => {
+    getTotalNumber: function () {
+      this.$root.getTotalNumber().then(res => {
+        console.log(`Total is ${res}`)
         this.getAdBoardData(Number(res))
       })
     }
