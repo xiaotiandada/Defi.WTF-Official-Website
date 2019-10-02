@@ -89,7 +89,7 @@ export default {
   },
   computed: {
     dialogTitle: function() {
-      return this.showDialogBuy ? "Buy the Billborad" : "Update My Billboard";
+      return this.showDialogBuy ? "Buy the Billboard" : "Update My Billboard";
     }
   },
   methods: {
@@ -100,7 +100,7 @@ export default {
     onClick: function() {
       web3.eth.getAccounts().then((accounts) => {
         const newPrice = web3.utils.toWei('1', 'ether');
-        // this.isLoad = true;   
+        // this.isLoad = true;
       });
       //window.location.href('https://capitalbox.one/index.html#/ad/0');
     },
@@ -115,7 +115,7 @@ export default {
         const newPrice = web3.utils.toWei(this.form.prePay, 'ether');
         // this.isLoad = true;
         return billboard.methods.buy(newPrice)
-          .send({ 
+          .send({
             from: accounts[0],
             value: newPrice,
           });
@@ -162,7 +162,7 @@ export default {
         const newPrice = web3.utils.toWei(this.form.prePay, 'ether');
         // this.isLoad = true;
         return billboard.methods.buy(newPrice)
-          .send({ 
+          .send({
             from: accounts[0],
             value: newPrice,
           });
@@ -177,7 +177,7 @@ export default {
         })
         .catch((err) => {
           console.log(err);
-        });  
+        });
 
       // console.log("setBoard");
       const ALICE = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY";

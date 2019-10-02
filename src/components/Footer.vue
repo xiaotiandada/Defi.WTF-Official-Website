@@ -8,7 +8,7 @@
                 <a target="_blank" href="mailto:ask@defi.wtf" class="envelope wow fadeInDown" data-wow-delay="0.4s"><i class="fa fa-envelope"></i></a>
             </div>
             <!-- copyright -->
-            <p> <a href="http://www.DeFi.WTF.com/" title="DeFi.WTF." target="_blank">© 2019 DeFi.WTF.</a></p>
+            <p> <a href="http://www.DeFi.wtf" title="DeFi.WTF" target="_blank">© 2019 DeFi.WTF</a></p>
         </div>
     </footer>
 </template>

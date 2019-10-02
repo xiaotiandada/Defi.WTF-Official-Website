@@ -1,46 +1,5 @@
 <template>
     <div class="home">
-        <div class="scene">
-      <div class="container-sun">
-        <div class="sun"></div>
-        <div class="band" style="animation-delay: -0s"></div>
-        <div class="band" style="animation-delay: -1s"></div>
-        <div class="band" style="animation-delay: -2s"></div>
-        <div class="band" style="animation-delay: -3s"></div>
-        <div class="band" style="animation-delay: -4s"></div>
-        <div class="band" style="animation-delay: -5s"></div>
-        <div class="band" style="animation-delay: -6s"></div>
-        <div class="band" style="animation-delay: -7s"></div>
-        <div class="band" style="animation-delay: -8s"></div>
-        <div class="band" style="animation-delay: -9s"></div>
-      </div>
-    </div>
-    <section class="countdown" id="timer">
-      <div class="container ">
-        <p class="countdown-title">Activity countdown</p>
-        <ul class="countdown ">
-          <li>
-            <span class="days">00</span>
-            <p class="days_ref">days</p>
-          </li>
-          <li class="seperator">.</li>
-          <li>
-            <span class="hours">00</span>
-            <p class="hours_ref">hours</p>
-          </li>
-          <li class="seperator">:</li>
-          <li>
-            <span class="minutes">00</span>
-            <p class="minutes_ref">minutes</p>
-          </li>
-          <li class="seperator">:</li>
-          <li>
-            <span class="seconds">00</span>
-            <p class="seconds_ref">seconds</p>
-          </li>
-        </ul>
-      </div>
-    </section>
     <section class="resume-section" id="home">
       <div class="container  ">
         <div class="row">
@@ -60,183 +19,77 @@
       </div>
     </section>
 
-    <section class="resume-section  " id="Agenda">
+    <section class="resume-section" id="Agenda">
       <div class="container">
-          <div class="section-title">
+        <div class="row mt-4 pt-4">
+          <div class="col-3 statue text-center my-auto">
+            <img src="src/assets/img/marylin.png">
+          </div>
+          <div class="section-title mt-3 pt-5 col-6">
               <h2>Agenda</h2>
-              <h4>Oct 7, 2019 | Osaka, Japan</h4>
+              <h5 class="font-weight-medium mt-2">Oct 7, 2019 | Osaka, Japan</h5>
               <div class="text-center mt-5">
-                  <a href="https://www.eventbrite.com/e/defiwtf-tickets-72483123975" class="site-btn wow fadeInUp" data-wow-delay="0.2s">REGISTER</a>
+                  <a href="https://www.eventbrite.com/e/defiwtf-tickets-72483123975" class="site-btn big wow fadeInUp" data-wow-delay="0.2s">
+                    REGISTER
+                  </a>
               </div>
           </div>
-          <div class="row panel" >
-              <div class="col-lg-10 col-xl-9 offset-lg-2 offset-xl-2">
-                  <!-- Review item -->
-                  <div class="resume-item wow fadeInUp" data-wow-delay="0.2s">
-                      <div class="resume-year">
-                          <h4>10:00-10:30</h4>
-                          <p>Lightning talks</p>
-                      </div>
-                      <div class="resume-text">
-                          <h3 class="panel-header" >1. Bird's-eye view of the Ethereum DeFi Microcosm</h3>
-                          <p class="panel-body">Story of DeFi, how it started, and where we stand now<br>
-                              Let’s play Lego: DeFi ecosystem mapping<br>
-                              DeFi East meets West</p>
-                      </div>
-                  </div>
-                  <!-- Review item -->
-                  <div class="resume-item wow fadeInUp" data-wow-delay="0.2s">
-                      <div class="resume-year">
-                          <h4>10:30-11:30 </h4>
-                          <p>Stream of talks</p>
-                      </div>
-                      <div class="resume-text">
-                          <h3 class="panel-header" >2. Evolution of Liquidity</h3>
-                          <p class="panel-body"> Liquidity Microstructure: CeFi vs. DeFi<br>
-                              Evolution of the DEXes<br>
-                              DeFi Liquidity Models: MMORPG, Single Player Game, and beyond</p>
-                      </div>
-                  </div>
-                  <!-- Review item -->
-                  <div class="resume-item wow fadeInUp" data-wow-delay="0.2s">
-                      <div class="resume-year">
-                          <h4>11:30-12:30</h4>
-                      </div>
-                      <div class="resume-text">
-                          <h3 class="panel-header" >3. Putting the "De" Back in DeFi</h3>
-                          <p class="panel-body"> 50 Shades of Decentralization: Design Principles and Trade-offs<br>
-                              DeFi Bull vs. DeFi Bear: A Debate</p>
-                      </div>
-                  </div>
-                  <!-- Review item -->
-                  <div class="resume-item wow fadeInUp" data-wow-delay="0.2s">
-                      <div class="resume-year">
-                          <h4>12:30-13:30</h4>
-                          <p>Lightning talks</p>
-                      </div>
-                      <div class="resume-text">
-                          <h3 class="panel-header" >4. Conversation with your DeFi Investor</h3>
-                          <p class="panel-body">Profiling DeFi Projects<br>
-                              Valuation Models for DeFi<br>
-                              Will DeFi make ETH valuable?<br>
-                              Chasing Yields across Crypto Native Assets</p>
-                      </div>
-                  </div>
-                  <!-- Review item -->
-                  <div class="resume-item wow fadeInUp" data-wow-delay="0.2s">
-                      <div class="resume-year">
-                          <h4>13:30-14:30</h4>
-                          <p>Stream of talks</p>
-                      </div>
-                      <div class="resume-text">
-                          <h3 class="panel-header" >5. Inception or Deception?</h3>
-                          <p class="panel-body">The Onramp: KYCed volume vs. permissionless olume, and what's trending in DeFi UI?<br>
-                              Product-Market-Fit: institutions v.s. retail, human v.s. bots v.s. other smart contracts?<br>
-                              Mechanism Design: design principles and trade offs in decentralization<br>
-                              Gamification: DeFi games vs. DeFi in games vs. DeFi as games<br>
-                              Killer User Case: Can double-digit rates last, borrower/lender dilemma<br>
-                              Road to Under-Collateralization</p>
-                      </div>
-                  </div>
-                  <!-- Review item -->
-                  <div class="resume-item wow fadeInUp" data-wow-delay="0.2s">
-                      <div class="resume-year">
-                          <h4>15:00-16:00</h4>
-                          <p>Stream of talks</p>
-                      </div>
-                      <div class="resume-text">
-                          <h3 class="panel-header" >6. Attacks and Defenses</h3>
-                          <p class="panel-body">Security : Common types of attacks in smart contracts operating on a single blockchain
-                              Security : How to identify generalized attack vectors in smart contracts operating across interdependent blockchains
-                              Security : Blockchain Confirmation Assurance Framework & cost of attacks across blockchains
-                              Formal verification : Special considerations in formal verification of bridge smart contracts
-                              Design against risk : Models of thinking, frameworks, and methodologies</p>
-                      </div>
-                  </div>
-                  <!-- Review item -->
-                  <div class="resume-item wow fadeInUp" data-wow-delay="0.2s">
-                      <div class="resume-year">
-                          <h4>16:00-17:00</h4>
-                          <p>Stream of talks</p>
-                      </div>
-                      <div class="resume-text">
-                          <h3 class="panel-header" >7. Implications of Intra- and Inter-dependencies</h3>
-                          <p class="panel-body">The DeFi Interdependency Graph : cluster and direction of dependency
-                              Highly coupled systems : Failures cascading through highly interdependent or bridged blockchains
-                              Economics of bridges : Case Study on Cosmos - ETH bridge
-                              Security and liquidity implications of interoperable asset and bridges: MCD, tBTC, etc.</p>
-                      </div>
-                  </div>
-                  <!-- Review item -->
-                  <div class="resume-item wow fadeInUp" data-wow-delay="0.2s">
-                      <div class="resume-year">
-                          <h4>17:00-18:00</h4>
-                          <p>Discussion</p>
-                      </div>
-                      <div class="resume-text">
-                          <h3 class="panel-header" >8. DeFi beyond Ethereum</h3>
-                          <p class="panel-body">Implication of ETH 1.0 to 2.0 for the highly coupled DeFi stack
-                              Panel: DeFi for Ethereum vs. Cosmos vs. Polkadot vs. EOS vs. Libra (Moderated by Nervos)
-                              What is DeFi? Definition Revisited.</p>
-                      </div>
-                  </div>
-                  <!-- Review item -->
-                  <div class="text-center mt-5">
-                      <a target="_blank"  href="https://github.com/carboclan/pm/issues/69" class="site-btn wow fadeInUp" data-wow-delay="0.2s">PROPOSE</a>
-                  </div>
-              </div>
+          <div class="col-3 statue text-center my-auto">
+            <img src="src/assets/img/selfie.png">
           </div>
         </div>
-    </section>
-    
-    <section>
-        <div class="container">
-            <div class="row ">
-                <!-- item -->
-                <div class="col-md-12 mt-30 wow fadeInUp" data-wow-delay="0.2s">
-                    <h2>Donation to Community ENS: defiwtf.eth</h2>
-                    <p>If you love what we’re doing and want to help make it a success, consider donating!As an OG supporter, you’ll instantly enter the WTF events’ hall of fame.<br>
-                        You can include a 140-word message about why you’re donating or anything you want to say to the DeFi community, and your name and comment will be displayed on community website (www.DeFi.WTF), Twitter (@WTFdao), and at the event.</p>
-                </div>
-                <div class="col-md-12  mt-30 wow fadeInUp" data-wow-delay="0.2s">
-                    <h2>Pop-up Collective – Dissolves after 21 Days</h2>
-                    <p>If you are a thinker/creative/hacker, join our pop-up collective of volunteers in preparation of that will exist for 21 days then dissolve. The collective will determine the spending of the donations and “A DeFi Billboard” proceeds, and publish the financials once the collective dissolves.<br>
-                        The collective will determine which research streams gets the remaining balance. Prior to dissolving, the collective also decides whether to turn into a loosely-organized community or a more institutionalized DAO with clear governing mechanism.<br>
-                        We need your brain power in helping us come up with the toughest questions that YOU care. Comment directly under this thread if you have a proposal or comments, and don’t forget to VOTE when voting period begins. More details, coming soon!<br>
-                        We need more help with design and implementation of the Quadratic Voting tool, and the Harberger Taxes social experiment! (DM me @CarboClanC on GitHub or Telegram @TinaZhen)</p>
-                </div>
-                <div class="col-md-12 mt-30 wow fadeInUp" data-wow-delay="0.2s">
-                    <h2>Propose and Vote for Agenda Topics</h2>
-                    <p>We need your brain power in helping us come up with the toughest questions; the ones you* care about the most. Comment directly under this thread if you have a proposal or comment. We’ll compile suggestions for agenda items for one week. After topics are compiled and organized, we’ll hold a vote so the community gets to decide which ones will be included. So don’t forget to VOTE when voting period begins.<br>
-                        We need more help with design and implementation of the Quadratic Voting tool! (DM @CarboClanC on GitHub or Telegram @TinaZhen)</p>
-                </div>
-            </div>
+          <div class="row panel pt-4 mt-5" >
+              <div class="col-12  ">
+                  <!-- Review item -->
+                  <div v-for="(item, i) in Agenda" class="row resume-item wow fadeInUp" data-wow-delay="0.2s">
+                      <div class="col-md-2">
+                          <h5>{{item.time}}</h5>
+                          <p>{{item.subtitle}}</p>
+                      </div>
+                      <div class="col-md-6 pointer" @click="showBody[i] = !showBody[i]">
+                          <h4 class="panel-header">{{item.title}}</h4>
+                          <p class="panel-body" v-html="item.body" v-show="showBody[i]"></p>
+                      </div>
+                      <div class="col-md-4 text-right">
+                          <avatar v-for="name in item.speakers" :person="People[name]" class="mr-2"/>
+                      </div>
+                  </div>
+                  <div class="text-center my-5">
+                      <a target="_blank"  href="https://github.com/carboclan/pm/issues/69" class="site-btn big wow fadeInUp" data-wow-delay="0.2s">FIND OUT MORE</a>
+                  </div>
+              </div>
+          </div>
         </div>
     </section>
     <section>
         <div class="container">
             <div class="row">
-             <div class="col-md-12 fish-wap wow fadeInUp" data-wow-delay="0.2s">
+                 <div class="col-md-12 fish-wap wow fadeInUp" data-wow-delay="0.2s">
                     <img  class="fish" src="src/assets/img/wtf3.png" >
                 </div>
+                <div class="col-md-12 text-center mb-5">
+                  <h1 class="my-5">21-Day pop-up collective</h1>
+                  <avatar v-for="item in People" :person="item" size="70" class="m-3"/>
+                </div>
             </div>
         </div>
     </section>
-    <section class="about-section spad" id="location">
+    <section class="about-section spad red-section" id="location">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 maps wow fadeInUp maps" data-wow-delay="0.3s">
+                <div class="col-lg-7 maps wow fadeInUp maps" data-wow-delay="0.3s">
                     <figure>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6563.45010563074!2d135.517705!3d34.661646!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf2eaba4fb607cc08!2sInternational%20House%2C%20Osaka!5e0!3m2!1sen!2sus!4v1569379742750!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                     </figure>
                 </div>
-                <div class="col-lg-6 about-text wow fadeInDown" data-wow-delay="0.5s">
-                    <h4>Time: Monday, Oct 7, 2019 10:00-18:00</h4>
-                    <h4>Location: International House, Osaka </h4>
-                    <p>8-chōme-2-6 Uehonmachi, Tennōji-ku, Osaka, 543-0001, Japan<p>
+                <div class="col-lg-5 about-text wow fadeInDown" data-wow-delay="0.5s">
+                    <h3>Monday, Oct 7, 2019<br> 10:00-18:00</h3>
+                    <br>
+                    <h3>Location: International House, Osaka </h3>
+                    <h4 class="font-weight-light">8-chōme-2-6 Uehonmachi, Tennōji-ku, Osaka, 543-0001, Japan</h4>
                     <br>
                     <br>
-                    <h4>DeFi.WTF will take place at the same venue as the Ethereum Lightning Talks organized by ETHPLANET. </h4>
+                    <h6>DeFi.WTF will take place at the same venue as the Ethereum Lightning Talks organized by ETHPLANET. </h6>
                 </div>
             </div>
         </div>
@@ -250,16 +103,27 @@
     </div>
 </template>
 
+<style scoped>
+  .statue img{
+    height:16em
+  }
+</style>
+
 <script>
 import Billboard from "../views/Billboard.vue";
 import InfoBoard from "../components/InfoBoard/index.vue";
-
+import Avatar from "../components/Avatar.vue";
+import People from "../util/people.js";
+import Agenda from "../util/agenda.js";
 
 export default {
   name: "Home",
-  components: { InfoBoard, Billboard },
+  components: { InfoBoard, Billboard, Avatar },
   data() {
     return {
+      Agenda,
+      People,
+      showBody: [false,false,false,false,false,false,false,false],
       title: "",
       startPrice: "",
       description: "",
@@ -287,7 +151,7 @@ export default {
   beforeMount() {
   },
   methods: {
-    buy() {     
+    buy() {
     },
     createAuction() {
     },

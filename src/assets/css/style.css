@@ -10,7 +10,7 @@ Table of contents
 
   @-> Main Styles
   @-> Header Section
-  @-> Hero Section 
+  @-> Hero Section
   @-> About Section
   @-> Service Section
   @-> Resume Section
@@ -52,6 +52,27 @@ label {
   transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
+.pointer{
+	cursor: pointer !important;
+}
+
+#Agenda{
+	background: #ececec;
+	color: #242424;
+}
+
+#location{
+	background:#cd341f !important;
+
+}
+
+.red-text{
+	color: #cd341f !important;
+}
+.panel-body, .resume-year p{
+	color: #363636;
+}
+
 .billboards{margin: 10px 150px 10px; min-height: 60px;}
 
 .stuffs{margin-top: 120px;min-height: 600px;margin-bottom: 120px;}
@@ -62,7 +83,7 @@ label {
     right: 0;
     bottom: 0;
     margin-bottom: 0;
-    left: 0; 
+    left: 0;
     display: none;
     color: #fff;
     background: hsla(0,0%,50.2%,.6);
@@ -163,11 +184,11 @@ label {
 
 
 .billboard{background-repeat: no-repeat transparent ;
-background-position: center; 
+background-position: center;
 min-width: 350px;
     background-image:  url(../img/billboard-bg.png);
     border: 40px solid transparent;
-           padding:15px; 
+           padding:15px;
             -moz-border-radius: 24px; /* Firefox */
   -webkit-border-radius: 24px; /* Safari 和 Chrome */
   border-radius: 24px; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
@@ -264,7 +285,7 @@ ul.solarsystem li.sun span {
     height: 60px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
-    border-radius: 30px;   
+    border-radius: 30px;
 }
 ul.solarsystem li.mercury {
     width: 100px;
@@ -461,7 +482,7 @@ ul#descriptions h2 {
     transform: scale(1);
 }
 ul#descriptions h2:hover {
-   color: #aa4200; 
+   color: #aa4200;
     -webkit-transform: scale(1.08);
     -moz-transform: scale(1.08);
     -o-transform: scale(1.08);
@@ -501,7 +522,7 @@ ul.solarsystem li {
     -webkit-animation-iteration-count:infinite;
     -webkit-animation-timing-function:linear;
     -webkit-animation-name:orbit;
-    
+
     -moz-animation-iteration-count:infinite;
     -moz-animation-timing-function:linear;
     -moz-animation-name:orbit;
@@ -510,7 +531,7 @@ ul.solarsystem li.earth span {
     -webkit-animation-iteration-count:infinite;
     -webkit-animation-timing-function:linear;
     -webkit-animation-name:moon;
-    
+
     -moz-animation-iteration-count:infinite;
     -moz-animation-timing-function:linear;
     -moz-animation-name:moon;
@@ -582,37 +603,37 @@ ul.solarsystem li.pluto {-webkit-animation-duration:120s; -moz-animation-duratio
             display: block;
             text-align: center;
         }
-        
+
         ul.countdown li {
             display: inline-block;
         }
-        
+
         ul.countdown li span {
             font-size: 80px;
             font-weight: 300;
             line-height: 80px;
         }
-        
+
         ul.countdown li.seperator {
             font-size: 80px;
             line-height: 70px;
             vertical-align: top;
         }
-        
+
         ul.countdown li p {
             color: #a7abb1;
             font-size: 14px;
         }
-        
+
         a {
             color: #76949F;
             text-decoration: none;
         }
-        
+
         a:hover {
             text-decoration: underline;
         }
-        
+
         .source {
             width: 405px;
             margin: 0 auto;
@@ -625,7 +646,7 @@ ul.solarsystem li.pluto {-webkit-animation-duration:120s; -moz-animation-duratio
             -moz-border-radius: 3px;
             border-radius: 3px;
         }
-        
+
         .btn {
             background: #f56c4c;
             margin: 40px auto;
@@ -641,7 +662,7 @@ ul.solarsystem li.pluto {-webkit-animation-duration:120s; -moz-animation-duratio
             -moz-border-radius: 2px;
             border-radius: 2px;
         }
-        
+
         .btn:hover {
             text-decoration: none;
             opacity: .7;
@@ -735,6 +756,10 @@ ol {
 	transition: all 0.3s;
 }
 
+.site-btn.big{
+		font-size: 18px;
+}
+
 .site-btn:hover {
 	color: #fff;
 	background: #333;
@@ -813,7 +838,7 @@ ol {
 	top: 0;
 	left: 0;
 	z-index: 99;
-	background: rgba(17, 17, 34, 0.9);
+	background: rgba(0,0,0,0.7);
 }
 
 .header-warp {
@@ -846,6 +871,9 @@ ol {
 
 .site-menu li {
 	display: inline-block;
+}
+.site-menu li.current a{
+	color: #cd341f;
 }
 
 .site-menu li.current a:after {
@@ -1081,7 +1109,6 @@ ol {
 
 .resume-item .resume-year {
 	float: left;
-	width: 200px;
 	position: relative;
 }
 
@@ -1104,7 +1131,6 @@ ol {
 }
 
 .resume-item .resume-text {
-	margin-left: 200px;
 	padding-top: 2px;
 }
 
@@ -1245,7 +1271,7 @@ ol {
 }
 
 .work-item .work-info p {
-	
+
 	font-size: 12px;
 
 	overflow: hidden;
@@ -1357,7 +1383,7 @@ ol {
 .board img {
 	height: 100%;
 }
-  
+
 .board .btn {
 	position: absolute;
 	right: 10%;
@@ -1384,7 +1410,7 @@ ol {
 .row-data span {
 	font-size: 20px;
 }
-  
+
 .btn-ok {
 	background-color: #e6007a;
 	border-color: #e6007a;
@@ -1393,7 +1419,7 @@ ol {
 .btn-ok:hover {
 	color: white;
 }
-  
+
 @keyframes bounceInDown {
 	from,
 	60%,
@@ -1429,7 +1455,7 @@ ol {
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 }
-  
+
 @include responsive($sm) {
 	.info-container {
 		padding: 0 16px;
