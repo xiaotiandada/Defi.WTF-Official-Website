@@ -10,82 +10,94 @@
 */
 
 export default{
-  0: {
-      time: "10:00-10:30",
-      subtitle: "lightning talks",
-      title: "1. Bird's-eye view of the Ethereum DeFi Microcosm",
-      body: `Story of DeFi, how it started, and where we stand now<br>
-        Let’s play Lego: DeFi ecosystem mapping<br>
-        DeFi East meets West`,
-      speakers: ["Tina", "Fran"]
-    },
   1: {
-      time: "10:30-11:30",
-      subtitle: "Stream of talks",
-      title: "2. Evolution of Liquidity",
-      body: `Liquidity Microstructure: CeFi vs. DeFi<br>
-          Evolution of the DEXes<br>
-          DeFi Liquidity Models: MMORPG, Single Player Game, and beyond`,
-      speakers: ["Tina", "Tina"]
-    },
+    time: "9:00-9:30",
+    subtitle: "",
+    title: "1. Sign-in & Breakfast",
+    body: ``,
+    speakers: [""]
+  },
   2: {
-      time: "11:30-12:30",
-      subtitle: "",
-      title: `3. Putting the "De" Back in DeFi`,
-      body: `50 Shades of Decentralization: Design Principles and Trade-offs<br>
-          DeFi Bull vs. DeFi Bear: A Debate`,
-      speakers: ["Fran", "Fran", "Fran", "Fran"]
+      time: "09:00-10:00",
+      subtitle: "lightning talks",
+      title: "2. Bird's-eye View of the Emergent Ethereum DeFi Microcosm",
+      body: `Story of DeFi: How it Started, Where It Stands Now, DeFi Definition Revisited<br>
+        DeFi East meets West`,
+      speakers: ["FelixFeng", "CamilaRusso","DianeDai"]
     },
   3: {
-      time: "12:30-13:30",
-      subtitle: "Lightning talks",
-      title: "4. Conversation with your DeFi Investor",
-      body: `Profiling DeFi Projects<br>
-          Valuation Models for DeFi<br>
-          Will DeFi make ETH valuable?<br>
-          Chasing Yields across Crypto Native Assets`,
-      speakers: ["Tina", "Fran"]
+      time: "10:00-11:00",
+      subtitle: "Stream of talks",
+      title: "3. Evolution of Liquidity",
+      body: `On Moneyness<br>
+          Evolution of Exchange Architecture of DEXes<br>
+          Deep Dive into DeFi Liquidity Models`,
+      speakers: ["SunnyAggarwal", "TomSchmidt","AlexEvans","TomSchmidt","LoiLu"]
     },
   4: {
-      time: "13:30-14:30",
-      subtitle: "Stream of talks",
-      title: "5. Inception or Deception?",
-      body: `The Onramp: KYCed volume vs. permissionless olume, and what's trending in DeFi UI?<br>
-          Product-Market-Fit: institutions v.s. retail, human v.s. bots v.s. other smart contracts?<br>
-          Mechanism Design: design principles and trade offs in decentralization<br>
-          Gamification: DeFi games vs. DeFi in games vs. DeFi as games<br>
-          Killer User Case: Can double-digit rates last, borrower/lender dilemma<br>
-          Road to Under-Collateralization`,
-      speakers: ["Tina", "Fran"]
+      time: "11:00-12:00",
+      subtitle: "",
+      title: `4. Conversation with Your DeFi Investor`,
+      body: `How to think about Value?<br>
+          Capture Value in DeFi: What didn't Work and What's Next`,
+      speakers: ["JoelMonegro", "MableJiang", "ChrisMcCann", "LasseClausen","RichardChen","HaseebQureshi","Niraj Pant"]
     },
   5: {
-      time: "15:00-16:00",
-      subtitle: "Stream of talks",
-      title: "6. Attacks and Defenses",
-      body: `Security : Common types of attacks in smart contracts operating on a single blockchain
-          Security : How to identify generalized attack vectors in smart contracts operating across interdependent blockchains
-          Security : Blockchain Confirmation Assurance Framework & cost of attacks across blockchains
-          Formal verification : Special considerations in formal verification of bridge smart contracts
-          Design against risk : Models of thinking, frameworks, and methodologies`,
-      speakers: ["Tina", "Fran"]
+      time: "12:00-13:00",
+      subtitle: "",
+      title: "5. WTF Talks & Lunch",
+      body: ``,
+      speakers: [""]
     },
   6: {
-      time: "13:30-14:30",
-      subtitle: "Stream of talks",
-      title: "7. Implications of Intra- and Inter-dependencies",
-      body: `The DeFi Interdependency Graph : cluster and direction of dependency
-          Highly coupled systems : Failures cascading through highly interdependent or bridged blockchains
-          Economics of bridges : Case Study on Cosmos - ETH bridge
-          Security and liquidity implications of interoperable asset and bridges: MCD, tBTC, etc.`,
-      speakers: ["Tina", "Fran"]
+      time: "13:00-14:00",
+      subtitle: "Lightning talks",
+      title: "6. Putting the \"De\" Back in DeFi",
+      body: `50 Shades of Decentralization in DeFi Mechanism Design<br>
+          DAO in DeFi & & DeFi in DAO`,
+      speakers: ["LevLivnev", "JennaZenk","AmeenSoleimani","PeterPan","JorgeIzquierdo","MartinKoppelman"]
     },
   7: {
+      time: "14:00-15:00",
+      subtitle: "Stream of talks",
+      title: "7. Inception vs. Deception",
+      body: `Chasing Yield: Interest Rates & Crypto Native Yields<br>
+          From Overcollateralization to Undercollateralization`,
+      speakers: ["TomSchmidt", "DanRobinson","ZhuoxunYin","TrentElmore","JacobShiach","BowenWang","JamesPreswich","MartinKoppelman","AllisonLu",""]
+    },
+  8: {
+      time: "15:00-16:00",
+      subtitle: "Stream of talks",
+      title: "8. DeFi Product-Market-Fit",
+      body: `Mapping the Mass Adoption Puzzle: Missing Pieces within the DeFi Stack<br>
+          DeFi's Real vs Expected Users: Institutions v.s. Retail, Human v.s. Bots v.s. Other Smart Contracts?`,
+      speakers: ["TomSchmidt", "TonySheng","SunCan","ItamarLesuisse","PhilipSeifert","CamilaRusso","HaydenAdams","AndrewKeys","ChaoPan"]
+    },
+  9: {
+      time: "16:00-17:00",
+      subtitle: "Stream of talks",
+      title: "9. Attacks and Defenses",
+      body: `DeFi Risk Assessment Framework<br>
+          Attack Vectors in DeFi Ecosystem: Smart Contract, Oracle, Liquidity Hack, etc<br>
+          Modeling Financial Risk Transfers: Casestudy on MakerDAO Credit Events<br>
+          Cascading Failures through Highly Coupled Systems`,
+      speakers: ["JackClancy", "ChiachiWu","Alexvans","ShrutiAppiah"]
+    },
+  10: {
       time: "17:00-18:00",
       subtitle: "Discussion",
-      title: "8. DeFi beyond Ethereum",
-      body: `Implication of ETH 1.0 to 2.0 for the highly coupled DeFi stack
-          Panel: DeFi for Ethereum vs. Cosmos vs. Polkadot vs. EOS vs. Libra (Moderated by Nervos)
-          What is DeFi? Definition Revisited.`,
-      speakers: ["Tina", "Fran"]
+      title: "10. Implications of Intra- and Inter-dependencies",
+      body: `Visualizing DeFi: The Evolution of a Connected System<br>
+          Implication of ETH 1.0 to 2.0 for the Highly Coupled DeFi Stack<br>
+          Security and Liquidity Implications of Interoperable Asset and Bridges: MCD, tBTC, etc.`,
+      speakers: ["ChristianCrowley", "KarlFloerach","ShrutiAppiah","JamesPreswich","SunnyAggarwal"]
     },
+  11: {
+      time: "18:00-19:00",
+      subtitle: "Discussion",
+      title: "11. DeFi beyond Ethereum 17:00-18:00 //Discussion",
+      body: `DeFi Bull vs. DeFi Bear: A Debate<br>
+      DeFi for Ethereum vs. Cosmos vs. Polkadot vs. EOS vs. Libra (Moderated by Nervos)`,
+      speakers: ["KyleKistner", "AndrewKeys"]
+  }
 }
