@@ -241,6 +241,35 @@ export default {
     buy() {
       this.showBuyModal=false;
       alert("buy");
+      
+      const initName = "233";
+      
+      /*this.$refs.initname.value
+      function strlen(str) {
+        var len = 0;
+        for (var i = 0; i < str.length; i++) {
+
+          var a = str.charAt(i);
+          if (a.match(/[^\x00-\xff]/ig) != null) {
+            len += 2;
+          } else {
+            len += 1;
+          }
+        }
+        return len;
+      }
+      if (strlen(initName)>48) {
+        this.contenttips = '内容长度不超过24个汉字或48个英文字符,现在长度是'+strlen(initName);
+        return;
+      }*/
+
+
+      const initPrice = 1;
+      const initDeposit = this.taxPerDay * this.numberOfDays + Number(this.newPrice);
+      const artPrice = this.newPrice;
+
+      const data = Object.assign({}, { initPrice, initDeposit, artPrice, initName })
+      this.$root.buyAdBoard(data);
     },
     update() {
       this.showBuyModal=false;
