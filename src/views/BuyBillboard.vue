@@ -55,10 +55,26 @@
        >
        <b-container fluid>
          <div class="w-100">
-           Input a URL of your image /// or upload
+
+           Input a URL of your image or upload one.
            <div class="firstclass funbtnclass">
              <input ref="newURL" type="text" placeholder="URL of your image">
            </div>
+
+          <div class="billboard-slide">
+            <div class="billboard-img">
+              <input ref="file" type="file" accept="image/png, image/jpeg, image/jpg, image/gif, image/webp" @change="upload">
+              <img v-if="!cover" id="billboardAdd" class="add" src="../assets/upload/add.png" alt="add" @click="uploadAdd">
+              <img v-if="cover" id="billboardCover" class="cover" :src="cover" alt="cover">
+              <div v-if="cover" id="billboardDel" class="full" @click="cover = ''">
+                <img class="del" src="../assets/upload/del.png" alt="del">
+              </div>
+              <div v-if="loading" id="billboardLoading" class="full-loading">
+                Uploading...
+              </div>
+            </div>
+          </div>
+
            Current price is {{ boards[selectedBoard].price | formatEth}}<br>
            How much do you value the space?
            <div class="firstclass funbtnclass">
@@ -75,7 +91,7 @@
          <div class="w-100">
            <a
              class="site-btn float-right font-weight-bold"
-             @click="showBuyModal=false"
+             @click="buy"
            >
              BUY NOW
            </a>
@@ -126,7 +142,7 @@
         <div class="w-100">
           <a
             class="site-btn float-right font-weight-bold"
-            @click="showUpdateModal=false"
+            @click="update"
           >
             UPDATE
           </a>
@@ -221,6 +237,55 @@ export default {
   destroyed(){
   },
   methods: {
+
+    buy() {
+      this.showBuyModal=false;
+      alert("buy");
+    },
+    update() {
+      this.showBuyModal=false;
+      alert("update");
+    },
+
+    uploadToSmDotMs(imgFile)  {
+      let formData = new FormData();
+      formData.append("smfile", imgFile);
+      return axios({
+        url: "https://sm.ms/api/upload",
+        method: "post",
+        data: formData,
+        headers: { "Content-Type": "multipart/form-data" }
+      });
+    },
+    uploadAdd() {
+      let fileDom = this.$refs.file
+      fileDom.click()
+    },
+    async upload(e) {
+      this.file = e.target.files[0];
+      this.uploadBtn()
+    },
+    async uploadBtn() {
+      this.loading = true
+      let fileDom = this.$refs.file
+      fileDom.setAttribute("type", "text");
+      await this.uploadToSmDotMs(this.file)
+        .then(res => {
+          if (res.status === 200 && res.data.code === "success") {
+            // console.log(res.data.data.url)
+            this.cover = res.data.data.url;
+          } else alert("上传图片失败");
+        })
+        .catch(e => {
+          console.log(e);
+          alert("上传图片失败");
+        }).finally(() => {
+          this.loading = false
+          fileDom.setAttribute("type", "file");
+        })
+    },
+
+
     getHeight:function() {
     },
     getAdBoardData: async function(total) {
