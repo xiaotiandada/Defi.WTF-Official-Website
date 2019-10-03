@@ -19,53 +19,86 @@
       <br>
       <h5 class="white-text font-weight-regular">We will conduct a continuous auction for 10 display slots on "a DeFi billboard" with a Harberger Tax mechanism.
         The 5% tax goes to the event's ENS address <strong>defiwtf.eth</strong>. The proceeds will go into funding the event and funding research that comes out of the event. Auction starts Oct 2.</h5>
-      <br><br><br>
-
-      <div class="row billboard">
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6" 
-          v-for="ad in adList" :class="['round-buy', 'pointer', selectedBoard===index ? 'selected' : '']" :key="ad.text" v-show="ad.text">
-            <img :src="ad.cover" alt="ADS">
-            <p>{{ad.text}}</p>
-        </div>
-      </div>      
     </div>
-
-    <div class="container mt-4 text-center">
-      <div class="row mt-4 w-100">
+    <div class="container my-4">
+      <div class="row my-4 w-100">
         <h2 class="w-100 text-center mt-4">Click on the billboard you would like to buy</h2>
       </div>
-      <div class="row mt-2">
+      <div class="row billboard">
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6"
+          v-for="(board , index) in boards" :class="['round-buy', 'pointer', selectedBoard===index ? 'selected' : '']" :key="index"  @click="selectedBoard = index">
+            <img :src="board.url.cover" alt="ADS" class="round-image">
+            <!--p>{{ad.text}}</p-->
+            <div class="overlay">{{ board.price }}Ξ</div>
+        </div>
+      </div>
+    </div>
+
+    <!--div class="container mt-4 text-center">
+
+      <div class="row mt-2 text-center">
         <div v-for="(item, index) in boards" :class="['round-buy', 'pointer', selectedBoard===index ? 'selected' : '']" @click="selectedBoard = index">
           <span>{{ item.price }} <br> ETH</span>
         </div>
       </div>
-    </div>
+    </div-->
     <div class="container my-4">
       <h4 class="red-text mt-2">Price: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].price }}</span></h4>
       <h4 class="red-text mt-2">Owner: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].owner }}</span></h4>
       <h4 class="red-text mt-2">Deposit: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].balance }}</span></h4>
       <h4 class="red-text mt-2">Redeemable Until: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].until }}</span></h4>
-      <h4 class="red-text mt-2">URL: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].url }}</span></h4>      
+      <h4 class="red-text mt-2">URL: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].url }}</span></h4>
       <div class="text-center my-5">
-        <a class="site-btn big wow fadeInUp" style="font-size:2em; font-weight:bold" data-wow-delay="0.2s">
+        <a @click="showModal = true" class="site-btn big wow fadeInUp" style="font-size:2em; font-weight:bold" data-wow-delay="0.2s">
           Buy Now!
         </a>
       </div>
     </div>
+    <b-modal
+      v-model="showModal"
+      :title="`Buy Billboard #${selectedBoard}`" style="color:black"
+      class="modal" centered
+    >
+    <div class="w-100">
+      <p>lots and lots of content here</p>
+    </div>
+    <template v-slot:modal-footer>
+      <div class="w-100 text-center">
+        <b-button class="site-btn float-right font-weight-bold" @click="showModal = false">
+          BUY NOW
+        </b-button>
+      </div>
+
+    </template>
+
+    </b-modal>
   </section>
 </template>
 
 <style>
+  :root{
+    --size: 160px;
+    --border-size: 8px;
+  }
+  .modal .btn{
+    margin: 0 !important;
+  }
+  .modal-header{
+    color:black;
+  }
   .round-buy{
     border-radius: 100%;
-    border: 8px solid white;
+    border: var(--border-size) solid white;
     background: #cd341f;
     color: white;
-    width: 140px;
-    height: 140px;
-    margin: 2em;
+    width: var(--size);
+    height: var(--size);
+    margin: 1.1em;
     text-align: center;
     padding-top: 2em;
+    max-width: var(--size) !important;
+    max-height: var(--size) !important;
+    overflow: hidden;
   }
   .round-buy span{
     font-size: 1.2em;
@@ -73,6 +106,26 @@
   }
   .round-buy.selected{
     border-color: yellow;
+  }
+  .round-image, .round-buy img, .overlay{
+    height: calc(var(--size) - (var(--border-size) * 2)) !important;
+    width: calc(var(--size) - (var(--border-size) * 2)) !important;
+    max-height: calc(var(--size) - (var(--border-size) * 2)) !important;
+    max-width: calc(var(--size) - (var(--border-size) * 2)) !important;
+    position: absolute;
+    top:0;
+    left: 0;
+  }
+  .overlay{
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding-top: 2.2em;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+  }
+  .selected .overlay{
+    color: yellow;
   }
 </style>
 
@@ -93,6 +146,7 @@ export default {
       text: '',
       url1: '',
       adList: [],
+      showModal: false,
       boards: //get blockchain prices, return them in digestible format
           [
             {price: 0.2, owner: 0x000, balance: 0.5, until: '3 Oct', url: ''},
@@ -114,7 +168,7 @@ export default {
     }
   },
   created(){
-            
+
     web3.version.getNetwork((err, netId) => {
       var ajax = require("node.ajax");
       let url = 'http://hk.i43.io/api/list_boards?networkId=' + netId;
@@ -128,7 +182,7 @@ export default {
           this.boards[i].owner = res.owner;
           this.boards[i].deposit = res.deposit;
           this.boards[i].until = res.lastTaxPayTimestamp
-                    
+
           if (res.content.includes(`"cover"`)) { // 只能这样判断了，不敢直接 JSON parse
             let data = JSON.parse(res.content)
             this.adList.push(data);
@@ -158,7 +212,7 @@ export default {
       }
     })
   },
-  destoryed(){
+  destroyed(){
   },
   methods: {
     getHeight:function() {
