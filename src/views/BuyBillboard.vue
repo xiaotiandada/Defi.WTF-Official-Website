@@ -116,7 +116,9 @@ export default {
     var ajax = require("node.ajax");
     var json = ajax("http://hk.i43.io/api/list_boards?networkId=42","GET",{
     },{'Content-Type': 'application/x-www-form-urlencoded'},"utf8");
-    console.log(json);
+        
+    alert(this.state.web3.networkId);
+
     for (let i = 0; i < 5; i++) {
       try {
         let res = json[i];
