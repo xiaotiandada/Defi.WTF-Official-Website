@@ -113,31 +113,46 @@ export default {
     }
   },
   created(){
-    var ajax = require("node.ajax");
-    var json = ajax("http://hk.i43.io/api/list_boards?networkId=42","GET",{
-    },{'Content-Type': 'application/x-www-form-urlencoded'},"utf8");
-        
-    alert(this.state.web3.networkId);
-
-    for (let i = 0; i < 5; i++) {
-      try {
-        let res = json[i];
-        this.boards[i].price = fromWei(res.price.toString(10), 'ether'); //toWei(toString(res.price), 'ether');
-        this.boards[i].owner = res.owner;
-        this.boards[i].deposit = res.deposit;
-        this.boards[i].until = res.lastTaxPayTimestamp
-        if (res.content.includes(`"cover"`)) { // 只能这样判断了，不敢直接 JSON parse
-          let data = JSON.parse(res.content)
-          this.adList.push(data);
-          console.log(data);
-        } else { //有文字没图片的场合
-          this.adList.push({ text: res.content, cover: "https://i.loli.net/2019/10/02/N4TzivwgLJypRb9.png" })
+            
+    web3.version.getNetwork((err, netId) => {
+      var ajax = require("node.ajax");
+      let url = 'http://hk.i43.io/api/list_boards?networkId=' + netId;
+      var json = ajax(url,"GET",{
+      },{'Content-Type': 'application/x-www-form-urlencoded'},"utf8");
+      
+      for (let i = 0; i < 5; i++) {
+        try {
+          let res = json[i];
+          this.boards[i].price = fromWei(res.price.toString(10), 'ether'); //toWei(toString(res.price), 'ether');
+          this.boards[i].owner = res.owner;
+          this.boards[i].deposit = res.deposit;
+          this.boards[i].until = res.lastTaxPayTimestamp
+          if (res.content.includes(`"cover"`)) { // 只能这样判断了，不敢直接 JSON parse
+            let data = JSON.parse(res.content)
+            this.adList.push(data);
+            console.log(data);
+          } else { //有文字没图片的场合
+            this.adList.push({ text: res.content, cover: "https://i.loli.net/2019/10/02/N4TzivwgLJypRb9.png" })
+          }
+        } catch (error) {
+          console.log('getAdBoardDataId', error)
         }
-      } catch (error) {
-        console.log('getAdBoardDataId', error)
       }
-    }
-   
+
+      switch (netId) {
+        case "1":
+          console.log('This is mainnet')
+          break
+        case "2":
+          console.log('This is the deprecated Morden test network.')
+          break
+        case "3":
+          console.log('This is the ropsten test network.')
+          break
+        default:
+          console.log('This is an unknown network.')
+      }
+    })
   },
   destoryed(){
   },
