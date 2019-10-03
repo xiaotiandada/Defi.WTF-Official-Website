@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import Login from "./views/Login.vue";
 import Home from "./views/Home.vue";
-import BuyBillboard from "./views/BuyBillboard.vue";
+import Billboard from "./views/BuyBillboard.vue";
 import Stuffs from "./views/Stuffs.vue";
 import GithubLogin from "./views/GithubLogin.vue";
 import TwitterLogin from "./views/TwitterLogin.vue";
@@ -32,7 +32,7 @@ export default new VueRouter({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component:BuyBillboard
+      component:Billboard
     },
     {
       path: "/stuffs",

@@ -65,6 +65,9 @@
 </style>
 
 <script>
+
+
+
 export default {
   components: {
   },
@@ -72,6 +75,7 @@ export default {
   ],
   data(){
     return {
+      json: {},
       cover: '',
       text: '',
       url1: '',
@@ -100,11 +104,27 @@ export default {
     }
   },
   created(){
-    this.getTotalNumber();
-    for (let i=0;i<10;++i) {
- //     this.adList.push("src/assets/img/wtf5.png");
-      //this.adList.push("...");
+    var ajax = require("node.ajax");
+    var json = ajax("http://hk.i43.io/api/list_boards?networkId=42","GET",{
+    },{'Content-Type': 'application/x-www-form-urlencoded'},"utf8")
+    for (let i = 0; i < 10; i++) {
+      try {
+        let res = json[i];
+        boards[i].price = res.price;
+        boards[i].owner = res.owner;
+        boards[i].deposit = res.deposit;
+        boards[i].until = res.lastTaxPayTimestamp
+        console.log('res', res)
+        if (res.content.includes(`"cover"`)) { // 只能这样判断了，不敢直接 JSON parse
+          let data = JSON.parse(res.content)
+        } else { //有文字没图片的场合
+          this.adList.push({ text: res.content, cover: "https://i.loli.net/2019/10/02/N4TzivwgLJypRb9.png" })
+        }
+      } catch (error) {
+        console.log('getAdBoardDataId', error)
+      }
     }
+   
   },
   destoryed(){
   },

@@ -52,11 +52,34 @@ export default {
     }
   },
   created(){
-    this.getTotalNumber();
+    var ajax = require("node.ajax");
+
+    var json = ajax("http://hk.i43.io/api/list_boards?networkId=42","GET",{
+    },{'Content-Type': 'application/x-www-form-urlencoded'},"utf8")
+
+    console.log(json);
+
+    //this.getTotalNumber();
     for (let i=0;i<10;++i) {
- //     this.adList.push("src/assets/img/wtf5.png");
+        //this.adList.push("src/assets/img/wtf5.png");
+        //this.adList.push(res.content);
       //this.adList.push("...");
     }
+      for (let i = 0; i < 10; i++) {
+        try {
+          let res = json[i]
+          console.log('res', res)
+          if (res.content.includes(`"cover"`)) { // 只能这样判断了，不敢直接 JSON parse
+            let data = JSON.parse(res.content)
+            this.adList.push(data);
+          } else { //有文字没图片的场合
+            this.adList.push({ text: res.content, cover: "https://i.loli.net/2019/10/02/N4TzivwgLJypRb9.png" })
+          }
+        } catch (error) {
+          console.log('getAdBoardDataId', error)
+        }
+      }
+
   },
   destoryed(){
   },
