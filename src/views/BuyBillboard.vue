@@ -240,8 +240,6 @@ export default {
 
     buy() {
       this.showBuyModal=false;
-      alert("buy");
-      
       const initName = "233";
       
       /*this.$refs.initname.value
@@ -264,11 +262,14 @@ export default {
       }*/
 
 
-      const initPrice = 1;
-      const initDeposit = this.taxPerDay * this.numberOfDays + Number(this.newPrice);
-      const artPrice = this.newPrice;
+      const initPrice = this.newPrice;
+      const id = this.selectedBoard;
+      const initDeposit = this.taxPerDay * this.numberOfDays;
+      const artPrice = this.boards[id].price;
 
-      const data = Object.assign({}, { initPrice, initDeposit, artPrice, initName })
+      alert(id);
+
+      const data = Object.assign({}, { id, initPrice, initDeposit, artPrice, initName })
       this.$root.buyAdBoard(data);
     },
     update() {
