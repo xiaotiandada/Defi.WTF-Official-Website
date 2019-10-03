@@ -7,7 +7,8 @@
                 <img src="src/assets/img/wtf5.png">
             </div>
             <div class=" want wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
-                <h1>We Want You!</h1>
+                <h1 class="red-text">A DeFi Billboard</h1>
+                <h1>This is a Harberger Tax Social Experiment</h1>
             </div>
         </div>
     </div>
