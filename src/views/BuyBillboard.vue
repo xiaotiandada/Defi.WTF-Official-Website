@@ -66,7 +66,8 @@
 
 <script>
 
-
+import Web3 from 'web3'
+import { fromWei } from 'web3-utils';
 
 export default {
   components: {
@@ -106,15 +107,15 @@ export default {
   created(){
     var ajax = require("node.ajax");
     var json = ajax("http://hk.i43.io/api/list_boards?networkId=42","GET",{
-    },{'Content-Type': 'application/x-www-form-urlencoded'},"utf8")
+    },{'Content-Type': 'application/x-www-form-urlencoded'},"utf8");
+    console.log(json);
     for (let i = 0; i < 10; i++) {
       try {
         let res = json[i];
-        boards[i].price = res.price;
-        boards[i].owner = res.owner;
-        boards[i].deposit = res.deposit;
-        boards[i].until = res.lastTaxPayTimestamp
-        console.log('res', res)
+        this.boards[i].price = fromWei(res.price.toString(10), 'ether'); //toWei(toString(res.price), 'ether');
+        this.boards[i].owner = res.owner;
+        this.boards[i].deposit = res.deposit;
+        this.boards[i].until = res.lastTaxPayTimestamp
         if (res.content.includes(`"cover"`)) { // 只能这样判断了，不敢直接 JSON parse
           let data = JSON.parse(res.content)
         } else { //有文字没图片的场合
