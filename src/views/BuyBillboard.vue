@@ -8,7 +8,18 @@
         The 5% tax goes to the event's ENS address <strong>defiwtf.eth</strong>. The proceeds will go into funding the event and funding research that comes out of the event. Auction starts Oct 2.</h5>
       <br><br><br>
       <img src="src/assets/img/defi-billboard.png" alt="defi-billboard" />
+
+      <div class="row billboard">
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6" 
+          v-for="ad in adList" :key="ad.text" v-show="ad.text">
+            <img :src="ad.cover" alt="ADS">
+            <p>{{ad.text}}</p>
+        </div>
+      </div>
+       
+
     </div>
+
     <div class="container">
         <div class="row ">
             <div class=" wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
@@ -87,10 +98,7 @@ export default {
             {price: 0.12, owner: 0x000, balance: 0.5, until: '13 Oct'},
             {price: 0.23, owner: 0x000, balance: 0.5, until: '23 Oct'},
             {price: 0.4, owner: 0x000, balance: 0.5, until: '9 Oct'},
-            {price: 1.2, owner: 0x000, balance: 0.5, until: '4 Oct'},
-            {price: 0.2, owner: 0x000, balance: 0.5, until: '6 Oct'},
-            {price: 3.2, owner: 0x000, balance: 0.5, until: '3 Oct'},
-            {price: 0.2, owner: 0x000, balance: 0.5, until: '1 Oct'},
+            {price: 1.2, owner: 0x000, balance: 0.5, until: '4 Oct'}
           ],
       selectedBoard: 0
     }
@@ -109,7 +117,7 @@ export default {
     var json = ajax("http://hk.i43.io/api/list_boards?networkId=42","GET",{
     },{'Content-Type': 'application/x-www-form-urlencoded'},"utf8");
     console.log(json);
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
       try {
         let res = json[i];
         this.boards[i].price = fromWei(res.price.toString(10), 'ether'); //toWei(toString(res.price), 'ether');
@@ -118,6 +126,8 @@ export default {
         this.boards[i].until = res.lastTaxPayTimestamp
         if (res.content.includes(`"cover"`)) { // 只能这样判断了，不敢直接 JSON parse
           let data = JSON.parse(res.content)
+          this.adList.push(data);
+          console.log(data);
         } else { //有文字没图片的场合
           this.adList.push({ text: res.content, cover: "https://i.loli.net/2019/10/02/N4TzivwgLJypRb9.png" })
         }
