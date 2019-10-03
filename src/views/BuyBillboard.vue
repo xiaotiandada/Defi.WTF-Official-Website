@@ -61,6 +61,37 @@
     >
     <div class="w-100">
       <p>lots and lots of content here</p>
+      <div class="firstclass funbtnclass">
+        <ul class="ulinputclass">
+          <li class="liinputclass">
+            <input ref="newprice" type="number" placeholder="new price in ETH">
+            <button class="confirmbuttonclass" @click="changePrice">
+              Change
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="firstclass funbtnclass">
+        <ul class="ulinputclass">
+          <li class="liinputclass">
+            <input ref="depositbal" type="number" placeholder="balance in ETH">
+            <button class="confirmbuttonclass" @click="depositWei">
+              Deposit
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="firstclass funbtnclass">
+        <ul class="ulinputclass">
+          <li class="liinputclass">
+            <input ref="withdrawDeposit" type="number" placeholder="balance in ETH">
+            <button class="confirmbuttonclass" @click="withdrawDeposit">
+              Withdraw
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
     <template v-slot:modal-footer>
       <div class="w-100 text-center">
