@@ -18,7 +18,11 @@ Vue.config.devtools = true
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-
+Vue.filter("formatEth", function(value, decimals = 4) {
+  if (!value) return "";
+  var cleanedValue = parseFloat(value);
+  return cleanedValue.toFixed(decimals) + "Ξ";
+})
 
 const vm = new Vue({
   el: '#app',
@@ -43,7 +47,7 @@ const vm = new Vue({
   //    this[ACTION_TYPES.SET_CURRENT_VIEW](newRoute)
     }
   },
-  beforeCreate: function() {  
+  beforeCreate: function() {
     this.$store.dispatch(ACTION_TYPES.REGISTER_WEB3_INSTANCE)
       .then((result) => {
         let state = result.state

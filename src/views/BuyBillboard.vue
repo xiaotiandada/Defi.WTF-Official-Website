@@ -34,14 +34,6 @@
       </div>
     </div>
 
-    <!--div class="container mt-4 text-center">
-
-      <div class="row mt-2 text-center">
-        <div v-for="(item, index) in boards" :class="['round-buy', 'pointer', selectedBoard===index ? 'selected' : '']" @click="selectedBoard = index">
-          <span>{{ item.price }} <br> ETH</span>
-        </div>
-      </div>
-    </div-->
     <div class="container my-4">
       <h4 class="red-text mt-2">Price: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].price }}</span></h4>
       <h4 class="red-text mt-2">Owner: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].owner }}</span></h4>
@@ -49,116 +41,100 @@
       <h4 class="red-text mt-2">Redeemable Until: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].until }}</span></h4>
       <h4 class="red-text mt-2">URL: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].url }}</span></h4>
       <div class="text-center my-5">
-        <a @click="showModal = true" class="site-btn big wow fadeInUp" style="font-size:2em; font-weight:bold" data-wow-delay="0.2s">
+        <a v-if="coinbase.toUpperCase() === boards[selectedBoard].owner.toUpperCase()" @click="showUpdateModal = true" class="site-btn big wow fadeInUp" style="font-size:2em; font-weight:bold" data-wow-delay="0.2s">
+          Update
+        </a>
+        <a v-else @click="showBuyModal = true" class="site-btn big wow fadeInUp" style="font-size:2em; font-weight:bold" data-wow-delay="0.2s">
           Buy Now!
         </a>
       </div>
     </div>
     <b-modal
-      v-model="showModal"
-      :title="`Buy Billboard #${selectedBoard}`" style="color:black"
-      class="modal" centered
-    >
-    <div class="w-100">
-      <p>lots and lots of content here</p>
-      <div class="firstclass funbtnclass">
-        <ul class="ulinputclass">
-          <li class="liinputclass">
-            <input ref="newprice" type="number" placeholder="new price in ETH">
-            <button class="confirmbuttonclass" @click="changePrice">
-              Change
-            </button>
-          </li>
-        </ul>
-      </div>
+       v-model="showBuyModal"
+       title="Buy Billboard"
+       >
+       <b-container fluid>
+         <div class="w-100">
+           Input a URL of your image /// or upload
+           <div class="firstclass funbtnclass">
+             <input ref="newURL" type="text" placeholder="URL of your image">
+           </div>
+           Current price is {{ boards[selectedBoard].price | formatEth}}<br>
+           How much do you value the space?
+           <div class="firstclass funbtnclass">
+             <input ref="newprice" type="number" step="5" placeholder="Your price, in ETH" v-model="newPrice">
+           </div>
+           <h5>Price per day: {{ taxPerDay | formatEth }}</h5>
+           How many days do you want to pre-pay? This will be taken automatically. Unused deposit can be withdrawn any time.
+           <input ref="numberOfDays" type="number" placeholder="Number of Days" v-model="numberOfDays">
+           <h3>Total you have to pay: {{ taxPerDay * numberOfDays + newPrice | formatEth }}</h3>
+         </div>
+       </b-container>
 
-      <div class="firstclass funbtnclass">
-        <ul class="ulinputclass">
-          <li class="liinputclass">
-            <input ref="depositbal" type="number" placeholder="balance in ETH">
-            <button class="confirmbuttonclass" @click="depositWei">
-              Deposit
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div class="firstclass funbtnclass">
-        <ul class="ulinputclass">
-          <li class="liinputclass">
-            <input ref="withdrawDeposit" type="number" placeholder="balance in ETH">
-            <button class="confirmbuttonclass" @click="withdrawDeposit">
-              Withdraw
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <template v-slot:modal-footer>
-      <div class="w-100 text-center">
-        <b-button class="site-btn float-right font-weight-bold" @click="showModal = false">
-          BUY NOW
-        </b-button>
-      </div>
+       <template v-slot:modal-footer>
+         <div class="w-100">
+           <a
+             class="site-btn float-right font-weight-bold"
+             @click="showBuyModal=false"
+           >
+             BUY NOW
+           </a>
+         </div>
+       </template>
+     </b-modal>
+     <b-modal
+      v-model="showUpdateModal"
+      title="Buy Billboard"
+      >
+      <b-container fluid>
+        <div class="w-100">
+          <div class="firstclass funbtnclass">
+            <ul class="ulinputclass">
+              <li class="liinputclass">
+                <input ref="newprice" type="number"  step="0.01" placeholder="new price in ETH">
+                <button class="confirmbuttonclass" @click="">
+                  Change
+                </button>
+              </li>
+            </ul>
+          </div>
 
-    </template>
+          <div class="firstclass funbtnclass">
+            <ul class="ulinputclass">
+              <li class="liinputclass">
+                <input ref="depositbal" type="number" step="0.01" placeholder="balance in ETH">
+                <button class="confirmbuttonclass" @click="">
+                  Deposit
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="firstclass funbtnclass">
+            <ul class="ulinputclass">
+              <li class="liinputclass">
+                <input ref="withdrawDeposit" type="number" step="0.01" placeholder="balance in ETH">
+                <button class="confirmbuttonclass" @click="">
+                  Withdraw
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </b-container>
 
+      <template v-slot:modal-footer>
+        <div class="w-100">
+          <a
+            class="site-btn float-right font-weight-bold"
+            @click="showUpdateModal=false"
+          >
+            UPDATE
+          </a>
+        </div>
+      </template>
     </b-modal>
   </section>
 </template>
-
-<style>
-  :root{
-    --size: 160px;
-    --border-size: 8px;
-  }
-  .modal .btn{
-    margin: 0 !important;
-  }
-  .modal-header{
-    color:black;
-  }
-  .round-buy{
-    border-radius: 100%;
-    border: var(--border-size) solid white;
-    background: #cd341f;
-    color: white;
-    width: var(--size);
-    height: var(--size);
-    margin: 1.1em;
-    text-align: center;
-    padding-top: 2em;
-    max-width: var(--size) !important;
-    max-height: var(--size) !important;
-    overflow: hidden;
-  }
-  .round-buy span{
-    font-size: 1.2em;
-    font-weight: 600;
-  }
-  .round-buy.selected{
-    border-color: yellow;
-  }
-  .round-image, .round-buy img, .overlay{
-    height: calc(var(--size) - (var(--border-size) * 2)) !important;
-    width: calc(var(--size) - (var(--border-size) * 2)) !important;
-    max-height: calc(var(--size) - (var(--border-size) * 2)) !important;
-    max-width: calc(var(--size) - (var(--border-size) * 2)) !important;
-    position: absolute;
-    top:0;
-    left: 0;
-  }
-  .overlay{
-    background: rgba(0,0,0,0.6);
-    color: white;
-    padding-top: 2.2em;
-    font-size: 1.6em;
-    font-weight: bold;
-    text-align: center;
-  }
-  .selected .overlay{
-    color: yellow;
-  }
-</style>
 
 <script>
 
@@ -178,6 +154,11 @@ export default {
       url1: '',
       adList: [],
       showModal: false,
+      showBuyModal: false,
+      showUpdateModal: false,
+      newPrice: 0,
+      newDeposit: 0,
+      numberOfDays: 1,
       boards: //get blockchain prices, return them in digestible format
           [
             {price: 0.2, owner: 0x000, balance: 0.5, until: '3 Oct', url: ''},
@@ -190,16 +171,24 @@ export default {
     }
   },
   computed: {
+    coinbase(){
+      return this.$store.state.web3.coinbase
+    },
+    taxPerDay(){
+      return this.newPrice>this.boards[this.selectedBoard].price? this.newPrice/30 : this.boards[this.selectedBoard].price/30
+    }
   },
   watch: {
     parseURL(newVal) {
       let val = JSON.parse(newVal)
       if (val.cover) this.cover = val.cover
       if (val.text) this.text = val.text
+    },
+    selectedBoard(newVal){
+      this.newPrice = parseFloat(this.boards[newVal].price) + 0.01;
     }
   },
   created(){
-
     web3.version.getNetwork((err, netId) => {
       var ajax = require("node.ajax");
       let url = 'http://hk.i43.io/api/list_boards?networkId=' + netId;
@@ -256,7 +245,60 @@ export default {
         this.getAdBoardData(Number(res))
       })
     }
-
   }
 };
 </script>
+
+<style>
+  :root{
+    --size: 160px;
+    --border-size: 8px;
+  }
+  .modal .btn{
+    margin: 0 !important;
+  }
+  .modal-header{
+    color:black;
+  }
+  .round-buy{
+    border-radius: 100%;
+    border: var(--border-size) solid white;
+    background: #cd341f;
+    color: white;
+    width: var(--size);
+    height: var(--size);
+    margin: 1.1em;
+    text-align: center;
+    padding-top: 2em;
+    max-width: var(--size) !important;
+    max-height: var(--size) !important;
+    overflow: hidden;
+  }
+  .round-buy span{
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  .round-buy.selected{
+    border-color: yellow;
+  }
+  .round-image, .round-buy img, .overlay{
+    height: calc(var(--size) - (var(--border-size) * 2)) !important;
+    width: calc(var(--size) - (var(--border-size) * 2)) !important;
+    max-height: calc(var(--size) - (var(--border-size) * 2)) !important;
+    max-width: calc(var(--size) - (var(--border-size) * 2)) !important;
+    position: absolute;
+    top:0;
+    left: 0;
+  }
+  .overlay{
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding-top: 2.2em;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+  }
+  .selected .overlay{
+    color: yellow;
+  }
+</style>
