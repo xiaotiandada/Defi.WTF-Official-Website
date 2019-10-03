@@ -75,15 +75,17 @@
             </div>
           </div>
 
-           Current price is {{ boards[selectedBoard].price | formatEth}}<br>
-           How much do you value the space?
+           Current price: {{ boards[selectedBoard].price | formatEth}}<br>
+           
            <div class="firstclass funbtnclass">
-             <input ref="newprice" type="number" step="5" placeholder="Your price, in ETH" v-model="newPrice">
-           </div>
-           <h5>Price per day: {{ taxPerDay | formatEth }}</h5>
-           How many days do you want to pre-pay? This will be taken automatically. Unused deposit can be withdrawn any time.
-           <input ref="numberOfDays" type="number" placeholder="Number of Days" v-model="numberOfDays">
-           <h3>Total you have to pay: {{ taxPerDay * numberOfDays + newPrice | formatEth }}</h3>
+             Your price in ether: <input ref="newprice" type="number" step="5" placeholder="Your price, in ETH" v-model="newPrice"> 
+           </div> 
+           <div class="firstclass funbtnclass">
+            How many days want to HODL? <input ref="numberOfDays" type="number" placeholder="Number of Days" v-model="numberOfDays">
+          </div>
+            This will be taken automatically. Unused deposit can be withdrawn any time.<br>
+           Price per day: {{ taxPerDay | formatEth }} <br>
+           Total you have to pay: {{ taxPerDay * numberOfDays + newPrice | formatEth }}
          </div>
        </b-container>
 
@@ -100,40 +102,28 @@
      </b-modal>
      <b-modal
       v-model="showUpdateModal"
-      title="Buy Billboard"
+      title="Update Billboard"
       >
       <b-container fluid>
         <div class="w-100">
           <div class="firstclass funbtnclass">
-            <ul class="ulinputclass">
-              <li class="liinputclass">
-                <input ref="newprice" type="number"  step="0.01" placeholder="new price in ETH">
-                <button class="confirmbuttonclass" @click="">
-                  Change
-                </button>
-              </li>
-            </ul>
+            <input ref="newprice" type="number"  step="0.01" placeholder="new price in ETH">
+            <button class="confirmbuttonclass" @click="">
+              Change
+            </button>
           </div>
 
           <div class="firstclass funbtnclass">
-            <ul class="ulinputclass">
-              <li class="liinputclass">
-                <input ref="depositbal" type="number" step="0.01" placeholder="balance in ETH">
-                <button class="confirmbuttonclass" @click="">
-                  Deposit
-                </button>
-              </li>
-            </ul>
+            <input ref="depositbal" type="number" step="0.01" placeholder="balance in ETH">
+            <button class="confirmbuttonclass" @click="">
+              Deposit
+            </button>
           </div>
           <div class="firstclass funbtnclass">
-            <ul class="ulinputclass">
-              <li class="liinputclass">
-                <input ref="withdrawDeposit" type="number" step="0.01" placeholder="balance in ETH">
-                <button class="confirmbuttonclass" @click="">
-                  Withdraw
-                </button>
-              </li>
-            </ul>
+            <input ref="withdrawDeposit" type="number" step="0.01" placeholder="balance in ETH">
+            <button class="confirmbuttonclass" @click="">
+              Withdraw
+            </button>
           </div>
         </div>
       </b-container>
@@ -260,7 +250,6 @@ export default {
         this.contenttips = '内容长度不超过24个汉字或48个英文字符,现在长度是'+strlen(initName);
         return;
       }*/
-
 
       const initPrice = this.newPrice;
       const id = this.selectedBoard;
