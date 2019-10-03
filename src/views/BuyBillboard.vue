@@ -1,24 +1,5 @@
 <template>
   <section class="portfolio-section spad" id="billboard">
-    <div class="container mt-5">
-      <br>
-      <h5 class="red-text">This is the only place in the WTF-verse where you will see logos. REALLY LOUD LOGOS. We are creating "a DeFi billboard" specifically to take shilling off the serious discussions</h5>
-      <br>
-      <h5 class="white-text font-weight-regular">We will conduct a continuous auction for 10 display slots on "a DeFi billboard" with a Harberger Tax mechanism.
-        The 5% tax goes to the event's ENS address <strong>defiwtf.eth</strong>. The proceeds will go into funding the event and funding research that comes out of the event. Auction starts Oct 2.</h5>
-      <br><br><br>
-      <img src="src/assets/img/defi-billboard.png" alt="defi-billboard" />
-
-      <div class="row billboard">
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6" 
-          v-for="ad in adList" :key="ad.text" v-show="ad.text">
-            <img :src="ad.cover" alt="ADS">
-            <p>{{ad.text}}</p>
-        </div>
-      </div>
-       
-
-    </div>
 
     <div class="container">
         <div class="row ">
@@ -30,6 +11,24 @@
             </div>
         </div>
     </div>
+
+    <div class="container mt-5">
+      <br>
+      <h5 class="red-text">This is the only place in the WTF-verse where you will see logos. REALLY LOUD LOGOS. We are creating "a DeFi billboard" specifically to take shilling off the serious discussions</h5>
+      <br>
+      <h5 class="white-text font-weight-regular">We will conduct a continuous auction for 10 display slots on "a DeFi billboard" with a Harberger Tax mechanism.
+        The 5% tax goes to the event's ENS address <strong>defiwtf.eth</strong>. The proceeds will go into funding the event and funding research that comes out of the event. Auction starts Oct 2.</h5>
+      <br><br><br>
+
+      <div class="row billboard">
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6" 
+          v-for="ad in adList" :class="['round-buy', 'pointer', selectedBoard===index ? 'selected' : '']" :key="ad.text" v-show="ad.text">
+            <img :src="ad.cover" alt="ADS">
+            <p>{{ad.text}}</p>
+        </div>
+      </div>      
+    </div>
+
     <div class="container mt-4 text-center">
       <div class="row mt-4 w-100">
         <h2 class="w-100 text-center mt-4">Click on the billboard you would like to buy</h2>
@@ -41,10 +40,11 @@
       </div>
     </div>
     <div class="container my-4">
-      <h4 class="red-text mt-2">Current Price: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].price }}</span></h4>
-      <h4 class="red-text mt-2">Current Owner: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].owner }}</span></h4>
-      <h4 class="red-text mt-2">Deposit Balance: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].balance }}</span></h4>
-      <h4 class="red-text mt-2">Redeemable until: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].until }}</span></h4>
+      <h4 class="red-text mt-2">Price: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].price }}</span></h4>
+      <h4 class="red-text mt-2">Owner: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].owner }}</span></h4>
+      <h4 class="red-text mt-2">Deposit: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].balance }}</span></h4>
+      <h4 class="red-text mt-2">Redeemable Until: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].until }}</span></h4>
+      <h4 class="red-text mt-2">URL: <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].url }}</span></h4>      
       <div class="text-center my-5">
         <a class="site-btn big wow fadeInUp" style="font-size:2em; font-weight:bold" data-wow-delay="0.2s">
           Buy Now!
@@ -94,11 +94,11 @@ export default {
       adList: [],
       boards: //get blockchain prices, return them in digestible format
           [
-            {price: 0.2, owner: 0x000, balance: 0.5, until: '3 Oct'},
-            {price: 0.12, owner: 0x000, balance: 0.5, until: '13 Oct'},
-            {price: 0.23, owner: 0x000, balance: 0.5, until: '23 Oct'},
-            {price: 0.4, owner: 0x000, balance: 0.5, until: '9 Oct'},
-            {price: 1.2, owner: 0x000, balance: 0.5, until: '4 Oct'}
+            {price: 0.2, owner: 0x000, balance: 0.5, until: '3 Oct', url: ''},
+            {price: 0.12, owner: 0x000, balance: 0.5, until: '13 Oct', url: ''},
+            {price: 0.23, owner: 0x000, balance: 0.5, until: '23 Oct', url: ''},
+            {price: 0.4, owner: 0x000, balance: 0.5, until: '9 Oct', url: ''},
+            {price: 1.2, owner: 0x000, balance: 0.5, until: '4 Oct', url: ''}
           ],
       selectedBoard: 0
     }
@@ -119,7 +119,7 @@ export default {
       let url = 'http://hk.i43.io/api/list_boards?networkId=' + netId;
       var json = ajax(url,"GET",{
       },{'Content-Type': 'application/x-www-form-urlencoded'},"utf8");
-      
+
       for (let i = 0; i < 5; i++) {
         try {
           let res = json[i];
@@ -127,12 +127,15 @@ export default {
           this.boards[i].owner = res.owner;
           this.boards[i].deposit = res.deposit;
           this.boards[i].until = res.lastTaxPayTimestamp
+                    
           if (res.content.includes(`"cover"`)) { // 只能这样判断了，不敢直接 JSON parse
             let data = JSON.parse(res.content)
             this.adList.push(data);
             console.log(data);
+            this.boards[i].url = data
           } else { //有文字没图片的场合
-            this.adList.push({ text: res.content, cover: "https://i.loli.net/2019/10/02/N4TzivwgLJypRb9.png" })
+           // this.adList.push({ text: res.content, cover: "https://i.loli.net/2019/10/02/N4TzivwgLJypRb9.png" })
+            this.boards[i].url = "none";
           }
         } catch (error) {
           console.log('getAdBoardDataId', error)
