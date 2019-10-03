@@ -74,7 +74,7 @@ const vm = new Vue({
     buyAdBoard(data) {
       const param = Object.assign({}, {
         state: this.$store.state,
-        adId: this.$store.state.currentAdBoard.adId,
+        adId: data.id,
         price: parseFloat(data.initPrice),
         content: data.initName,
         value: parseFloat(data.initDeposit) + parseFloat(data.artPrice)
