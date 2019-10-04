@@ -1,6 +1,6 @@
 <template>
   <a :href="person.link" target="_blank">
-    <img :src="`src/assets/img/people/${person.image}`" class="round" :width="width"/>
+    <img :src="personalAvatar" class="round" :width="width"/>
   </a>
 </template>
 
@@ -14,8 +14,8 @@ export default {
     }
   },
   computed: {
-    image(){
-      return require();
+    personalAvatar() {
+      return `src/assets/img/people/${person.image}`
     },
     width(){
       return this.size || 50;

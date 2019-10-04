@@ -119,7 +119,7 @@
           <div class="row panel pt-4 mt-5" >
               <div class="col-12  ">
                   <!-- Review item -->
-                  <div v-for="(item, i) in Agenda" class="row resume-item wow fadeInUp" data-wow-delay="0.2s">
+                  <div v-for="(item, i) in Agenda" :key="i" class="row resume-item wow fadeInUp" data-wow-delay="0.2s">
                       <div class="col-md-2">
                           <h5>{{item.time}}</h5>
                           <p>{{item.subtitle}}</p>
@@ -129,7 +129,7 @@
                           <p class="panel-body" v-html="item.body" v-show="showBody[i]"></p>
                       </div>
                       <div class="col-md-4 text-right">
-                          <avatar v-for="name in item.speakers" :person="People[name]" class="mr-2"/>
+                          <avatar v-for="(name, idx) in item.speakers" :key="idx" :person="People[name]" class="mr-2"/>
                       </div>
                   </div>
                   <div class="text-center my-5">
@@ -150,7 +150,7 @@
                 </div>
                 <div class="col-md-12 text-center mb-5">
                   <h1 class="my-5">21-Day pop-up collective</h1>
-                  <avatar v-for="item in People" :person="item" size="70" class="m-3"/>
+                  <avatar v-for="item in People" :key="item.image" :person="item" size="70" class="m-3"/>
                 </div>
             </div>
         </div>
