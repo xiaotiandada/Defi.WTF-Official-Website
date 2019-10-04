@@ -143,7 +143,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import { uploadToSmDotMs } from "../util/image";
 import Web3 from 'web3'
 import { fromWei } from 'web3-utils';
 
@@ -281,17 +281,6 @@ export default {
       this.showBuyModal=false;
       alert("update");
     },
-
-    uploadToSmDotMs(imgFile)  {
-      let formData = new FormData();
-      formData.append("smfile", imgFile);
-      return axios({
-        url: "https://sm.ms/api/upload",
-        method: "post",
-        data: formData,
-        headers: { "Content-Type": "multipart/form-data" }
-      });
-    },
     uploadAdd() {
       let fileDom = this.$refs.file
       fileDom.click()
@@ -304,7 +293,7 @@ export default {
       this.loading = true
       let fileDom = this.$refs.file
       fileDom.setAttribute("type", "text");
-      await this.uploadToSmDotMs(this.file)
+      await uploadToSmDotMs(this.file)
         .then(res => {
           if (res.status === 200 && res.data.code === "success") {
             // console.log(res.data.data.url)
