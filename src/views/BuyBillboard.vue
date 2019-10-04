@@ -186,11 +186,6 @@ export default {
     }
   },
   watch: {
-    parseURL(newVal) {
-      let val = JSON.parse(newVal)
-      if (val.cover) this.cover = val.cover
-      if (val.text) this.text = val.text
-    },
     selectedBoard(newVal){
       this.newPrice = parseFloat(this.boards[newVal].price) + 0.01;
     }
