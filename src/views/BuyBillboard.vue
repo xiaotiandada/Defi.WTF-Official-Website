@@ -179,6 +179,7 @@
 
 <script>
 import { uploadToSmDotMs } from "../util/image";
+import axios from "axios";
 import Web3 from "web3";
 import { fromWei } from "web3-utils";
 
@@ -187,7 +188,6 @@ export default {
   props: [],
   data() {
     return {
-      json: {},
       cover: "",
       text: "",
       loading: false,
@@ -227,39 +227,20 @@ export default {
   },
   created() {
     web3.version.getNetwork((err, netId) => {
-      var ajax = require("node.ajax");
-      let url = "http://hk.i43.io/api/list_boards?networkId=" + netId;
-      var json = ajax(
-        url,
-        "GET",
-        {},
-        { "Content-Type": "application/x-www-form-urlencoded" },
-        "utf8"
-      );
-
-      for (let i = 0; i < 5; i++) {
-        try {
-          let res = json[i];
-          this.boards[i].price = fromWei(res.price.toString(10), "ether"); //toWei(toString(res.price), 'ether');
-          this.boards[i].owner = res.owner;
-          this.boards[i].deposit = res.deposit;
-          this.boards[i].until = res.lastTaxPayTimestamp;
-
-          if (res.content.includes(`"cover"`)) {
-            // 只能这样判断了，不敢直接 JSON parse
-            let data = JSON.parse(res.content);
-            this.adList.push(data);
-            console.log(data);
-            this.boards[i].url = data;
-          } else {
-            //有文字没图片的场合
-            // this.adList.push({ text: res.content, cover: "https://i.loli.net/2019/10/02/N4TzivwgLJypRb9.png" })
-            this.boards[i].url = "none";
+      let url = `http://hk.i43.io/api/list_boards?networkId=${netId}`;
+      axios.get(url).then(({ data }) => {
+        // functional style babe, just map it
+        this.boards = data.map(item => {
+          const url = item.content.includes(`"cover"`) ? JSON.parse(item.content) : "none";
+          return { 
+            price: fromWei(item.price.toString(10), "ether"),
+            owner: item.owner,
+            deposit: item.deposit,
+            until: item.lastTaxPayTimestamp,
+            url
           }
-        } catch (error) {
-          console.log("getAdBoardDataId", error);
-        }
-      }
+        })
+     });
     });
   },
   destroyed() {},

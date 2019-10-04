@@ -52,7 +52,8 @@ export default {
     }
   },
   created(){
-    var ajax = require("node.ajax");
+    // var ajax = require("node.ajax"); 
+    // please use axios instead
 
     var json = ajax("http://hk.i43.io/api/list_boards?networkId=42","GET",{
     },{'Content-Type': 'application/x-www-form-urlencoded'},"utf8")
