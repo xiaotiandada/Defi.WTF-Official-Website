@@ -121,7 +121,7 @@ const vm = new Vue({
 
       const param = Object.assign({}, {
         state: this.$store.state,
-        adId: this.$store.state.currentAdBoard.adId,
+        adId: data.id,
         contentToChange: data.contentToChange
       })
 
@@ -130,7 +130,7 @@ const vm = new Vue({
             let log = result.logs[i]
             if (SC_EVENTS.CHANGE_CONTENT == log.event) {
               let newAdId = log.args[0]
-              this.addHistory(newAdId)
+              // this.addHistory(newAdId)
             }
           }
         }).catch((error) => {

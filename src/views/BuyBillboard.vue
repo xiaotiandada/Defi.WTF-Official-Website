@@ -88,7 +88,7 @@
         <div class="w-100">
           Input a URL of your image or upload one.
           <div class="firstclass funbtnclass">
-            <input ref="newURL" type="text" placeholder="URL of your image" />
+            <input v-model="cover" ref="newURL" type="text" placeholder="URL of your image" />
           </div>
 
           <div class="billboard-slide">
@@ -165,6 +165,36 @@
             <input ref="withdrawDeposit" type="number" step="0.01" placeholder="balance in ETH" />
             <button class="confirmbuttonclass" @click="withdraw">Withdraw</button>
           </div>
+
+   Input a URL of your image or upload one.
+          <div class="firstclass funbtnclass">
+            <input v-model="cover" ref="newURL" type="text" placeholder="URL of your image" />
+          </div>
+
+          <div class="billboard-slide">
+            <div class="billboard-img">
+              <input
+                ref="file"
+                type="file"
+                accept="image/png, image/jpeg, image/jpg, image/gif, image/webp"
+                @change="upload"
+              />
+              <img
+                v-if="!cover"
+                id="billboardAdd"
+                class="add"
+                src="../assets/upload/add.png"
+                alt="add"
+                @click="uploadAdd"
+              />
+              <img v-if="cover" id="billboardCover" class="cover" :src="cover" alt="cover" />
+              <div v-if="cover" id="billboardDel" class="full" @click="cover = ''">
+                <img class="del" src="../assets/upload/del.png" alt="del" />
+              </div>
+              <div v-if="loading" id="billboardLoading" class="full-loading">Uploading...</div>
+            </div>
+          </div>
+
         </div>
       </b-container>
 
@@ -190,6 +220,7 @@ export default {
     return {
       cover: "",
       text: "",
+      content: "",
       loading: false,
       url1: "",
       adList: [],
@@ -245,6 +276,28 @@ export default {
   },
   destroyed() {},
   methods: {
+
+    getContentData() {
+    /*  if(!this.cover.length){
+        return alert('图片地址不能为空')
+      }*/
+      
+      let contentData = {
+        text: this.content,
+        cover: this.cover,
+      }
+
+      let contentDataJson = JSON.stringify(contentData)
+      return contentDataJson;
+    },
+
+    changeContentImg:function(){
+      let contentData = this.getContentData();
+      const id = this.selectedBoard;
+      const data = Object.assign({}, { id, contentToChange: contentData })
+      this.$root.changeContent(data)
+    },
+    
     change() {
       let priceToChange = this.newPrice;
       const id = this.selectedBoard;
@@ -267,7 +320,7 @@ export default {
 
     buy() {
       this.showBuyModal = false;
-      const initName = "233";
+      const initName = this.getContentData();
 
       /*this.$refs.initname.value
       function strlen(str) {
@@ -292,9 +345,6 @@ export default {
       const id = this.selectedBoard;
       const initDeposit = this.taxPerDay * this.numberOfDays;
       const artPrice = this.boards[id].price;
-
-      alert(id);
-
       const data = Object.assign(
         {},
         { id, initPrice, initDeposit, artPrice, initName }
@@ -303,7 +353,7 @@ export default {
     },
     update() {
       this.showBuyModal = false;
-      alert("update");
+      this.changeContentImg();
     },
     uploadAdd() {
       let fileDom = this.$refs.file;
