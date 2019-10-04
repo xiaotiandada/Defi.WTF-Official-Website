@@ -143,7 +143,7 @@
 </template>
 
 <script>
-
+import axios from "axios";
 import Web3 from 'web3'
 import { fromWei } from 'web3-utils';
 
@@ -157,6 +157,7 @@ export default {
       json: {},
       cover: '',
       text: '',
+      loading: false,
       url1: '',
       adList: [],
       showModal: false,
