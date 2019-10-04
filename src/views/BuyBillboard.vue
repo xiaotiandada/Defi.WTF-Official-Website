@@ -108,21 +108,21 @@
         <div class="w-100">
           <div class="firstclass funbtnclass">
             <input ref="newprice" type="number"  step="0.01" placeholder="new price in ETH">
-            <button class="confirmbuttonclass" @click="">
+            <button class="confirmbuttonclass" @click="change">
               Change
             </button>
           </div>
 
           <div class="firstclass funbtnclass">
             <input ref="depositbal" type="number" step="0.01" placeholder="balance in ETH">
-            <button class="confirmbuttonclass" @click="">
+            <button class="confirmbuttonclass" @click="deposit">
               Deposit
             </button>
           </div>
           <div class="firstclass funbtnclass">
             <input ref="withdrawDeposit" type="number" step="0.01" placeholder="balance in ETH">
-            <button class="confirmbuttonclass" @click="">
-              Withdraw
+            <button class="confirmbuttonclass" @click="withdraw">
+              Withdraw  
             </button>
           </div>
         </div>
@@ -227,6 +227,26 @@ export default {
   destroyed(){
   },
   methods: {
+
+    change() {
+      let priceToChange = this.newPrice;
+      const id = this.selectedBoard;
+      const data = Object.assign({}, { id, priceToChange })
+      this.$root.changePrice(data)
+    },
+    deposit() {
+      let depositToAdd = this.deposit;
+      const id = this.selectedBoard;
+      const data = Object.assign({}, { id, depositToAdd })
+      this.$root.addDeposit(data)
+    },
+
+    withdraw() {
+      let amountToWithdraw = this.withdrawDeposit.value;
+      const id = this.selectedBoard;
+      const data = Object.assign({}, { id, amountToWithdraw });
+      this.$root.withdrawDeposit(data);
+    },
 
     buy() {
       this.showBuyModal=false;

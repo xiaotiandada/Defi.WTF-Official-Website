@@ -98,12 +98,83 @@ const vm = new Vue({
     forkAdBoard(data) {
     },
     changePrice(data) {
+      const param = Object.assign({}, {
+        state: this.$store.state,
+        adId: data.id,
+        priceToChange: parseFloat(data.priceToChange)
+      })
+
+      aabManager.changePrice(param).then((result) => {
+        for (var i = 0; i < result.logs.length; i++) {
+          let log = result.logs[i]
+          if (SC_EVENTS.CHANGE_PRICE == log.event) {
+            let newAdId = log.args[0]
+            this.addHistory(newAdId)
+          }
+        }
+      }).catch((error) => {
+        // {code: -32016, message: "The execution failed due to an exception."}
+        console.error("main.js forkAdBoard 333: " + JSON.stringify(error))
+      })      
     },
     changeContent(data) {
+
+      const param = Object.assign({}, {
+        state: this.$store.state,
+        adId: this.$store.state.currentAdBoard.adId,
+        contentToChange: data.contentToChange
+      })
+
+      aabManager.changeContent(param).then((result) => {
+          for (var i = 0; i < result.logs.length; i++) {
+            let log = result.logs[i]
+            if (SC_EVENTS.CHANGE_CONTENT == log.event) {
+              let newAdId = log.args[0]
+              this.addHistory(newAdId)
+            }
+          }
+        }).catch((error) => {
+          console.error("main.js changeContent: " + JSON.stringify(error))
+        })
     },
     addDeposit(data) {
+
+      const param = Object.assign({}, {
+        state: this.$store.state,
+        adId: data.id,
+        depositToAdd: parseFloat(data.depositToAdd)
+      })
+
+      aabManager.addDeposit(param).then((result) => {
+          for (var i = 0; i < result.logs.length; i++) {
+            let log = result.logs[i]
+            if (SC_EVENTS.ADD_DEPOSITE == log.event) {
+              let newAdId = log.args[0]
+              this.addHistory(newAdId)
+            }
+          }
+        }).catch((error) => {
+          console.error("main.js addDeposit: " + JSON.stringify(error))
+        })
     },
     withdrawDeposit(data) {
+      const param = Object.assign({}, {
+        state: this.$store.state,
+        adId: data.id,
+        amountToWithdraw: parseFloat(data.amountToWithdraw)
+      })
+
+      aabManager.withdrawDeposit(param).then((result) => {
+          for (var i = 0; i < result.logs.length; i++) {
+            let log = result.logs[i]
+            if (SC_EVENTS.WITHDRAW_DEPOSIT == log.event) {
+              let newAdId = log.args[0]
+              this.addHistory(newAdId)
+            }
+          }
+        }).catch((error) => {
+          console.error("main.js withdrawDeposit: " + JSON.stringify(error))
+        })
     },
     // 得到总数
     async getTotalNumber() {
