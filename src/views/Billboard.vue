@@ -5,26 +5,26 @@
       <div class="container">
           <div class="row ">
               <div class=" wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
-                  <img src="src/assets/img/wtf5.png">
+                  <img src="img/wtf5.png">
               </div>
               <div class=" want wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
                   <h1>We Want You!</h1> <br>
                   <a target="_blank"  href="http://capitalbox.one/index.html#/ad/0" class="site-btn wow fadeInUp" data-wow-delay="0.2s">Buy a billboard?(Kovan Test Net)</a>
               </div>
-                
+
           </div>
       </div>
     </section>
 
       <div class="row billboard">
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6" 
+        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6"
           v-for="ad in adList" :key="ad.text" v-show="ad.text">
             <img :src="ad.cover" alt="ADS">
             <p>{{ad.text}}</p>
         </div>
       </div>
-       
-  </section> 
+
+  </section>
 </template>
 
 <script>
@@ -42,7 +42,7 @@ export default {
     }
   },
   computed: {
-  
+
   },
   watch: {
     parseURL(newVal) {
@@ -52,7 +52,7 @@ export default {
     }
   },
   created(){
-    // var ajax = require("node.ajax"); 
+    // var ajax = require("node.ajax");
     // please use axios instead
 
     var json = ajax("http://hk.i43.io/api/list_boards?networkId=42","GET",{
@@ -62,7 +62,7 @@ export default {
 
     //this.getTotalNumber();
     for (let i=0;i<10;++i) {
-        //this.adList.push("src/assets/img/wtf5.png");
+        //this.adList.push("img/wtf5.png");
         //this.adList.push(res.content);
       //this.adList.push("...");
     }
