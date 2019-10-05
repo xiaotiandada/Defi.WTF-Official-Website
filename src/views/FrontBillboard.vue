@@ -1,21 +1,33 @@
 <template>
-<section class="billboards">
-
-    <section class="portfolio-section spad" id="billboard">
+  <section class="billboards">
+    <section
+      id="billboard"
+      class="portfolio-section spad"
+    >
       <div class="container">
-          <div class="row ">
-              <div class=" wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
-                  <img src="img/wtf5.png">
-              </div>
-              <div class=" want wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
-                  <h1>We Want You!</h1> <br>
-                  <router-link to="/billboard"  class="site-btn wow fadeInUp" data-wow-delay="0.2s">Buy a billboard?</router-link>
-              </div>
-
+        <div class="row ">
+          <div
+            class=" wow fadeInUp col-md-6 col-xs-6 col-sm-12"
+            data-wow-delay="0.2s"
+          >
+            <img src="img/wtf5.png">
           </div>
+          <div
+            class=" want wow fadeInUp col-md-6 col-xs-6 col-sm-12"
+            data-wow-delay="0.2s"
+          >
+            <h1>We Want You!</h1> <br>
+            <router-link
+              to="/billboard"
+              class="site-btn wow fadeInUp"
+              data-wow-delay="0.2s"
+            >
+              Buy a billboard?
+            </router-link>
+          </div>
+        </div>
       </div>
     </section>
-
   </section>
 </template>
 

@@ -1,8 +1,13 @@
 <template>
-<section class="billboards">
-      <div class="row billboard">
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="adList[0]" :alt="adList[0]"> </div>
-  <!--  <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[1]" alt="adList[1]" onerror='this.src="img/wtf5.png"'> </div>
+  <section class="billboards">
+    <div class="row billboard">
+      <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 ">
+        <img
+          :src="adList[0]"
+          :alt="adList[0]"
+        >
+      </div>
+      <!--  <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[1]" alt="adList[1]" onerror='this.src="img/wtf5.png"'> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[2]" alt="adList[2]" onerror='this.src="img/wtf5.png"'> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[3]" alt="adList[3]" onerror='this.src="img/wtf5.png"'> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[4]" alt="adList[4]" onerror='this.src="img/wtf5.png"'> </div>
@@ -12,10 +17,15 @@
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[8]" alt="adList[8]" onerror='this.src="img/wtf5.png"'> </div>
         <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6 "> <img :src="this.adList[9]" alt="adList[9]" onerror='this.src="img/wtf5.png"'> </div>
         -->
-      </div>
-        <div class="text-center mt-5">
-            <a target="_blank"  href="http://capitalbox.one/index.html#/ad/0" class="site-btn wow fadeInUp" data-wow-delay="0.2s">Buy a billboard?(Kovan Test Net)</a>
-        </div>
+    </div>
+    <div class="text-center mt-5">
+      <a
+        target="_blank"
+        href="http://capitalbox.one/index.html#/ad/0"
+        class="site-btn wow fadeInUp"
+        data-wow-delay="0.2s"
+      >Buy a billboard?(Kovan Test Net)</a>
+    </div>
   </section>
 </template>
 

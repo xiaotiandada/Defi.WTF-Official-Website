@@ -1,14 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="logo.png" />
+    <img
+      alt="Vue logo"
+      src="logo.png"
+    >
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <button class="btn-base bg-purple" @click="walletLogin('GitHub')">
+    <button
+      class="btn-base bg-purple"
+      @click="walletLogin('GitHub')"
+    >
       <span>Github 登录</span>
     </button>
-    <button class="btn-base bg-purple" @click="walletLogin('Twitter')">
+    <button
+      class="btn-base bg-purple"
+      @click="walletLogin('Twitter')"
+    >
       <span>Twitter 登录</span>
     </button>
-    <button class="btn-base bg-purple" @click="walletLogin('Metamask')">
+    <button
+      class="btn-base bg-purple"
+      @click="walletLogin('Metamask')"
+    >
       <span>Metamask 登录</span>
     </button>
   </div>
@@ -19,7 +31,7 @@
 // import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "home",
+  name: "Home",
   // components: {
   //   HelloWorld
   // },

@@ -1,6 +1,13 @@
 <template>
-  <a :href="person.link" target="_blank">
-    <img :src="personalAvatar" class="round" :width="width"/>
+  <a
+    :href="person.link"
+    target="_blank"
+  >
+    <img
+      :src="personalAvatar"
+      class="round"
+      :width="width"
+    >
   </a>
 </template>
 

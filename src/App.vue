@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <Header></Header>
+    <Header />
     <!--Router View, for index content please use 'views/Home.vue' instead -->
-    <router-view/>
-    <Footer></Footer>
+    <router-view />
+    <Footer />
   </div>
 </template>
 

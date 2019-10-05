@@ -1,23 +1,36 @@
 <template>
-  <section class="portfolio-section spad" id="billboard">
+  <section
+    id="billboard"
+    class="portfolio-section spad"
+  >
     <div class="container">
       <div class="row">
-        <div class="wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
-          <img src="img/wtf5.png" />
+        <div
+          class="wow fadeInUp col-md-6 col-xs-6 col-sm-12"
+          data-wow-delay="0.2s"
+        >
+          <img src="img/wtf5.png">
         </div>
-        <div class="want wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
-          <h1 class="red-text">A DeFi Billboard</h1>
+        <div
+          class="want wow fadeInUp col-md-6 col-xs-6 col-sm-12"
+          data-wow-delay="0.2s"
+        >
+          <h1 class="red-text">
+            A DeFi Billboard
+          </h1>
           <h1>This is a Harberger Tax Social Experiment</h1>
         </div>
       </div>
     </div>
 
     <div class="container mt-5">
-      <br />
+      <br>
       <h5
         class="red-text"
-      >This is the only place in the WTF-verse where you will see logos. REALLY LOUD LOGOS. We are creating "a DeFi billboard" specifically to take shilling off the serious discussions</h5>
-      <br />
+      >
+        This is the only place in the WTF-verse where you will see logos. REALLY LOUD LOGOS. We are creating "a DeFi billboard" specifically to take shilling off the serious discussions
+      </h5>
+      <br>
       <h5 class="white-text font-weight-regular">
         We will conduct a continuous auction for 10 display slots on "a DeFi billboard" with a Harberger Tax mechanism.
         The 5% tax goes to the event's ENS address
@@ -26,19 +39,27 @@
     </div>
     <div class="container my-4">
       <div class="row my-4 w-100">
-        <h2 class="w-100 text-center mt-4">Click on the billboard you would like to buy</h2>
+        <h2 class="w-100 text-center mt-4">
+          Click on the billboard you would like to buy
+        </h2>
       </div>
       <div class="row billboard">
         <div
-          class="col-xl-1-5 col-lg-3 col-md-4 col-xs-6 col-sm-6"
           v-for="(board , index) in boards"
-          :class="['round-buy', 'pointer', selectedBoard===index ? 'selected' : '']"
           :key="index"
+          class="col-xl-1-5 col-lg-3 col-md-4 col-xs-6 col-sm-6"
+          :class="['round-buy', 'pointer', selectedBoard===index ? 'selected' : '']"
           @click="selectedBoard = index"
         >
-          <img :src="board.url.cover" alt="ADS" class="round-image" />
+          <img
+            :src="board.url.cover"
+            alt="ADS"
+            class="round-image"
+          >
           <!--p>{{ad.text}}</p-->
-          <div class="overlay">{{ board.price }}Ξ</div>
+          <div class="overlay">
+            {{ board.price }}Ξ
+          </div>
         </div>
       </div>
     </div>
@@ -69,26 +90,34 @@
       <div class="text-center my-5">
         <a
           v-if="coinbase.toUpperCase() === boards[selectedBoard].owner.toUpperCase()"
-          @click="showUpdateModal = true"
           class="site-btn big wow fadeInUp"
           style="font-size:2em; font-weight:bold"
           data-wow-delay="0.2s"
+          @click="showUpdateModal = true"
         >Update</a>
         <a
           v-else
-          @click="showBuyModal = true"
           class="site-btn big wow fadeInUp"
           style="font-size:2em; font-weight:bold"
           data-wow-delay="0.2s"
+          @click="showBuyModal = true"
         >Buy Now!</a>
       </div>
     </div>
-    <b-modal v-model="showBuyModal" title="Buy Billboard">
+    <b-modal
+      v-model="showBuyModal"
+      title="Buy Billboard"
+    >
       <b-container fluid>
         <div class="w-100">
           Input a URL of your image or upload one.
           <div class="firstclass funbtnclass mb-4">
-            <input v-model="cover" ref="newURL" type="text" placeholder="URL of your image" />
+            <input
+              ref="newURL"
+              v-model="cover"
+              type="text"
+              placeholder="URL of your image"
+            >
           </div>
 
           <div class="billboard-slide">
@@ -98,7 +127,7 @@
                 type="file"
                 accept="image/png, image/jpeg, image/jpg, image/gif, image/webp"
                 @change="upload"
-              />
+              >
               <img
                 v-if="!cover"
                 id="billboardAdd"
@@ -106,72 +135,136 @@
                 src="upload/add.png"
                 alt="add"
                 @click="uploadAdd"
-              />
-              <img v-if="cover" id="billboardCover" class="cover" :src="cover" alt="cover" />
-              <div v-if="cover" id="billboardDel" class="full" @click="cover = ''">
-                <img class="del" src="upload/del.png" alt="del" />
+              >
+              <img
+                v-if="cover"
+                id="billboardCover"
+                class="cover"
+                :src="cover"
+                alt="cover"
+              >
+              <div
+                v-if="cover"
+                id="billboardDel"
+                class="full"
+                @click="cover = ''"
+              >
+                <img
+                  class="del"
+                  src="upload/del.png"
+                  alt="del"
+                >
               </div>
-              <div v-if="loading" id="billboardLoading" class="full-loading">Uploading...</div>
+              <div
+                v-if="loading"
+                id="billboardLoading"
+                class="full-loading"
+              >
+                Uploading...
+              </div>
             </div>
           </div>
-          Current price: {{ boards[selectedBoard].price | formatEth}}
-          <br />
+          Current price: {{ boards[selectedBoard].price | formatEth }}
+          <br>
 
           <div class="firstclass funbtnclass">
             Your price in ether:
             <input
               ref="newprice"
+              v-model="newPrice"
               type="number"
               step="5"
               placeholder="Your price, in ETH"
-              v-model="newPrice"
-            />
+            >
           </div>
           <div class="firstclass funbtnclass">
             How many days want to HODL?
             <input
               ref="numberOfDays"
+              v-model="numberOfDays"
               type="number"
               placeholder="Number of Days"
-              v-model="numberOfDays"
-            />
+            >
           </div>This will be taken automatically. Unused deposit can be withdrawn any time.
-          <br />
+          <br>
           Price per day: {{ taxPerDay | formatEth }}
-          <br />
+          <br>
           Total you have to pay: {{ taxPerDay * numberOfDays + newPrice | formatEth }}
         </div>
       </b-container>
 
       <template v-slot:modal-footer>
         <div class="w-100">
-          <span class="font-weight-bold ml-3 pt-2 my-auto" style="font-size:1.5em; color:black; line-height:2.3em">Total: {{ taxPerDay * numberOfDays + Number(newPrice) | formatEth(4) }}</span>
-          <a class="site-btn float-right font-weight-bold" 
-             style="font-size:1.1em;"
-             @click="buy">BUY NOW</a>
+          <span
+            class="font-weight-bold ml-3 pt-2 my-auto"
+            style="font-size:1.5em; color:black; line-height:2.3em"
+          >Total: {{ taxPerDay * numberOfDays + Number(newPrice) | formatEth(4) }}</span>
+          <a
+            class="site-btn float-right font-weight-bold" 
+            style="font-size:1.1em;"
+            @click="buy"
+          >BUY NOW</a>
         </div>
       </template>
     </b-modal>
-    <b-modal v-model="showUpdateModal" title="Update Billboard">
+    <b-modal
+      v-model="showUpdateModal"
+      title="Update Billboard"
+    >
       <b-container fluid>
         <div class="w-100">
           <div class="firstclass funbtnclass">
-            <input ref="newprice" type="number" step="0.01" placeholder="new price in ETH" />
-            <button class="confirmbuttonclass" @click="change">Change</button>
+            <input
+              ref="newprice"
+              type="number"
+              step="0.01"
+              placeholder="new price in ETH"
+            >
+            <button
+              class="confirmbuttonclass"
+              @click="change"
+            >
+              Change
+            </button>
           </div>
 
           <div class="firstclass funbtnclass">
-            <input ref="depositbal" type="number" step="0.01" placeholder="balance in ETH" />
-            <button class="confirmbuttonclass" @click="deposit">Deposit</button>
+            <input
+              ref="depositbal"
+              type="number"
+              step="0.01"
+              placeholder="balance in ETH"
+            >
+            <button
+              class="confirmbuttonclass"
+              @click="deposit"
+            >
+              Deposit
+            </button>
           </div>
           <div class="firstclass funbtnclass">
-            <input ref="withdrawDeposit" type="number" step="0.01" placeholder="balance in ETH" />
-            <button class="confirmbuttonclass" @click="withdraw">Withdraw</button>
+            <input
+              ref="withdrawDeposit"
+              type="number"
+              step="0.01"
+              placeholder="balance in ETH"
+            >
+            <button
+              class="confirmbuttonclass"
+              @click="withdraw"
+            >
+              Withdraw
+            </button>
           </div>
 
-   Input a URL of your image or upload one.
+          Input a URL of your image or upload one.
           <div class="firstclass funbtnclass">
-            <input v-model="cover" ref="newURL" type="text" placeholder="URL of your image" />
+            <input
+              ref="newURL"
+              v-model="cover"
+              type="text"
+              placeholder="URL of your image"
+            >
           </div>
 
           <div class="billboard-slide">
@@ -181,7 +274,7 @@
                 type="file"
                 accept="image/png, image/jpeg, image/jpg, image/gif, image/webp"
                 @change="upload"
-              />
+              >
               <img
                 v-if="!cover"
                 id="billboardAdd"
@@ -189,21 +282,44 @@
                 src="upload/add.png"
                 alt="add"
                 @click="uploadAdd"
-              />
-              <img v-if="cover" id="billboardCover" class="cover" :src="cover" alt="cover" />
-              <div v-if="cover" id="billboardDel" class="full" @click="cover = ''">
-                <img class="del" src="upload/del.png" alt="del" />
+              >
+              <img
+                v-if="cover"
+                id="billboardCover"
+                class="cover"
+                :src="cover"
+                alt="cover"
+              >
+              <div
+                v-if="cover"
+                id="billboardDel"
+                class="full"
+                @click="cover = ''"
+              >
+                <img
+                  class="del"
+                  src="upload/del.png"
+                  alt="del"
+                >
               </div>
-              <div v-if="loading" id="billboardLoading" class="full-loading">Uploading...</div>
+              <div
+                v-if="loading"
+                id="billboardLoading"
+                class="full-loading"
+              >
+                Uploading...
+              </div>
             </div>
           </div>
-
         </div>
       </b-container>
 
       <template v-slot:modal-footer>
         <div class="w-100">
-          <a class="site-btn float-right font-weight-bold" @click="update">UPDATE</a>
+          <a
+            class="site-btn float-right font-weight-bold"
+            @click="update"
+          >UPDATE</a>
         </div>
       </template>
     </b-modal>

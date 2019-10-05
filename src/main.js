@@ -27,8 +27,6 @@ Vue.filter("formatEth", function(value, decimals = 2) {
 const vm = new Vue({
   el: '#app',
   router,
-  render: h => h(App),
-  store,
   components: { App },
   computed: {
   },
@@ -222,6 +220,8 @@ const vm = new Vue({
     async addHistory(adId) {
     }
   },
+  render: h => h(App),
+  store,
 //  template: '<App :is-d-app-ready="isDAppReady" :current-view="currentView" />'
 });
 
