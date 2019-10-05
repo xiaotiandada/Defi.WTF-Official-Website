@@ -15,7 +15,7 @@ export default{
     subtitle: "",
     title: "1. Sign-in & Breakfast",
     body: ``,
-    speakers: [""]
+    speakers: []
   },
   2: {
       time: "09:00-10:00",
@@ -47,7 +47,7 @@ export default{
       subtitle: "",
       title: "5. WTF Talks & Lunch",
       body: ``,
-      speakers: [""]
+      speakers: []
     },
   6: {
       time: "13:00-14:00",

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div id="app">
     <Header></Header>
     <!--Router View, for index content please use 'views/Home.vue' instead -->
-    <router-view/> 
+    <router-view/>
     <Footer></Footer>
   </div>
 </template>

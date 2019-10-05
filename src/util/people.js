@@ -2,7 +2,7 @@
 
   Add people here:
   Nickname, capitalized, for use as reference in the Agenda file
-  image: upload it to the src/assets/people folder, and reference file here with extension
+  image: upload it to the people folder, and reference file here with extension
   link: link to whatever you want
 
 */
@@ -112,10 +112,6 @@ export default{
     image: "Chao Pan @MakerDAO China.jpg",
     link: "https://www.linkedin.com/in/chao-pan-30294b86/"
   },
-  SunnyAggarwal: {
-    image: "",
-    link: "https://www.linkedin.com/in/sunnya97/"
-  },
   KyleKistner: {
     image: "Kyle Kistner @Bzx.jpg",
     link: "https://www.linkedin.com/in/kyleb0x/"
@@ -156,15 +152,7 @@ export default{
     image: "",
     link: ""
   },
-  MartinKoppelman: {
-    image: "",
-    link: ""
-  },
   PhilipSeifert: {
-    image: "",
-    link: ""
-  },
-  CamilaRusso: {
     image: "",
     link: ""
   },
@@ -185,10 +173,6 @@ export default{
     link: ""
   },
   KarlFloerach: {
-    image: "",
-    link: ""
-  },
-  ShrutiAppiah: {
     image: "",
     link: ""
   }

@@ -5,7 +5,7 @@
       <div class="container">
           <div class="row ">
               <div class=" wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
-                  <img src="src/assets/img/wtf5.png">
+                  <img src="img/wtf5.png">
               </div>
               <div class=" want wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
                   <h1>We Want You!</h1> <br>
@@ -54,7 +54,7 @@ export default {
   created(){
     this.getTotalNumber();
     for (let i=0;i<10;++i) {
- //     this.adList.push("src/assets/img/wtf5.png");
+ //     this.adList.push("img/wtf5.png");
       //this.adList.push("...");
     }
   },

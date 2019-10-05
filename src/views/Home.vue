@@ -13,7 +13,7 @@
             <p>The first of a series of WTF events, traces the emergent DeFi stack and explores its implications through in-depth conversations with the space’s main actors.</p>
           </div>
           <div class="wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
-            <img src="src/assets/img/wtf1.png" />
+            <img src="img/wtf1.png" />
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@
     <section>
       <div class="row" style="margin-top:5em; background:#cd341f">
         <div class="col-3 m-0 p-0 my-auto">
-          <b-img src="src/assets/img/head-left.png"/>
+          <b-img src="img/head-left.png"/>
         </div>
         <div class="col-6 my-auto px-4" style="background:#cd341f">
           <b-carousel
@@ -46,7 +46,7 @@
                   class="d-block img-fluid w-100"
                   width="360"
                   height="180"
-                  src="src/assets/img/Slide5.JPG"
+                  src="img/Slide5.jpg"
                   alt="image slot"
                 >
               </template>
@@ -57,7 +57,7 @@
                   class="d-block img-fluid w-100"
                   width="360"
                   height="180"
-                  src="src/assets/img/Slide6.JPG"
+                  src="img/Slide6.jpg"
                   alt="image slot"
                 >
               </template>
@@ -68,7 +68,7 @@
                   class="d-block img-fluid w-100"
                   width="360"
                   height="180"
-                  src="src/assets/img/Slide3.JPG"
+                  src="img/Slide3.jpg"
                   alt="image slot"
                 >
               </template>
@@ -76,7 +76,7 @@
           </b-carousel>
         </div>
         <div class="col-3 m-0 p-0 my-auto">
-          <b-img src="src/assets/img/head-left.png" style="transform: rotate(180deg)"/>
+          <b-img src="img/head-left.png" style="transform: rotate(180deg)"/>
         </div>
       </div>
     </section>
@@ -101,7 +101,7 @@
       <div class="container">
         <div class="row mt-4 pt-4">
           <div class="col-3 statue text-center my-auto">
-            <img src="src/assets/img/marylin.png">
+            <img src="img/marylin.png">
           </div>
           <div class="section-title mt-3 pt-5 col-6">
               <h2>Agenda</h2>
@@ -113,7 +113,7 @@
               </div>
           </div>
           <div class="col-3 statue text-center my-auto">
-            <img src="src/assets/img/selfie.png">
+            <img src="img/selfie.png">
           </div>
         </div>
           <div class="row panel pt-4 mt-5" >
@@ -129,7 +129,7 @@
                           <p class="panel-body" v-html="item.body" v-show="showBody[i]"></p>
                       </div>
                       <div class="col-md-4 text-right">
-                          <avatar v-for="(name, idx) in item.speakers" :key="idx" :person="People[name]" class="mr-2"/>
+                          <avatar v-for="(name, idx) in item.speakers" v-if="People[name] && People[name].link" :key="idx" :person="People[name]" class="mr-2"/>
                       </div>
                   </div>
                   <div class="text-center my-5">
@@ -146,11 +146,11 @@
         <div class="container">
             <div class="row">
                  <div class="col-md-12 fish-wap wow fadeInUp" data-wow-delay="0.2s">
-                    <img  class="fish" src="src/assets/img/wtf3.png" >
+                    <img  class="fish" src="img/wtf3.png" >
                 </div>
                 <div class="col-md-12 text-center mb-5">
                   <h1 class="my-5">21-Day pop-up collective</h1>
-                  <avatar v-for="item in People" :key="item.image" :person="item" size="70" class="m-3"/>
+<!--                  <avatar v-for="item in People" :key="item.image" :person="item" size="70" class="m-3"/>-->
                 </div>
             </div>
         </div>

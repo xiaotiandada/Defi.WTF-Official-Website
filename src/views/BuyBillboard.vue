@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
-          <img src="src/assets/img/wtf5.png" />
+          <img src="img/wtf5.png" />
         </div>
         <div class="want wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
           <h1 class="red-text">A DeFi Billboard</h1>
@@ -103,13 +103,13 @@
                 v-if="!cover"
                 id="billboardAdd"
                 class="add"
-                src="../assets/upload/add.png"
+                src="upload/add.png"
                 alt="add"
                 @click="uploadAdd"
               />
               <img v-if="cover" id="billboardCover" class="cover" :src="cover" alt="cover" />
               <div v-if="cover" id="billboardDel" class="full" @click="cover = ''">
-                <img class="del" src="../assets/upload/del.png" alt="del" />
+                <img class="del" src="upload/del.png" alt="del" />
               </div>
               <div v-if="loading" id="billboardLoading" class="full-loading">Uploading...</div>
             </div>
@@ -183,13 +183,13 @@
                 v-if="!cover"
                 id="billboardAdd"
                 class="add"
-                src="../assets/upload/add.png"
+                src="upload/add.png"
                 alt="add"
                 @click="uploadAdd"
               />
               <img v-if="cover" id="billboardCover" class="cover" :src="cover" alt="cover" />
               <div v-if="cover" id="billboardDel" class="full" @click="cover = ''">
-                <img class="del" src="../assets/upload/del.png" alt="del" />
+                <img class="del" src="upload/del.png" alt="del" />
               </div>
               <div v-if="loading" id="billboardLoading" class="full-loading">Uploading...</div>
             </div>
@@ -263,7 +263,7 @@ export default {
         // functional style babe, just map it
         this.boards = data.map(item => {
           const url = item.content.includes(`"cover"`) ? JSON.parse(item.content) : "none";
-          return { 
+          return {
             price: fromWei(item.price.toString(10), "ether"),
             owner: item.owner,
             deposit: item.deposit,
@@ -281,7 +281,7 @@ export default {
     /*  if(!this.cover.length){
         return alert('图片地址不能为空')
       }*/
-      
+
       let contentData = {
         text: this.content,
         cover: this.cover,
@@ -297,7 +297,7 @@ export default {
       const data = Object.assign({}, { id, contentToChange: contentData })
       this.$root.changeContent(data)
     },
-    
+
     change() {
       let priceToChange = this.newPrice;
       const id = this.selectedBoard;
