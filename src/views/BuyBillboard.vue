@@ -46,7 +46,7 @@
     <div class="container my-4">
       <h4 class="red-text mt-2">
         Price:
-        <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].price }}</span>
+        <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].price | formatEth }}</span>
       </h4>
       <h4 class="red-text mt-2">
         Owner:
@@ -54,13 +54,13 @@
       </h4>
       <h4 class="red-text mt-2">
         Deposit:
-        <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].balance }}</span>
+        <span class="ml-4 font-weight-thin white-text">{{ boards[selectedBoard].balance | formatEth(4) }}</span>
       </h4>
       <h4 class="red-text mt-2">
         Redeemable Until:
         <span
           class="ml-4 font-weight-thin white-text"
-        >{{ boards[selectedBoard].until }}</span>
+        >{{ (boards[selectedBoard].until) }}</span>
       </h4>
       <h4 class="red-text mt-2">
         URL:
@@ -87,7 +87,7 @@
       <b-container fluid>
         <div class="w-100">
           Input a URL of your image or upload one.
-          <div class="firstclass funbtnclass">
+          <div class="firstclass funbtnclass mb-4">
             <input v-model="cover" ref="newURL" type="text" placeholder="URL of your image" />
           </div>
 
@@ -145,7 +145,10 @@
 
       <template v-slot:modal-footer>
         <div class="w-100">
-          <a class="site-btn float-right font-weight-bold" @click="buy">BUY NOW</a>
+          <span class="font-weight-bold ml-3 pt-2 my-auto" style="font-size:1.5em; color:black; line-height:2.3em">Total: {{ taxPerDay * numberOfDays + Number(newPrice) | formatEth(4) }}</span>
+          <a class="site-btn float-right font-weight-bold" 
+             style="font-size:1.1em;"
+             @click="buy">BUY NOW</a>
         </div>
       </template>
     </b-modal>

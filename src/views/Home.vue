@@ -19,11 +19,11 @@
       </div>
     </section-->
     <section>
-      <div class="row" style="margin-top:5em; background:#cd341f">
-        <div class="col-3 m-0 p-0 my-auto">
+      <div class="row no-gutters" style="margin-top:5em; background:#cd341f">
+        <div class="col-3 d-none d-lg-inline m-0 p-0 my-auto">
           <b-img src="img/head-left.png"/>
         </div>
-        <div class="col-6 my-auto px-4" style="background:#cd341f">
+        <div class="col-lg-6 my-auto px-md-4" style="background:#cd341f">
           <b-carousel
             id="carousel"
             v-model="slide"
@@ -31,7 +31,7 @@
             controls
             indicators
             background="#cd341f"
-            class="mx-4"
+            class="mx-md-4"
             img-width="360"
             img-height="180"
             style="background:#cd341f"
@@ -75,7 +75,7 @@
             </b-carousel-slide>
           </b-carousel>
         </div>
-        <div class="col-3 m-0 p-0 my-auto">
+        <div class="col-3 d-none d-lg-inline m-0 p-0 my-auto">
           <b-img src="img/head-left.png" style="transform: rotate(180deg)"/>
         </div>
       </div>
@@ -99,8 +99,8 @@
     </section>
     <section class="resume-section" id="Agenda">
       <div class="container">
-        <div class="row mt-4 pt-4">
-          <div class="col-3 statue text-center my-auto">
+        <div class="row no-gutters mt-4 pt-4">
+          <div class="col px-0 statue text-center my-auto">
             <img src="img/marylin.png">
           </div>
           <div class="section-title mt-3 pt-5 col-6">
@@ -112,26 +112,29 @@
                   </a>
               </div>
           </div>
-          <div class="col-3 statue text-center my-auto">
+          <div class="col px-0 statue text-center my-aut">
             <img src="img/selfie.png">
           </div>
         </div>
-          <div class="row panel pt-4 mt-5" >
+          <div class="row no-gutters panel pt-4 mt-5" >
               <div class="col-12  ">
                   <!-- Review item -->
-                  <div v-for="(item, i) in Agenda" :key="i" class="row resume-item wow fadeInUp" data-wow-delay="0.2s">
-                      <div class="col-md-2">
-                          <h5>{{item.time}}</h5>
-                          <p>{{item.subtitle}}</p>
-                      </div>
-                      <div class="col-md-6 pointer" @click="showBody[i] = !showBody[i]">
-                          <h4 class="panel-header">{{item.title}}</h4>
-                          <p class="panel-body" v-html="item.body" v-show="showBody[i]"></p>
-                      </div>
-                      <div class="col-md-4 text-right">
-                          <avatar v-for="(name, idx) in item.speakers" v-if="People[name] && People[name].link" :key="idx" :person="People[name]" class="mr-2"/>
-                      </div>
-                  </div>
+                  <template v-for="(item, i) in Agenda">
+                    <hr v-if="i > 0" class="d-md-none" style="width:30%;border: 1px solid rgba(0,0,0,0.45);"/>
+                    <div class="row resume-item py-4 px-0 px-sm-3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="col-md-2">
+                            <h5>{{item.time}}</h5>
+                            <p>{{item.subtitle}}</p>
+                        </div>
+                        <div class="col-md-6 pointer" @click="showBody[i] = !showBody[i]">
+                            <h4 class="panel-header">{{item.title}}</h4>
+                            <p class="panel-body" v-html="item.body" v-show="showBody[i]"></p>
+                        </div>
+                        <div class="col-md-4 mt-3 text-right">
+                            <avatar v-for="name in item.speakers" :person="People[name]" class="mr-2"/>
+                        </div>
+                    </div>
+                  </template>
                   <div class="text-center my-5">
                       <a target="_blank"  href="https://github.com/carboclan/pm/issues/69" class="site-btn big wow fadeInUp" data-wow-delay="0.2s">FIND OUT MORE</a>
                   </div>
@@ -186,7 +189,7 @@
 
 <style scoped>
   .statue img{
-    height:16em
+    max-height:16em
   }
 </style>
 

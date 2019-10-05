@@ -18,7 +18,7 @@ Vue.config.devtools = true
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-Vue.filter("formatEth", function(value, decimals = 4) {
+Vue.filter("formatEth", function(value, decimals = 2) {
   if (!value) return "";
   var cleanedValue = parseFloat(value);
   return cleanedValue.toFixed(decimals) + "Ξ";
