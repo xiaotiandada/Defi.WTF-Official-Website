@@ -73,6 +73,17 @@
                 >
               </template>
             </b-carousel-slide>
+            <b-carousel-slide>
+              <template v-slot:img>
+                <img
+                  class="d-block img-fluid w-100"
+                  width="360"
+                  height="180"
+                  src="img/Slide4.jpeg"
+                  alt="image slot"
+                >
+              </template>
+            </b-carousel-slide>            
           </b-carousel>
         </div>
         <div class="col-3 d-none d-lg-inline m-0 p-0 my-auto">
@@ -128,7 +139,9 @@
                         </div>
                         <div class="col-md-6 pointer" @click="showBody[i] = !showBody[i]">
                             <h4 class="panel-header">{{item.title}}</h4>
-                            <p class="panel-body" v-html="item.body" v-show="showBody[i]"></p>
+                            <template v-for="(g, j) in item.body">
+                              <li v-html="g" v-show="showBody[i]"></li>
+                            </template>
                         </div>
                         <div class="col-md-4 mt-3 text-right">
                             <avatar v-for="name in item.speakers" :person="People[name]" class="mr-2"/>
@@ -194,7 +207,6 @@
 </style>
 
 <script>
-import Billboard from "../views/Billboard.vue";
 import InfoBoard from "../components/InfoBoard/index.vue";
 import Avatar from "../components/Avatar.vue";
 import People from "../util/people.js";

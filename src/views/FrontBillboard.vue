@@ -9,20 +9,12 @@
               </div>
               <div class=" want wow fadeInUp col-md-6 col-xs-6 col-sm-12" data-wow-delay="0.2s">
                   <h1>We Want You!</h1> <br>
-                  <a target="_blank"  href="http://capitalbox.one/index.html#/ad/0" class="site-btn wow fadeInUp" data-wow-delay="0.2s">Buy a billboard?(Kovan Test Net)</a>
+                  <router-link to="/billboard"  class="site-btn wow fadeInUp" data-wow-delay="0.2s">Buy a billboard?</router-link>
               </div>
 
           </div>
       </div>
     </section>
-
-      <div class="row billboard">
-        <div class="col-xl-1-5 col-lg-3 col-md-4  col-xs-6 col-sm-6"
-          v-for="ad in adList" :key="ad.text">
-          <img :src="ad.cover" alt="ADS">
-          <p>{{ad.text}}</p>
-        </div>
-      </div>
 
   </section>
 </template>

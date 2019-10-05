@@ -13,34 +13,40 @@ export default{
   1: {
     time: "9:00-9:30",
     subtitle: "",
-    title: "Sign-in & Breakfast",
+    title: "Sign-in",
     body: ``,
     speakers: [""]
   },
   2: {
       time: "09:30-10:00",
-      subtitle: "lightning talks",
+//      subtitle: "lightning talks",
       title: "1. Bird's-eye View of the Emergent Ethereum DeFi Microcosm",
-      body: `Story of DeFi: How it Started, Where It Stands Now, DeFi Definition Revisited<br>
-        DeFi East meets West`,
+      body: {
+        1: "Story of DeFi: How it Started, Where It Stands Now, DeFi Definition Revisited",
+        2: "DeFi East meets West"
+      },
       speakers: ["FelixFeng", "CamilaRusso","DianeDai"]
     },
   3: {
       time: "10:00-11:00",
-      subtitle: "Stream of talks",
+//      subtitle: "Stream of talks",
       title: "2. Evolution of Liquidity",
-      body: `On Moneyness<br>
-          Evolution of Exchange Architecture of DEXes<br>
-          Deep Dive into DeFi Liquidity Models`,
+      body: {
+        1: "On Moneyness",
+        2: "Evolution of Exchange Architecture of DEXes",
+        3: "Deep Dive into DeFi Liquidity Models"
+      },
       speakers: ["SunnyAggarwal", "TomSchmidt","AlexEvans","TomSchmidt","LevLivnev","KyleKistner"]
     },
   4: {
       time: "11:00-12:00",
-      subtitle: "Discussion",
+      // subtitle: "Discussion",
       title: "3. Implications of Intra- and Inter-dependencies",
-      body: `Visualizing DeFi: The Evolution of a Connected System<br>
-          Security and Liquidity Implications of Interoperable Asset and Bridges: MCD, tBTC, etc.<br>
-          Liquid Collaterals: Trojan Horse of Protocol Economics?`,
+      body: {
+        1: "Visualizing DeFi: The Evolution of a Connected System",
+        2: "Security and Liquidity Implications of Interoperable Asset and Bridges: MCD, tBTC, etc.",
+        3: "Liquid Collaterals: Trojan Horse of Protocol Economics?"
+      },
       speakers: ["ChristianCrowley","ShrutiAppiah","JamesPreswich","SunnyAggarwal","TInaZhen","JamesPreswich","IlliaPolosukhim","DanRobinson","JakeKim"]
     },
   5: {
@@ -52,55 +58,67 @@ export default{
     },
   6: {
       time: "13:00-14:00",
-      subtitle: "Lightning talks",
+      // subtitle: "Lightning talks",
       title: "5. Putting the \"De\" Back in DeFi",
-      body: `50 Shades of Decentralization in DeFi Mechanism Design<br>
-          DAO in DeFi & & DeFi in DAO`,
+      body: {
+        1: "50 Shades of Decentralization in DeFi Mechanism Design",
+        2: "DAO in DeFi & & DeFi in DAO"
+      },
       speakers: ["LevLivnev", "JennaZenk","AmeenSoleimani","PeterPan","JorgeIzquierdo","MartinKoppelman"]
     },
   7: {
       time: "14:00-15:00",
-      subtitle: "Stream of talks",
+//      subtitle: "Stream of talks",
       title: "6. Attacks and Defenses",
-      body: `DeFi Risk Assessment Framework<br>
-          Attack Vectors in DeFi Ecosystem: Smart Contract, Oracle, Liquidity Hack, etc<br>
-          Modeling Financial Risk Transfers: Casestudy on MakerDAO Credit Events<br>
-          Cascading Failures through Highly Coupled Systems`,
+      body: {
+        1: "DeFi Risk Assessment Framework",
+        2: "Attack Vectors in DeFi Ecosystem: Smart Contract, Oracle, Liquidity Hack, etc",
+        3: "Modeling Financial Risk Transfers: Casestudy on MakerDAO Credit Events",
+        4: "Cascading Failures through Highly Coupled Systems"
+      },
       speakers: ["JackClancy", "ChiachiWu","Alexvans","ShrutiAppiah"]
     },
   8: {
       time: "15:00-16:00",
       subtitle: "",
       title: `7. Conversation with Your DeFi Investor`,
-      body: `How to think about Value?<br>
-          Capture Value in DeFi: What didn't Work and What's Next`,
+      body: {
+        1: "How to think about Value?",
+        2: "Capture Value in DeFi: What didn't Work and What's Next"
+      },
       speakers: ["JoelMonegro", "MableJiang", "ChrisMcCann", "LasseClausen","RichardChen","HaseebQureshi","NirajPant"]
     },
   9: {
       time: "16:00-17:00",
-      subtitle: "Stream of talks",
+//      subtitle: "Stream of talks",
       title: "8. Inception vs. Deception",
-      body: `Chasing Yield: Interest Rates & Crypto Native Yields<br>
-      Should We and Can We Go from Over-collateralization to Under-collateralization?`,
+      body: {
+        1: "Chasing Yield: Interest Rates & Crypto Native Yields",
+        2: "Should We and Can We Go from Over-collateralization to Under-collateralization?"
+      },
       speakers: ["TomSchmidt", "DanRobinson","ZhuoxunYin","TrentElmore","JacobShiach","KyleKistner","MatteoLeibowitz","HaseebQureshi","MartinKoppelman","AllisonLu","MindaoYang"]
     },
   10: {
       time: "17:00-18:00",
-      subtitle: "Stream of talks",
+//      subtitle: "Stream of talks",
       title: "9. DeFi Product-Market-Fit",
-      body: `Mapping the Mass Adoption Puzzle: Missing Pieces within the DeFi Stack<br>
-          DeFi's Real vs Expected Users: Institutions v.s. Retail, Human v.s. Bots v.s. Other Smart Contracts?`,
+      body: {
+        1: "Mapping the Mass Adoption Puzzle: Missing Pieces within the DeFi Stack",
+        2: "DeFi's Real vs Expected Users: Institutions v.s. Retail, Human v.s. Bots v.s. Other Smart Contracts?"
+      },
       speakers: ["SeeEun", "TonySheng","AndrewAlbertson","ItamarLesuisse","HaydenAdams","VadimKoleoshkin","PhilipSeifert","CamilaRusso","HaydenAdams","BowenWang","AndrewKeys","ChaoPan"]
     },
 
     11: {
       time: "18:00-19:00",
-      subtitle: "Discussion",
+//      subtitle: "Discussion",
       title: "10. What's Next for DeFi",
-      body: `Global Legal Landscape for DeFi<br>
-          Implication of ETH 1.0 to 2.0 for the Highly Coupled DeFi Stack<br>
-          DeFi Bull vs. DeFi Bear: A Debate<br>
-          DeFi.WTF: Call for Research & Experiments`,
+      body: {
+        1: "Global Legal Landscape for DeFi",
+        2: "Implication of ETH 1.0 to 2.0 for the Highly Coupled DeFi Stack",
+        3: "DeFi Bull vs. DeFi Bear: A Debate",
+        4: "DeFi.WTF: Call for Research & Experiments"
+      },
       speakers: ["DanFriedberg", "KarlFloerach","KyleKistner","AndrewKeys","MatteoLeibowitz","TinaZhen","ToyaB","ShrutiAppiah","CamilaRusso","JennaZenk"]
   }
 }
