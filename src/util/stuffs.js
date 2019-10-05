@@ -1,3 +1,10 @@
 export default{
-  "Community Member": ["TinaZhen", "ToyaB", "MinakoKojima"]
+  "Curators": 
+    ["TinaZhen", "ToyaB", "ShrutiAppiah", "CamilaRusso", "JennaZenk"],
+  "Technical Jammers": 
+    ["MinakoKojima", "MingMingXia","TalRasha","FrancescoRenzi", "XuxianJiang", "KeLin", "Tmono", "YanduoRen"],
+  "Creative Alchemist": 
+    ["EchoQi", "TingtingSong","AaronLi"],
+  "Community Contributors": 
+    ["Diane Dai", "MableJiang", "BowenWang", "ChaoPan", "MindaoYang", "VictorZhang", "FengLiu", "TaylorZhang", "YinCao", "YisiLiu", "SujiYan", "RubyWu", "MaggieNi", "MelodyTaira", "RuhanWang", "TianxingZhen"],
 }

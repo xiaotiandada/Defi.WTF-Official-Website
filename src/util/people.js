@@ -8,6 +8,83 @@
 */
 
 export default{
+  MingmingXia: {
+    image: "MingmingXia.jpeg",
+    link: "https://www.linkedin.com/in/%E8%87%B4%E6%98%8E-%E5%A4%8F-814821164/"
+  },
+  TalRasha: {
+    image: "TalRasha.jpeg",
+    link: "https://github.com/talrasha007"
+  },
+  FrancescoRenzi: {
+    image: "FrancescoRenzi.jpeg",
+    link: "https://www.linkedin.com/in/francescogeorgerenzi"
+  },
+  XuxianJiang: {
+    image: "XuxianJiang.jpeg",
+    link: "https://www.linkedin.com/in/xuxianjiang/"
+  },
+  KeLin: {
+    image: "KeLin.jpeg",
+    link: "https://github.com/guanchao71"
+  },
+  Tmono: {
+    image: "Tmono.jpeg",
+    link: "https://github.com/Tmono"
+  },
+  YanduoRen: {
+    image: "YanduoRen.jpeg",
+    link: "https://github.com/renyanduo"
+  },
+  EchoQi: {
+    image: "EchoQi.jpeg",
+    link: "https://www.linkedin.com/in/keyue-qi-echo-613864b6/"
+  },
+  TingtingSong: {
+    image: "TingtingSong.jpeg",
+    link: "https://tingsongthu.github.io/index.html"
+  },
+  AaronLi: {
+    image: "AaronLi.jpeg",
+    link: "https://github.com/polymorpher"
+  },
+  VictorZhang: {
+    image: "VictorZhang.jpeg",
+    link: "https://github.com/zhangzhongnan928"
+  },
+  FengLiu: {
+    image: "FengLiu.jpeg",
+    link: "https://www.linkedin.com/in/feng-liu-51465b18"
+  },
+  TaylorZhang: {
+    image: "TaylorZhang.jpeg",
+    link: "https://www.linkedin.com/in/taylor-tianran-zhang-25730664/"
+  },
+  YinCao: {
+    image: "YinCao.jpeg",
+    link: "https://www.linkedin.com/in/caoyin/"
+  },
+  YisiLiu: {
+    image: "YisiLiu.jpeg",
+    link: "https://github.com/yisiliu"
+  },
+  RubyWu: {
+    image: "RubyWu.jpeg",
+    link: "https://github.com/wudirruby"
+  },
+  MaggieNi: {
+    image: "MaggieNi.jpeg",
+    link: "https://www.linkedin.com/in/xueyun-maggie-ni-272b8758/"
+  },
+  RuhanWang: {
+    image: "RuhanWang.jpeg",
+    link: "https://www.linkedin.com/in/ruhan-wang-8234b852"
+  },
+  TianxingZhen: {
+    image: "TianxingZhen.jpeg",
+    link: "https://twitter.com/thisiskteeee"
+  },
+
   MinakoKojima: {
     image: "minakokojima.jpeg",
     link: "http://feihuacebook.com/feihu.tang"
