@@ -48,8 +48,12 @@ export default{
     image: "James Preswich @Summa @tBTC.jpg",
     link: "https://www.linkedin.com/in/prestwich/"
   },
-  TInaZhen: {
-    image: "TIna Zhen @YellowHatDAO.jpg",
+  ToyaB: {
+    image: "ToyaB.jpg",
+    link: "https://twitter.com/toya77196996"
+  },
+  TinaZhen: {
+    image: "Tina Zhen @YellowHatDAO.jpg",
     link: "https://www.linkedin.com/in/tina-zhen-5185b324/"
   },
   IlliaPolosukhim: {
@@ -62,7 +66,7 @@ export default{
   },
   Mindao: {
     image: "Mindao @dForce.jpg",
-    link: "https://www.linkedin.com/in/ziggy-zeidan-64a93565/"
+    link: "https://www.linkedin.com/in/mindaoyang"
   },
   Bowen: {
     image: "Bowen @DDEX.jpg",
@@ -125,7 +129,7 @@ export default{
     link: "https://www.linkedin.com/in/izqui/"
   },
   MartinKoppelman: {
-    image: "Martin Koppelman @Gnosis @Dxdao.jpg",
+    image: "Martin Koppelman @Gnosis @Dxdao.jpeg",
     link: "https://www.linkedin.com/in/koeppelmann/"
   },
   JackClancy: {
@@ -164,6 +168,10 @@ export default{
     image: "Niraj Pant @Polychain.jpg",
     link: "https://www.linkedin.com/in/nirajpant/"
   },
+  DanFriedberg: {
+    image: "Dan Friedberg @Fenwick & West.jpg",
+    link: "https://www.linkedin.com/in/dan-friedberg-63645253"     
+  },
   DanRobinson: {
     image: "Dan Robinson @Paradigm.jpg",
     link: "https://www.linkedin.com/in/danielprobinson/"
@@ -185,7 +193,7 @@ export default{
     link: "https://www.linkedin.com/in/kyleb0x/"
   },
   BowenWang: {
-    image: "Bowen Wang @DDex.jpg",
+    image: "Bowen @DDex.jpg",
     link: "https://www.linkedin.com/in/bowenwang992/"
   },
   AllisonLu: {
@@ -195,10 +203,6 @@ export default{
   Kyle: {
     image: "Kyle @Bzx.jpg",
     link: "https://www.linkedin.com/in/kyleb0x/"
-  },
-  MindaoYang: {
-    image: "Mindao Yang @dForce @USDx.jpg",
-    link: "https://www.linkedin.com/in/ziggy-zeidan-64a93565/"
   },
   SeeEun: {
     image: "See Eun @Nonce.jpg",
@@ -229,8 +233,8 @@ export default{
     link: "https://www.linkedin.com/in/andrew-keys-45a9517/"
   },
   PhilipSeifert: {
-    image: "",
-    link: ""
+    image: "Philiff.jpg",
+    link: "https://twitter.com/Philiff"
   },
   ChaoPan: {
     image: "Chao Pan @MakerDAO China.jpg",

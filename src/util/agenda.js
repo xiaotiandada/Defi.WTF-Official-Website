@@ -11,7 +11,7 @@
 
 export default{
   1: {
-    time: "9:00-9:30",
+    time: "09:00-09:30",
     subtitle: "",
     title: "Sign-in",
     body: ``,
@@ -36,7 +36,7 @@ export default{
         2: "Evolution of Exchange Architecture of DEXes",
         3: "Deep Dive into DeFi Liquidity Models"
       },
-      speakers: ["SunnyAggarwal", "TomSchmidt","AlexEvans","TomSchmidt","LevLivnev","KyleKistner"]
+      speakers: ["SunnyAggarwal","AlexEvans","TomSchmidt","LevLivnev","KyleKistner"]
     },
   4: {
       time: "11:00-12:00",
@@ -47,7 +47,7 @@ export default{
         2: "Security and Liquidity Implications of Interoperable Asset and Bridges: MCD, tBTC, etc.",
         3: "Liquid Collaterals: Trojan Horse of Protocol Economics?"
       },
-      speakers: ["ChristianCrowley","ShrutiAppiah","JamesPreswich","SunnyAggarwal","TInaZhen","JamesPreswich","IlliaPolosukhim","DanRobinson","JakeKim"]
+      speakers: ["ChristianCrowley","ShrutiAppiah","SunnyAggarwal","TinaZhen","JamesPreswich","IlliaPolosukhim","DanRobinson","JakeKim"]
     },
   5: {
       time: "12:00-13:00",
@@ -76,7 +76,7 @@ export default{
         3: "Modeling Financial Risk Transfers: Casestudy on MakerDAO Credit Events",
         4: "Cascading Failures through Highly Coupled Systems"
       },
-      speakers: ["JackClancy", "ChiachiWu","Alexvans","ShrutiAppiah"]
+      speakers: ["JackClancy", "ChiachiWu","AlexEvans","ShrutiAppiah"]
     },
   8: {
       time: "15:00-16:00",
@@ -96,7 +96,7 @@ export default{
         1: "Chasing Yield: Interest Rates & Crypto Native Yields",
         2: "Should We and Can We Go from Over-collateralization to Under-collateralization?"
       },
-      speakers: ["TomSchmidt", "DanRobinson","ZhuoxunYin","TrentElmore","JacobShiach","KyleKistner","MatteoLeibowitz","HaseebQureshi","MartinKoppelman","AllisonLu","MindaoYang"]
+      speakers: ["TomSchmidt", "DanRobinson","ZhuoxunYin","AlexObadia","TrentElmore","JacobShiach","KyleKistner",,"HaseebQureshi","MartinKoppelman","AllisonLu","Mindao"]
     },
   10: {
       time: "17:00-18:00",
@@ -106,7 +106,7 @@ export default{
         1: "Mapping the Mass Adoption Puzzle: Missing Pieces within the DeFi Stack",
         2: "DeFi's Real vs Expected Users: Institutions v.s. Retail, Human v.s. Bots v.s. Other Smart Contracts?"
       },
-      speakers: ["SeeEun", "TonySheng","AndrewAlbertson","ItamarLesuisse","HaydenAdams","VadimKoleoshkin","PhilipSeifert","CamilaRusso","HaydenAdams","BowenWang","AndrewKeys","ChaoPan"]
+      speakers: ["SeeEun", "TonySheng","AndrewAlbertson","ItamarLesuisse","HaydenAdams","VadimKoleoshkin","PhilipSeifert","CamilaRusso","BowenWang","AndrewKeys","ChaoPan"]
     },
 
     11: {

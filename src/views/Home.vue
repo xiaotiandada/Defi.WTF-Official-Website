@@ -128,7 +128,7 @@
           <div class="section-title mt-3 pt-5 col-6">
             <h2>Agenda</h2>
             <h5 class="font-weight-medium mt-2">
-              Oct 7, 2019 | Osaka, Japan
+              2019.10.7 @ International House, Osaka, Japan
             </h5>
             <div class="text-center mt-5">
               <a
@@ -168,12 +168,14 @@
                   <h4 class="panel-header">
                     {{ item.title }}
                   </h4>
-                  <template v-for="(g, j) in item.body">
-                    <li
-                      v-show="showBody[i]"
-                      v-html="g"
-                    />
-                  </template>
+                  <ol>
+                    <template v-for="(g, j) in item.body">
+                      <li
+                        v-show="showBody[i]"
+                        v-html="g"
+                      />
+                    </template>
+                  </ol>
                 </div>
                 <div class="col-md-4 mt-3 text-right">
                   <avatar

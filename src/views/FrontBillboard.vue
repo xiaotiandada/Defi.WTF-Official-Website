@@ -10,21 +10,40 @@
             class=" wow fadeInUp col-md-6 col-xs-6 col-sm-12"
             data-wow-delay="0.2s"
           >
-            <img src="img/wtf5.png">
+            <img width="420px" src="img/wtf5.png">
           </div>
           <div
             class=" want wow fadeInUp col-md-6 col-xs-6 col-sm-12"
             data-wow-delay="0.2s"
           >
-            <h1>We Want You!</h1> <br>
-            <router-link
+            <h1 class="red-text">
+              A DeFi Billboard
+            </h1>
+            <h1>This is a Harberger Tax Social Experiment</h1>
+            <br>
+                        <router-link
               to="/billboard"
-              class="site-btn wow fadeInUp"
+              class="site-btn big wow fadeInUp"
               data-wow-delay="0.2s"
             >
-              Buy a billboard?
+              I WANNA SHILL
             </router-link>
           </div>
+    <div class="container mt-5">
+      <h5
+        class="red-text"
+      >
+        This is the only place in the WTF-verse where you will see logos. REALLY LOUD LOGOS. We are creating "a DeFi billboard" specifically to take shilling off the serious discussions
+      </h5>
+      <br>
+      <h5 class="white-text font-weight-regular">
+        We will conduct a continuous auction for 10 display slots on "a DeFi billboard" with a Harberger Tax mechanism.
+        The 5% tax goes to the event's ENS address
+        <strong>defiwtf.eth</strong>. The proceeds will go into funding the event and funding research that comes out of the event. Auction starts at Oct 7.
+      </h5>
+      <br><br>
+    </div>          
+            <img src="img/defi-billboard.png">
         </div>
       </div>
     </section>
