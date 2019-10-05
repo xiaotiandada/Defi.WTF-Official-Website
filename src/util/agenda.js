@@ -53,7 +53,9 @@ export default{
       time: "12:00-13:00",
       subtitle: "",
       title: "4. WTF Talks & Lunch",
-      body: ``,
+      body: {
+        1: "WTF Talks are 5-min short and sweet presentations proposed by the DeFi community. Due to venue restrictions Bento Box lunch will be provided to registered audience on a first come first serve basis."
+      },
       speakers: [""]
     },
   6: {

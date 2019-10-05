@@ -2,7 +2,7 @@ export default{
   "Curators": 
     ["TinaZhen", "ToyaB", "ShrutiAppiah", "CamilaRusso", "JennaZenk"],
   "Technical Jammers": 
-    ["MinakoKojima", "MingMingXia","TalRasha","FrancescoRenzi", "XuxianJiang", "KeLin", "Tmono", "YanduoRen"],
+    ["MinakoKojima", "MingmingXia","TalRasha","FrancescoRenzi", "XuxianJiang", "KeLin", "Tmono", "YanduoRen"],
   "Creative Alchemist": 
     ["EchoQi", "TingtingSong","AaronLi"],
   "Community Contributors": 
