@@ -209,7 +209,7 @@ export default{
     link: "https://www.linkedin.com/in/tonysheng/"
   },
   AndrewAlbertson: {
-    image: "",
+    image: "Andrew Albertson @Fenwick & West.jpg",
     link: "https://www.linkedin.com/in/andrew-albertson-9b47563b/"
   },
   ItamarLesuisse: {
@@ -243,5 +243,13 @@ export default{
   KarlFloerach: {
     image: "Karl Floerach.jpg",
     link: "https://www.linkedin.com/in/karlfloersch/"
+  },
+  AlexObadia: {
+    image: "Alex Obadia @Cambrial Capital.jpg",
+    link: "https://www.linkedin.com/in/alexandreobadia/"
+  },
+  MatteoLeibowitz: {
+    image: "Matteo Leibowitz @the Block.jpg",
+    link: "https://www.linkedin.com/in/matteo-leibowitz-b01935ba/"
   }
 }

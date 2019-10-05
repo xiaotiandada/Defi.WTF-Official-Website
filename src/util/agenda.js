@@ -13,14 +13,14 @@ export default{
   1: {
     time: "9:00-9:30",
     subtitle: "",
-    title: "1. Sign-in & Breakfast",
+    title: "Sign-in & Breakfast",
     body: ``,
     speakers: [""]
   },
   2: {
       time: "09:30-10:00",
       subtitle: "lightning talks",
-      title: "2. Bird's-eye View of the Emergent Ethereum DeFi Microcosm",
+      title: "1. Bird's-eye View of the Emergent Ethereum DeFi Microcosm",
       body: `Story of DeFi: How it Started, Where It Stands Now, DeFi Definition Revisited<br>
         DeFi East meets West`,
       speakers: ["FelixFeng", "CamilaRusso","DianeDai"]
@@ -28,16 +28,16 @@ export default{
   3: {
       time: "10:00-11:00",
       subtitle: "Stream of talks",
-      title: "3. Evolution of Liquidity",
+      title: "2. Evolution of Liquidity",
       body: `On Moneyness<br>
           Evolution of Exchange Architecture of DEXes<br>
           Deep Dive into DeFi Liquidity Models`,
-      speakers: ["SunnyAggarwal", "TomSchmidt","AlexEvans","TomSchmidt","LevLivnev"]
+      speakers: ["SunnyAggarwal", "TomSchmidt","AlexEvans","TomSchmidt","LevLivnev","KyleKistner"]
     },
   4: {
       time: "11:00-12:00",
       subtitle: "Discussion",
-      title: "4. Implications of Intra- and Inter-dependencies",
+      title: "3. Implications of Intra- and Inter-dependencies",
       body: `Visualizing DeFi: The Evolution of a Connected System<br>
           Security and Liquidity Implications of Interoperable Asset and Bridges: MCD, tBTC, etc.<br>
           Liquid Collaterals: Trojan Horse of Protocol Economics?`,
@@ -46,14 +46,14 @@ export default{
   5: {
       time: "12:00-13:00",
       subtitle: "",
-      title: "5. WTF Talks & Lunch",
+      title: "4. WTF Talks & Lunch",
       body: ``,
       speakers: [""]
     },
   6: {
       time: "13:00-14:00",
       subtitle: "Lightning talks",
-      title: "6. Putting the \"De\" Back in DeFi",
+      title: "5. Putting the \"De\" Back in DeFi",
       body: `50 Shades of Decentralization in DeFi Mechanism Design<br>
           DAO in DeFi & & DeFi in DAO`,
       speakers: ["LevLivnev", "JennaZenk","AmeenSoleimani","PeterPan","JorgeIzquierdo","MartinKoppelman"]
@@ -61,7 +61,7 @@ export default{
   7: {
       time: "14:00-15:00",
       subtitle: "Stream of talks",
-      title: "7. Attacks and Defenses",
+      title: "6. Attacks and Defenses",
       body: `DeFi Risk Assessment Framework<br>
           Attack Vectors in DeFi Ecosystem: Smart Contract, Oracle, Liquidity Hack, etc<br>
           Modeling Financial Risk Transfers: Casestudy on MakerDAO Credit Events<br>
@@ -71,7 +71,7 @@ export default{
   8: {
       time: "15:00-16:00",
       subtitle: "",
-      title: `8. Conversation with Your DeFi Investor`,
+      title: `7. Conversation with Your DeFi Investor`,
       body: `How to think about Value?<br>
           Capture Value in DeFi: What didn't Work and What's Next`,
       speakers: ["JoelMonegro", "MableJiang", "ChrisMcCann", "LasseClausen","RichardChen","HaseebQureshi","NirajPant"]
@@ -79,15 +79,15 @@ export default{
   9: {
       time: "16:00-17:00",
       subtitle: "Stream of talks",
-      title: "9. Inception vs. Deception",
+      title: "8. Inception vs. Deception",
       body: `Chasing Yield: Interest Rates & Crypto Native Yields<br>
       Should We and Can We Go from Over-collateralization to Under-collateralization?`,
-      speakers: ["TomSchmidt", "DanRobinson","ZhuoxunYin","TrentElmore","JacobShiach","KyleKistner","HaseebQureshi","MartinKoppelman","AllisonLu","KyleKistner","MindaoYang"]
+      speakers: ["TomSchmidt", "DanRobinson","ZhuoxunYin","TrentElmore","JacobShiach","KyleKistner","MatteoLeibowitz","HaseebQureshi","MartinKoppelman","AllisonLu","MindaoYang"]
     },
   10: {
       time: "17:00-18:00",
       subtitle: "Stream of talks",
-      title: "10. DeFi Product-Market-Fit",
+      title: "9. DeFi Product-Market-Fit",
       body: `Mapping the Mass Adoption Puzzle: Missing Pieces within the DeFi Stack<br>
           DeFi's Real vs Expected Users: Institutions v.s. Retail, Human v.s. Bots v.s. Other Smart Contracts?`,
       speakers: ["SeeEun", "TonySheng","AndrewAlbertson","ItamarLesuisse","HaydenAdams","VadimKoleoshkin","PhilipSeifert","CamilaRusso","HaydenAdams","BowenWang","AndrewKeys","ChaoPan"]
@@ -96,11 +96,11 @@ export default{
     11: {
       time: "18:00-19:00",
       subtitle: "Discussion",
-      title: "11. What's Next for DeFi",
+      title: "10. What's Next for DeFi",
       body: `Global Legal Landscape for DeFi<br>
           Implication of ETH 1.0 to 2.0 for the Highly Coupled DeFi Stack<br>
           DeFi Bull vs. DeFi Bear: A Debate<br>
           DeFi.WTF: Call for Research & Experiments`,
-      speakers: ["DanFriedberg", "KarlFloerach","KyleKistner","AndrewKeys","TinaZhen","ToyaB","ShrutiAppiah","CamilaRusso","JennaZenk"]
+      speakers: ["DanFriedberg", "KarlFloerach","KyleKistner","AndrewKeys","MatteoLeibowitz","TinaZhen","ToyaB","ShrutiAppiah","CamilaRusso","JennaZenk"]
   }
 }
