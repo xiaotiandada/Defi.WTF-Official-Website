@@ -217,7 +217,8 @@
             <h1 class="my-5">
               21-Day pop-up collective
             </h1>
-            <!--                  <avatar v-for="item in People" :key="item.image" :person="item" size="70" class="m-3"/>-->
+            <Stuffs />
+            <!-- <avatar v-for="item in People" :key="item.image" :person="item" size="70" class="m-3"/>-->
           </div>
         </div>
       </div>
@@ -297,10 +298,11 @@ import Avatar from "../components/Avatar.vue";
 import People from "../util/people.js";
 import Agenda from "../util/agenda.js";
 import FrontBillboard from "../views/FrontBillboard.vue";
+import Stuffs from "../views/Stuffs.vue";
 
 export default {
   name: "Home",
-  components: { FrontBillboard, Avatar },
+  components: { FrontBillboard, Avatar, Stuffs },
   data() {
     return {
       Agenda,
@@ -340,14 +342,6 @@ export default {
     },
     onSlideEnd(slide) {
       this.sliding = false
-    },
-    buy() {
-    },
-    createAuction() {
-    },
-    handleSubmit() {
-    },
-    handleFinalize() {
     }
   }
 };

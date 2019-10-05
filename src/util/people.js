@@ -8,6 +8,10 @@
 */
 
 export default{
+  MinakoKojima: {
+    image: "minakokojima.jpeg",
+    link: "http://feihuacebook.com/feihu.tang"
+  },
   FelixFeng: {
     image: "Felix Feng @Set Protocol.jpg",
     link: "https://www.linkedin.com/in/felix-feng/"
