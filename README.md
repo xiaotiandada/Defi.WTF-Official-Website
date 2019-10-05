@@ -1,13 +1,29 @@
-# Defi.WTF-Official-Website
+# defi-wtf-www
 
-Yet another offcial website
-
-## Development
-Based on [vue](https://github.com/vuejs/vue)
-
-```shell
-$ npm install
-$ npm run dev
+## Project setup
+```
+npm install
 ```
 
-注意：新版 webpack-dev-server 可能会有兼容性问题。
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
