@@ -1,5 +1,5 @@
 <template>
-        <footer class="footer-section spad set-bg" data-setbg="src/assets/img/footer-bg.svg">
+        <footer class="footer-section spad set-bg" data-setbg="img/footer-bg.svg">
         <div class="container">
             <div class="social-links">
                 <a target="_blank" href="https://t.me/defiwtf" class="telegram wow fadeInDown" data-wow-delay="0.2s"><i class="fa fa-telegram "></i></a>

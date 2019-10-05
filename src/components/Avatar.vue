@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     personalAvatar() {
-      return `src/assets/img/people/${person.image}`
+      return `img/people/${this.person.image}`
     },
     width(){
       return this.size || 50;
