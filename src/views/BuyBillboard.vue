@@ -351,11 +351,6 @@ export default {
       numberOfDays: 1,
       //get blockchain prices, return them in digestible format
       boards: [
-        { price: 0.2, owner: 0x000, balance: 0.5, until: "3 Oct", url: "" },
-        { price: 0.12, owner: 0x000, balance: 0.5, until: "13 Oct", url: "" },
-        { price: 0.23, owner: 0x000, balance: 0.5, until: "23 Oct", url: "" },
-        { price: 0.4, owner: 0x000, balance: 0.5, until: "9 Oct", url: "" },
-        { price: 1.2, owner: 0x000, balance: 0.5, until: "4 Oct", url: "" }
       ],
       selectedBoard: 0
     };
@@ -395,22 +390,15 @@ export default {
   },
   destroyed() {},
   methods: {
-
     getContentData() {
-    /*  if(!this.cover.length){
-        return alert('图片地址不能为空')
-      }*/
-
       let contentData = {
         text: this.content,
         cover: this.cover,
       }
-
       let contentDataJson = JSON.stringify(contentData)
       return contentDataJson;
     },
-
-    changeContentImg:function(){
+    changeContentImg() {
       let contentData = this.getContentData();
       const id = this.selectedBoard;
       const data = Object.assign({}, { id, contentToChange: contentData })
@@ -436,7 +424,6 @@ export default {
       const data = Object.assign({}, { id, amountToWithdraw });
       this.$root.withdrawDeposit(data);
     },
-
     buy() {
       this.showBuyModal = false;
       const initName = this.getContentData();
@@ -468,6 +455,9 @@ export default {
         {},
         { id, initPrice, initDeposit, artPrice, initName }
       );
+      
+      console.log(data);
+
       this.$root.buyAdBoard(data);
     },
     update() {

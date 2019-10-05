@@ -70,6 +70,7 @@ const vm = new Vue({
   },
   methods: {
     buyAdBoard(data) {
+
       const param = Object.assign({}, {
         state: this.$store.state,
         adId: data.id,
@@ -78,20 +79,11 @@ const vm = new Vue({
         value: parseFloat(data.initDeposit) + parseFloat(data.artPrice)
       })
 
-      aabManager.buyAdBoard(param)
-        .then((result) => {
-          for (var i = 0; i < result.logs.length; i++) {
-            let log = result.logs[i]
-            if (SC_EVENTS.TRANSFER == log.event) {
-            } else if (SC_EVENTS.BUY == log.event) {
-            } else if (SC_EVENTS.TAX_PAY == log.event) {
-            }
-          }
-        })
-        .catch((error) => {
-          // {code: -32016, message: "The execution failed due to an exception."}
-          console.error("main.js buyAdBoard: " + JSON.stringify(error))
-        })
+      aabManager.buyAdBoard(param).then((result) => {
+      }).catch((error) => {
+        // {code: -32016, message: "The execution failed due to an exception."}
+        console.error("main.js buyAdBoard: " + JSON.stringify(error))
+      })
     },
     forkAdBoard(data) {
     },

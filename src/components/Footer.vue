@@ -18,7 +18,7 @@
         ><i class="fa fa-twitter" /></a>
         <a
           target="_blank"
-          href="https://github.com/carboclan/pm/issues/69"
+          href="https://github.com/carboclan/pm/blob/master/research/DeFi.WTF_Agenda.md"
           class="github wow fadeInDown"
           data-wow-delay="0.4s"
         ><i class="fa fa-github" /></a>

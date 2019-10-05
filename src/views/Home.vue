@@ -189,7 +189,7 @@
             <div class="text-center my-5">
               <a
                 target="_blank"
-                href="https://github.com/carboclan/pm/issues/69"
+                href="https://github.com/carboclan/pm/blob/master/research/DeFi.WTF_Agenda.md"
                 class="site-btn big wow fadeInUp"
                 data-wow-delay="0.2s"
               >FIND OUT MORE</a>
