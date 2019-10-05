@@ -9,82 +9,81 @@
 
 export default{
   MingmingXia: {
-    image: "MingmingXia.jpeg",
+    image: "MingmingXia.jpg",
     link: "https://www.linkedin.com/in/%E8%87%B4%E6%98%8E-%E5%A4%8F-814821164/"
   },
   TalRasha: {
-    image: "TalRasha.jpeg",
+    image: "TalRasha.jpg",
     link: "https://github.com/talrasha007"
   },
   FrancescoRenzi: {
-    image: "FrancescoRenzi.jpeg",
+    image: "FrancescoRenzi.jpg",
     link: "https://www.linkedin.com/in/francescogeorgerenzi"
   },
   XuxianJiang: {
-    image: "XuxianJiang.jpeg",
+    image: "XuxianJiang.jpg",
     link: "https://www.linkedin.com/in/xuxianjiang/"
   },
   KeLin: {
-    image: "KeLin.jpeg",
+    image: "KeLin.jpg",
     link: "https://github.com/guanchao71"
   },
   Tmono: {
-    image: "Tmono.jpeg",
+    image: "Tmono.jpg",
     link: "https://github.com/Tmono"
   },
   YanduoRen: {
-    image: "YanduoRen.jpeg",
+    image: "YanduoRen.jpg",
     link: "https://github.com/renyanduo"
   },
   EchoQi: {
-    image: "EchoQi.jpeg",
+    image: "EchoQi.jpg",
     link: "https://www.linkedin.com/in/keyue-qi-echo-613864b6/"
   },
   TingtingSong: {
-    image: "TingtingSong.jpeg",
+    image: "TingtingSong.jpg",
     link: "https://tingsongthu.github.io/index.html"
   },
   AaronLi: {
-    image: "AaronLi.jpeg",
+    image: "AaronLi.jpg",
     link: "https://github.com/polymorpher"
   },
   VictorZhang: {
-    image: "VictorZhang.jpeg",
+    image: "VictorZhang.jpg",
     link: "https://github.com/zhangzhongnan928"
   },
   FengLiu: {
-    image: "FengLiu.jpeg",
+    image: "FengLiu.jpg",
     link: "https://www.linkedin.com/in/feng-liu-51465b18"
   },
   TaylorZhang: {
-    image: "TaylorZhang.jpeg",
+    image: "TaylorZhang.jpg",
     link: "https://www.linkedin.com/in/taylor-tianran-zhang-25730664/"
   },
   YinCao: {
-    image: "YinCao.jpeg",
+    image: "YinCao.jpg",
     link: "https://www.linkedin.com/in/caoyin/"
   },
   YisiLiu: {
-    image: "YisiLiu.jpeg",
+    image: "YisiLiu.jpg",
     link: "https://github.com/yisiliu"
   },
   RubyWu: {
-    image: "RubyWu.jpeg",
+    image: "RubyWu.jpg",
     link: "https://github.com/wudirruby"
   },
   MaggieNi: {
-    image: "MaggieNi.jpeg",
+    image: "MaggieNi.jpg",
     link: "https://www.linkedin.com/in/xueyun-maggie-ni-272b8758/"
   },
   RuhanWang: {
-    image: "RuhanWang.jpeg",
+    image: "RuhanWang.jpg",
     link: "https://www.linkedin.com/in/ruhan-wang-8234b852"
   },
   TianxingZhen: {
-    image: "TianxingZhen.jpeg",
+    image: "TianxingZhen.jpg",
     link: "https://twitter.com/thisiskteeee"
   },
-
   MinakoKojima: {
     image: "minakokojima.jpeg",
     link: "http://feihuacebook.com/feihu.tang"
