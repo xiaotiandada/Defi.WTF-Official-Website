@@ -32,8 +32,8 @@
               </router-link>
             </li>
             <li>
-              <router-link to="/stuffs">
-                Stuffs
+              <router-link to="/about">
+                About
               </router-link>
             </li>
             <!--<li>
