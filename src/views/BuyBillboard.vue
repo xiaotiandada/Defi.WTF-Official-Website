@@ -372,7 +372,7 @@ export default {
   },
   created() {
     web3.version.getNetwork((err, netId) => {
-      let url = `http://hk.i43.io/api/list_boards?networkId=${netId}`;
+      let url = `//t.mcarlo.com/api/list_boards?networkId=${netId}`;
       axios.get(url).then(({ data }) => {
         // functional style babe, just map it
         this.boards = data.map(item => {
