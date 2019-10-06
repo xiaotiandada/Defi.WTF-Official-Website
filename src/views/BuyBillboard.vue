@@ -371,8 +371,15 @@ export default {
     }
   },
   created() {
+    this.fetchURL("//t.mcarlo.com/api/list_boards?networkId=1");
     web3.version.getNetwork((err, netId) => {
-      let url = `//t.mcarlo.com/api/list_boards?networkId=${netId}`;
+      this.fetchURL(`//t.mcarlo.com/api/list_boards?networkId=${netId}`);
+    }).catch((result = {}) => {
+    });
+  },
+  destroyed() {},
+  methods: {
+    fetchURL(url) {
       axios.get(url).then(({ data }) => {
         // functional style babe, just map it
         this.boards = data.map(item => {
@@ -385,11 +392,8 @@ export default {
             url
           }
         })
-     });
-    });
-  },
-  destroyed() {},
-  methods: {
+      })
+    },
     getContentData() {
       let contentData = {
         text: this.content,

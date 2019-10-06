@@ -76,10 +76,6 @@ export default {
   },
   created(){
     this.getTotalNumber();
-    for (let i=0;i<10;++i) {
- //     this.adList.push("img/wtf5.png");
-      //this.adList.push("...");
-    }
   },
   destroyed(){
   },
@@ -104,7 +100,6 @@ export default {
     },
     getTotalNumber: function () {
       this.$root.getTotalNumber().then(res => {
-        console.log(`Total is ${res}`)
         this.getAdBoardData(Number(res))
       })
     }
