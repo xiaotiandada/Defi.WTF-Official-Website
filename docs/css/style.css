@@ -41,6 +41,12 @@ body {
 .fish-wap{text-align: center;}
 .fish{width: 50%;margin:50px auto; }
 
+@media (max-width:767.98px) {
+	.fish{
+		width: 100%;
+		margin: 1em;
+	}
+}
 label {
   position: absolute;
   top: 0;
@@ -76,11 +82,8 @@ label {
 	color: #363636;
 }
 
-.panel-header {
-	font-size:11px;
-}
-
-.billboards{margin: 10px 150px 10px; min-height: 60px;}
+.billboards{
+	margin: 10px auto 10px; min-height: 60px;}
 
 .stuffs{margin-top: 120px;min-height: 600px;margin-bottom: 120px;}
 .stuffs h2{padding:10px 10px 30px 10px; }
@@ -1106,10 +1109,16 @@ ol {
 }
 
 .resume-item {
-	margin-bottom: 30px;
 	clear: both;
+	padding-right: 15px;
+	padding-left:15px;
+	max-width: calc(100% + 30px);
 }
 
+.resume-item:hover{
+	transition: 0,4s ease;
+	background: rgba(0,0,0,0.1);
+}
 .resume-item:last-child {
 	margin-bottom: 0;
 }
