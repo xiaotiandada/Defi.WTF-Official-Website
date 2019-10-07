@@ -15,7 +15,7 @@ export default{
     subtitle: "",
     title: "Sign-in",
     body: ``,
-    speakers: [""]
+    speakers: []
   },
   2: {
       time: "09:30-10:00",
@@ -56,7 +56,7 @@ export default{
       body: {
         1: "WTF Talks are 5-min short and sweet presentations proposed by the DeFi community. Due to venue restrictions Bento Box lunch will be provided to registered audience on a first come first serve basis."
       },
-      speakers: [""]
+      speakers: []
     },
   6: {
       time: "13:00-14:00",
@@ -98,7 +98,7 @@ export default{
         1: "Chasing Yield: Interest Rates & Crypto Native Yields",
         2: "Should We and Can We Go from Over-collateralization to Under-collateralization?"
       },
-      speakers: ["TomSchmidt", "DanRobinson","ZhuoxunYin","AlexObadia","TrentElmore","JacobShiach","KyleKistner",,"HaseebQureshi","MartinKoppelman","AllisonLu","Mindao"]
+      speakers: ["TomSchmidt", "DanRobinson","ZhuoxunYin","AlexObadia","TrentElmore","JacobShiach","KyleKistner","HaseebQureshi","MartinKoppelman","AllisonLu","Mindao"]
     },
   10: {
       time: "17:00-18:00",
