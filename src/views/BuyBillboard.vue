@@ -89,7 +89,7 @@
       </h4>
       <div class="text-center my-5">
         <a
-          v-if="coinbase.toUpperCase() === boards[selectedBoard].owner.toUpperCase()"
+          v-if="coinbase && coinbase.toUpperCase() === boards[selectedBoard].owner.toUpperCase()"
           class="site-btn big wow fadeInUp"
           style="font-size:2em; font-weight:bold"
           data-wow-delay="0.2s"
