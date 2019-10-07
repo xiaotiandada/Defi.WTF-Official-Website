@@ -15,7 +15,18 @@
 
 export default {
   name: "Avatar",
-  props: ['person', "size"],
+  props: {
+    person: {
+      type: Object,
+      default: () => {
+        return {
+          link: '',
+          image: ''
+        }
+      }
+    }, 
+    size: Number
+  },
   data() {
     return {
     }
