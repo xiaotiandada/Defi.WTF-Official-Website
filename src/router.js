@@ -10,7 +10,7 @@ import GithubLogin from "./views/GithubLogin.vue";
 import TwitterLogin from "./views/TwitterLogin.vue";
 
 export default new VueRouter({
-  mode: "history",
+  mode: "hash",
   base: "",
   routes: [
    {
