@@ -6,5 +6,5 @@ export default{
   "Creative Alchemist": 
     ["EchoQi", "TingtingSong","AaronLi"],
   "Community Contributors": 
-    ["Diane Dai", "MableJiang", "BowenWang", "ChaoPan", "MindaoYang", "VictorZhang", "FengLiu", "TaylorZhang", "YinCao", "YisiLiu", "SujiYan", "RubyWu", "MaggieNi", "MelodyTaira", "RuhanWang", "TianxingZhen"],
+    ["DianeDai", "MableJiang", "BowenWang", "ChaoPan", "Mindao", "VictorZhang", "FengLiu", "TaylorZhang", "YinCao", "YisiLiu", "SujiYan", "RubyWu", "MaggieNi", "MelodyTaira", "RuhanWang", "TianxingZhen"],
 }
