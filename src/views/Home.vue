@@ -147,7 +147,10 @@
         <div class="row no-gutters panel pt-4 mt-5">
           <div class="col-12  ">
             <!-- Review item -->
-            <template v-for="(item, i) in Agenda">
+            <div
+              v-for="(item, i) in Agenda"
+              :key="i"
+            >
               <hr
                 v-if="i > 0"
                 class="d-md-none"
@@ -163,29 +166,33 @@
                 </div>
                 <div
                   class="col-md-6 pointer"
-                  @click="showBody[i] = !showBody[i]"
+                  @click="toggleList(i)"
                 >
                   <h4 class="panel-header">
                     {{ item.title }}
                   </h4>
-                  <ol>
-                    <template v-for="(g, j) in item.body">
-                      <li
-                        v-show="showBody[i]"
-                        v-html="g"
-                      />
-                    </template>
-                  </ol>
+                  <ul
+                    v-show="item.showBody"
+                    class="panel-ul"
+                  >
+                    <li
+                      v-for="(g, j) in item.body"
+                      :key="j"
+                    >
+                      {{ j }}.{{ g }}
+                    </li>
+                  </ul>
                 </div>
                 <div class="col-md-4 mt-3 text-right">
                   <avatar
-                    v-for="name in item.speakers"
+                    v-for="(name, index) in item.speakers"
+                    :key="index"
                     :person="People[name]"
                     class="mr-2"
                   />
                 </div>
               </div>
-            </template>
+            </div>
             <div class="text-center my-5">
               <a
                 target="_blank"
@@ -309,7 +316,6 @@ export default {
       People,
       slide: 0,
       sliding: null,
-      showBody: [false,false,false,false,false,false,false,false],
       title: "",
       startPrice: "",
       description: "",
@@ -342,7 +348,22 @@ export default {
     },
     onSlideEnd(slide) {
       this.sliding = false
+    },
+    toggleList(i) {
+      this.Agenda[i].showBody = !this.Agenda[i].showBody
     }
   }
 };
 </script>
+
+
+<style scoped>
+.panel-ul {
+  list-style: none;
+}
+.panel-ul li {
+  margin: 10px 0;
+  line-height: 1.5;
+  font-size: 16px;
+}
+</style>
